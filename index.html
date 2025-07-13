@@ -13,25 +13,29 @@
       color: #222;
       line-height: 1.6;
     }
+    nav {
+      background-color: #002a8f;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
     header {
-      background-color: rgba(255,255,255,0.9);
+      background-color: rgba(255,255,255,0.95);
       color: #000;
       padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      text-align: center;
     }
     header h1 {
       margin: 0;
       font-size: 2em;
-    }
-    .profile-img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #cf142b;
     }
     section {
       background-color: white;
@@ -83,10 +87,26 @@
 </head>
 <body>
 
+  <nav>
+    <a href="#biografia">Biografía</a>
+    <a href="#poemas">Poemas</a>
+    <a href="#cuentos">Cuentos</a>
+    <a href="#comentarios">Comentarios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
   <header>
     <h1>Ricardo Hernández Letras</h1>
-    <img src="https://ricardo-letras.vercel.app/ricardo.jpg" alt="Ricardo Hernández" class="profile-img" />
   </header>
+
+  <section id="biografia">
+    <h2>Biografía</h2>
+    <p>Ricardo Hernández Rodríguez. Nació el 7/2/1956, en la ciudad de Colón, provincia de Matanzas, Cuba. Reside en La Habana desde 1962.
+Graduado en Pedagogía con especialidad en Química en el Instituto Superior Pedagógico Enrique José Varona. 
+Inició su actividad laboral como profesor de secundaria básica y más tarde se desempeñó en áreas vinculadas a recursos humanos. 
+Cursó postgrados en instituciones de Cuba, México (Universidad de La Salle, Cancún) y República Dominicana (Universidad Católica de Santo Domingo). 
+Autor del poemario "Versos Callejeros. Las cosas que amo" y del libro "Cuentos de suspense, amor y muerte", ambos disponibles en Amazon.</p>
+  </section>
 
   <section id="poemas">
     <h2>Poemas</h2>
@@ -104,8 +124,24 @@
       <textarea rows="5" placeholder="Escribe tu comentario aquí..."></textarea>
       <button>Enviar</button>
     </div>
-    <p><em>*Esta sección aún no guarda comentarios. Para activarla se necesita conexión a base de datos o plataforma externa.</em></p>
+    <p><em>*Esta sección aún no guarda comentarios. Para activarla se necesita conexión a base de datos o servicio externo.</em></p>
   </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Para consultas, puedes escribir a: <strong>ricardo.hernandez@email.com</strong></p>
+  </section>
+
+  <!-- Contador de visitas -->
+  <div style="text-align:center; margin-top: 40px;">
+    <p style="font-weight: bold; color: #002a8f;">Visitas al sitio:</p>
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=12367989&style=0006&nbdigits=6&type=ip&initCount=000000" 
+           title="Contador de visitas gratuito" 
+           alt="Contador de visitas" 
+           style="border:0;" />
+    </a>
+  </div>
 
   <footer>
     &copy; 2025 Ricardo Hernández. Todos los derechos reservados.
