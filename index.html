@@ -1,178 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
-<!DOCTYPE html>
-<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ricardo Hernández Letras</title>
   <style>
-    body { font-family: Georgia, serif; margin: 0; padding: 0; background: #fefefe; color: #222; }
-    header { background: #111; color: white; padding: 20px; text-align: center; }
-    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
-    section { padding: 40px 20px; max-width: 800px; margin: auto; }
-    h1, h2 { color: #b10f2e; }
-    p { line-height: 1.6; text-align: justify; }
-    footer { background: #111; color: white; text-align: center; padding: 20px; }
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #002a8f 0%, white 50%, #cf142b 100%);
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background-color: rgba(255,255,255,0.9);
+      color: #000;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #cf142b;
+    }
+    section {
+      background-color: white;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #002a8f;
+      border-bottom: 2px solid #cf142b;
+      padding-bottom: 5px;
+    }
+    p {
+      white-space: pre-line;
+      text-align: justify;
+    }
+    footer {
+      background: #002a8f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .comment-box {
+      margin-top: 20px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #cf142b;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a30f22;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Ricardo Hernández Letras</h1>
-    <nav>
-      <a href="#bio">Biografía</a>
-      <a href="#cuento">Cuento</a>
-      <a href="#poesia">Poesía</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <img src="https://ricardo-letras.vercel.app/ricardo.jpg" alt="Ricardo Hernández" class="profile-img" />
   </header>
 
-  <section id="bio">
-    <h2>Biografía</h2>
-    <p>
-      Ricardo Hernández Rodríguez. Nació el 7/2/1956 en Colón, Matanzas, Cuba. Reside en La Habana desde 1962.
-      Graduado en Pedagogía (Química) por el ISP Enrique José Varona. Inició como profesor de secundaria, luego ejerció funciones en recursos humanos.
-      Cursó postgrados en FORMATUR (Cuba), La Salle (México), y la Universidad Católica de Santo Domingo (RD).
-      Autor de "Versos Callejeros. Las cosas que amo" y "Cuentos de suspense, amor y muerte", publicados en Amazon.com.
-    </p>
-  
-      
-<section id="cuento-balseros">
-  <h2>Cuento: Balseros</h2>
-  <p>
-&quot;En medio del mar no se ve tierra&quot;. Escribió el poeta.<br>
--¡Cojones! No se ve nada-. Pensó en voz alta el solitario balsero al observar la oscuridad que lo rodeaba en una noche sin estrellas.
-Auto amarrado con cuerdas de henequén a una desgastada cámara para neumáticos que le servía de embarcación, navegaba por las intimidantes aguas del estrecho de la Florida. Este tipo de balsas constituyen el invento más liviano e inseguro utilizado por los cubanos para escapar de la isla.
-No obstante la fragilidad del improvisado navío, balsa y tripulante lograron sobrevivir a la tormenta que los sorprendió recién desaparecidos los últimos rayos de sol en el lejano horizonte.<br><br>
+  <section id="poemas">
+    <h2>Poemas</h2>
+    <p>Aquí aparecerán tus poemas.</p>
+  </section>
 
-[...]<br><br>
+  <section id="cuentos">
+    <h2>Cuentos</h2>
+    <p>Aquí aparecerán tus cuentos.</p>
+  </section>
 
-Recibió el Padre al ahogado exclamando en su idioma de fe y amor:<br>
--¡Hijo mío! Tuyo es el reino de los cielos. ¡Amén!-<br>
-¡Amén!-. Respondieron al unísono las silentes voces de los miles de cadáveres que yacen en el fondo del mar del Estrecho de la Florida.<br><br>
-
-Fin
-  </p>
-
-  
-
-
-  <section id="poema-se-cae-la-habana">
-    <h2>Poema: Se cae La Habana</h2>
-    <p>
-Se cae La Habana.  
-La Habana se está cayendo,  
-se desmorona en pedazos.  
-Las calles llenas de baches,  
-los almendrones pasando.  
-Sus noches no tienen luces.  
-Travestis, putas y machos buscan  
-turistas viejos o nacionales bien pertrechados.  
-Niños crecen sin dioses,  
-no hay reyes magos,  
-penan de encantos.  
-Parques desaparecen.  
-Los almendrones pasando.  
-La Habana grita su llanto,  
-llora su risa, gime su encanto.  
-Con el pasado vive soñando.
-    </p>
-  
-
-  
-
+  <section id="comentarios">
+    <h2>Comentarios</h2>
+    <div class="comment-box">
+      <textarea rows="5" placeholder="Escribe tu comentario aquí..."></textarea>
+      <button>Enviar</button>
+    </div>
+    <p><em>*Esta sección aún no guarda comentarios. Para activarla se necesita conexión a base de datos o plataforma externa.</em></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Ricardo Hernández. Todos los derechos reservados.</p>
+    &copy; 2025 Ricardo Hernández. Todos los derechos reservados.
   </footer>
 
-</body>
-</html>
-
-    </p>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>
-      Para consultas, colaboraciones o entrevistas:<br>
-      📧 <a href="mailto:ricardohernandezletras@gmail.com">ricardohernandezletras@gmail.com</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Ricardo Hernández. Todos los derechos reservados.</p>
-  </footer>
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ricardo Hernández Letras</title>
-  <style>
-    body { font-family: Georgia, serif; margin: 0; padding: 0; background: #fefefe; color: #222; }
-    header { background: #111; color: white; padding: 20px; text-align: center; }
-    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
-    section { padding: 40px 20px; max-width: 800px; margin: auto; }
-    h1, h2 { color: #b10f2e; }
-    footer { background: #111; color: white; text-align: center; padding: 20px; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Ricardo Hernández Letras</h1>
-    <nav>
-      <a href="#bio">Biografía</a>
-      <a href="#cuento">Cuento</a>
-      <a href="#poesia">Poesía</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <section id="bio">
-    <h2>Biografía</h2>
-    <p>
-      Ricardo Hernández Rodríguez. Nació el 7/2/1956 en Colón, Matanzas, Cuba. Reside en La Habana desde 1962.
-      Graduado en Pedagogía (Química) por el ISP Enrique José Varona. Inició como profesor de secundaria, luego ejerció funciones en recursos humanos.
-      Cursó postgrados en FORMATUR (Cuba), La Salle (México), y la Universidad Católica de Santo Domingo (RD).
-      Autor de "Versos Callejeros. Las cosas que amo" y "Cuentos de suspense, amor y muerte".
-    </p>
-  </section>
-
-  <section id="cuento">
-    <h2>Cuento: Balseros</h2>
-    <p>
-      "En medio del mar no se ve tierra", escribió el poeta. —¡Cojones! No se ve nada —pensó el solitario balsero...<br>
-      Así comienza la historia de dos amigos que huyen hacia la libertad en una balsa improvisada. Una historia de fe, locura y supervivencia marcada por el mar y el silencio.
-    </p>
-  </section>
-
-  <section id="poesia">
-    <h2>Poema: Se cae La Habana</h2>
-    <p>
-      La Habana se está cayendo,<br>
-      se desmorona en pedazos.<br>
-      Las calles llenas de baches,<br>
-      los almendrones pasando.<br><br>
-      [...]<br><br>
-      La Habana grita su llanto,<br>
-      llora su risa, gime su encanto.<br>
-      Con el pasado vive soñando.
-    </p>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>
-      Para consultas, colaboraciones o entrevistas:<br>
-      📧 <a href="mailto:ricardohernandezletras@gmail.com">ricardohernandezletras@gmail.com</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Ricardo Hernández. Todos los derechos reservados.</p>
-  </footer>
 </body>
 </html>
