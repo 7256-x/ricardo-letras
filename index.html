@@ -293,6 +293,23 @@ Partieron los intrépidos aventureros el jueves santo del año mil novecientos n
   <footer>
     &copy; 2025 Ricardo Hernández. Todos los derechos reservados.
   </footer>
+<script>
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-button');
+    
+    tabs.forEach(tab => {
+      tab.classList.remove('active');
+    });
+    
+    buttons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
