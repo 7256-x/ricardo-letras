@@ -2,289 +2,113 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ricardo Hernández Letras</title>
   <style>
     body {
-      font-family: 'Georgia', serif;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #002a8f 0%, white 50%, #cf142b 100%);
-      color: #222;
-      line-height: 1.6;
     }
+
     nav {
-      background-color: #002a8f;
-      padding: 10px 0;
       text-align: center;
+      background-color: #003366;
+      padding: 1em;
     }
-    nav a {
+
+    .tab-button {
+      background-color: #003366;
       color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    header {
-      background-color: rgba(255,255,255,0.95);
-      color: #000;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    section {
-      background-color: white;
-      margin: 30px auto;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 800px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #002a8f;
-      border-bottom: 2px solid #cf142b;
-      padding-bottom: 5px;
-    }
-    p {
-      white-space: pre-line;
-      text-align: justify;
-    }
-    footer {
-      background: #002a8f;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    .comment-box {
-      margin-top: 20px;
-    }
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      resize: vertical;
-    }
-    button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #cf142b;
       border: none;
-      color: white;
-      border-radius: 5px;
+      padding: 10px 16px;
+      margin: 0;
       cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
     }
-    button:hover {
-      background-color: #a30f22;
+
+    .tab-button:hover {
+      background-color: #005599;
+    }
+
+    .tab-button.active {
+      background-color: #cc0000;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .tab-content.active {
+      display: block;
     }
   </style>
 </head>
 <body>
 
-<style>
-  .tab-button {
-    background-color: #003366;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    margin: 0;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1em;
-  }
-  .tab-button:hover {
-    background-color: #005599;
-  }
-  .tab-button.active {
-    background-color: #cc0000;
-  }
-  .tab-content {
-    display: none;
-    padding: 2em;
-  }
-  .tab-content.active {
-    display: block;
-  
-  .<div style="text-align:center;">
-  <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
-  <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
-  <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
-  <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
-  <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+  <!-- MENÚ DE PESTAÑAS -->
+  <nav>
+    <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
+    <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
+    <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
+    <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+    <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+  </nav>
 
-</div>
-    
-<div id="biografia" class="tab-content active">
-  <h2>Biografía>/h2>
-  <p>Ricardo Hernández Rodríguez nació en Colón...</p>
-</Div>
+  <!-- SECCIONES -->
 
-<div id="poemas" class="tab-content">
-  <h2>Poemas</h2>
-  <p>Se cae La Habana...</p>
-</Div>
+  <div id="biografia" class="tab-content active">
+    <h2>Biografía</h2>
+    <p>Ricardo Hernández Rodríguez nació el 7/2/1956 en Colón, provincia de Matanzas, Cuba. Reside en La Habana desde 1962.</p>
+    <p>Graduado de Pedagogía en la especialidad de Química en el Instituto Superior Pedagógico Enrique José Varona. Ha ejercido como profesor de Química y trabajado en áreas de recursos humanos. Cursó postgrados en FORMATUR (Cuba), Universidad de La Salle (México) y Universidad Católica de Santo Domingo (República Dominicana).</p>
+    <p>Autor del poemario <strong>"Versos Callejeros. Las cosas que amo"</strong> y del libro <strong>"Cuentos de suspense, amor y muerte"</strong>, ambos publicados en Amazon.com.</p>
+  </div>
 
-  
-      
-  Se cae La Habana.  
-  
-La Habana se está cayendo,  
-se desmorona en pedazos.  
-Las calles llenas de baches,  
-los almendrones pasando.  
-  
-Sus noches no tienen luces.  
-Travestis, putas y machos buscan  
-turistas viejos o nacionales bien pertrechados.  
-  
-Niños crecen sin dioses,  
-no hay reyes magos,  
-penan de encantos.  
-Parques desaparecen.  
-Los almendrones pasando.  
-  
-La Habana grita su llanto,  
-llora su risa, gime su encanto.  
-Con el pasado vive soñando.
-
-Fin
-
+  <div id="poemas" class="tab-content">
+    <h2>Poemas</h2>
+    <p>Aquí se mostrarán los poemas originales del autor. Por ejemplo:</p>
+    <p><strong>Se cae La Habana</strong><br>
+    La Habana se está cayendo,<br>
+    se desmorona en pedazos...<br>
+    (etc.)</p>
+  </div>
 
   <div id="cuentos" class="tab-content">
-  <h2>Balseros</h2>
+    <h2>Cuentos</h2>
+    <p>Aquí aparecerán los cuentos publicados, como el cuento "Balseros".</p>
   </div>
 
-Balseros.
-
-"En medio del mar no se ve tierra". Escribió el poeta.<br>
--¡Cojones! No se ve nada-. Pensó en voz alta el solitario balsero al observar la oscuridad que lo rodeaba en una noche sin estrellas. Auto amarrado con cuerdas de henequén a una desgastada cámara para neumáticos que le servía de embarcación, navegaba por las intimidantes aguas del estrecho de la Florida. Este tipo de balsas constituyen el invento más liviano e inseguro utilizado por los cubanos para escapar de la isla. No obstante la fragilidad del improvisado navío, balsa y tripulante lograron sobrevivir a la tormenta que los sorprendió recién desaparecidos los últimos rayos de sol en el lejano horizonte.<br><br>
-
-Estaba por concluir la segunda noche desde que abandonara el país por un punto de las costas del este de la Habana, cercano a la bahía de la ciudad. Lo hizo en unión de un amigo de la infancia, cuya amistad se consolidó en una de las abundantes prisiones existentes en la isla. Ambos cumplían condena por motivos políticos. En su caso particular fue sentenciado a un año y medio de encarcelamiento. Motivo: planear el ingreso a la sede de una embajada diplomática con el propósito de solicitar asilo, acción que no llegó siquiera a intentar.<br><br>
-
-Como lo hicieran otros miles antes y lo continúan haciendo muchos más hasta el presente, se lanzaron a la mar los imberbes jóvenes en busca de un sueño que no podían concretar en sus propias almohadas. Se los impedía la falta de libertad para construir el futuro añorado. No comulgaban con el incierto provenir que les imponían desde la fuerza de una ideología totalitaria. Doctrina ajena a la idiosincrasia de una nación que a su pesar, ha observado pasivamente durante décadas como maltratan, tergiversan y aniquilan las más naturales y sublimes tradiciones acumuladas durante siglos de existencia.<br><br>
-
-Partieron los intrépidos aventureros el jueves santo del año mil novecientos noventa. Lo hicieron después de celebrar con sus respectivas familias la tradicional cena que se realiza en tan significativa fecha. En honor a la verdad aquellas comidas se podrían catalogar como una merienda o refrigerio, dado las insuficiencia en cantidad y calidad de las raciones servidas. Era el resultado de la escasez que ya imponía el recién iniciado periodo especial. Contradictorio nombre surgido de la retorcida costumbre de los gobernantes del país, quienes acostumbran utilizar llamativos y absurdos adjetivos para referirse a determinados periodos o hechos negativos, por los que ha atravesado el país en su etapa post revolucionaria, estancada desde su propio inicio a pesar de algunos logros exhibidos con exagerada elocuencia y alcanzados a expensas de extender la miseria entre la mayoría de la población, limitando las libertades personales de los ciudadanos.
-  </p>
-<section id="cuento-balseros-2" style="margin-top: 2em;">
-  <h2 style="color: #003366;">Cuento: Balseros <span style="font-size: 0.7em; color: #666;">(continuación)</span></h2>
-  <hr style="border: 1px solid #cc0000;">
-  <p>Desde la corta distancia en que despavorido y perplejo presenció el desgarrador espectáculo, el otro chico entró en estado de pánico. A punto de colapsar, gritar, patear, pedir auxilio u otra histérica y comprensiva reacción, lo sorprendió una arqueada de vómito agrio que tragó por puro instinto de sobre vivencia. Evitó así que de caer el contenido de su estómago al agua, los gigantescos mamíferos lo percibieran y agregaran al sangriento festín.</p>
-
-  <p>Perdió el conocimiento por el terror experimentado, como si Dios hubiera intervenido para prevenir una demencia segura. Quedó inconscientemente acurrucado dentro del hueco que se forma en el centro de las cámaras cuando estas se inflan. Por suerte, el fondo de la misma estaba protegido por una madera resistente y de igual diámetro que su circunferencia total, lo que se hace para proporcionar mayor seguridad al tripulante.</p>
-
-  <p>No recobraría la razón el desmayado hasta que, al desaparecer la luz solar, lo sorprendió la tormenta que lo obligara a amarrarse a la balsa. Para ello utilizó los pedazos de soga de henequén llevados con ese propósito. Constituyó la única y desesperada medida para no sucumbir a las inmensas y continuas olas que lo azotaron hasta poco antes de expirar la segunda noche del trágico trayecto.</p>
-
-  <p>En la soledad del oscuro y ya calmado mar, rememoró los acontecimientos que culminaron con la cruel masacre de su acompañante. Luego de una larga meditación y temiendo la posibilidad de que se repitiera el sanguinario hecho en su persona, consideró la variante de regresar. Era consciente de que al continuar solo, disminuían las probabilidades de culminar con éxito el recorrido.</p>
-
-  <p>La idea del retorno ganó peso tras realizar una complicada ojeada a los insumos y materiales recopilados para el viaje. Excepto unos trozos de galletas y algo de agua mezclada con sales de rehidratación, la tormenta se lo llevó todo. Las pérdidas también incluían los remos y la brújula, preciado instrumento que le indicaba el rumbo y constituía el obsequio de uno de sus hermanos previo a la cita con el destino.</p>
-
-  <p>A la deriva, decepcionado y adolorido, engulló los restos de galletas, bebiendo algo del preciado líquido hidratante. Logró dormirse en la oscuridad de la más triste y desgarradora madrugada que había experimentado en su corta existencia.</p>
-</section>
-<section id="cuento-balseros-3" style="margin-top: 2em;">
-  <h2 style="color: #003366;">Cuento: Balseros <span style="font-size: 0.7em; color: #666;">(continuación)</span></h2>
-  <hr style="border: 1px solid #cc0000;">
-  <p>En el amanecer del sábado, salpicaduras de gotas de agua producidas por otra manada le hicieron despertar sobresaltado. Para su tranquilidad, se trataba de alborotadores y amigables delfines. El acompañamiento de los simpáticos animalitos, aunque duró todo el día, no llegó a borrar los horribles momentos vividos durante la jornada anterior.</p>
-
-  <p>Sin embargo, se tranquilizó un poco, atento a los saltos, danzas y sonidos de los mamíferos. Por la noche, en la soledad del frío mar y el desconsuelo de haber perdido al entrañable acompañante de celda y travesía, reflexionó con mayor detenimiento acerca de los recientes sucesos.</p>
-
-  <p>La muerte —en la que nunca había pensado— se le había mostrado en una de sus peores facetas y comprendió que las posibilidades de sobrevivir eran muy pocas. El resto de la velada, a pesar de exhibir todavía un cielo borroso, transcurrió sin incidentes que alterasen la paz nocturnal.</p>
-
-  <p>La mañana del domingo revelaba a los ojos del improvisado tripulante un hermoso paisaje marino. El mar tibio, sereno y transparente motivó al joven que se mostró más dispuesto a reanudar el viaje.</p>
-
-  <p>Después de consagrar un cálido pensamiento al fallecido amigo, enjuagó las lágrimas de despedida y desayunó las últimas migas de galletas. Las acompañó con todo el potable líquido que aún existía, como si presintiera cercano el fin de la aventura.</p>
-
-  <p>Cual gladiador que enfrenta cruenta batalla, vociferó el tradicional grito de guerra cubano:</p>
-
-  <p style="text-align: center; font-weight: bold; font-size: 1.1em; color: #990000;">—¡Piiiiiiiiiiiiiiiiiingaaaaaaaaaaaaaaaaaa!—</p>
-
-  <p>Sincronizadamente descargó manotazo sobre la superficie del apacible mar con tal fuerza, que el ruido del impacto hubiera resultado suficiente para ahuyentar hasta a los mismísimos depredadores que dieron cuenta de la vida amiga.</p>
-
-  <p>Sin importar el ardor que le producían las llagas en las quemadas piernas al entrar en contacto con el agua salada, comenzó a remar con renovado y esperanzador ímpetu. Utilizaba ahora los brazos como remos, propulsados por las patas de rana que le proporcionaban más daño que beneficios. Olvidando el dolor, pero con la fe intacta en Dios, remó seguro de que este lo guiaba hacia el objetivo propuesto.</p>
-</section>
-<section id="cuento-balseros-4" style="margin-top: 2em;">
-  <h2 style="color: #003366;">Cuento: Balseros <span style="font-size: 0.7em; color: #666;">(final)</span></h2>
-  <hr style="border: 1px solid #cc0000;">
-  <p>Cerca del mediodía se detuvo, totalmente desfallecido. El descomunal esfuerzo realizado, la falta de alimentos y agua, así como los efectos del sol, comenzaron a pasarle factura a un cuerpo y alma ya resentidos.</p>
-
-  <p>Adentrada la tarde, desorientado e irrazonable, comenzó a alucinar. Murmullos provenientes de las profundidades de un mar todavía apacible y más transparente aún, invadieron el calenturiento cerebro del navegante.</p>
-
-  <p>En el desvariar de su razonamiento, emergieron del mar peces de maravillosos colores, saltando y dando vueltas alrededor del navío. Luego, metamorfoseados en personas ahogándose o siendo destripadas por extraños seres marinos semejantes a los monstruos mitológicos, terminó por enloquecer.</p>
-
-  <p>La porfía entre razón y locura pugnaban por mantenerlo a bordo o arrojarse al mar, en salvación de las imaginarias víctimas. Para mayor angustia, visualizó entre el conglomerado de figuras sufrientes, la imagen del amigo descuartizado por los tiburones. El asesinado, con siniestra sonrisa desdibujada en el rostro, le reclamaba insistentemente su presencia en el abismo.</p>
-
-  <p>Despojándose de la camisa blanca y las patas de rana, se dispuso a arrojarse al mar. Pero el reflejo de una luz no proveniente del cielo lo cegó, haciéndole perder el equilibrio. Extenuado, se desplomó sobre la vieja cámara de neumáticos, que comenzó a desinflarse rápidamente.</p>
-
-  <p>Ya sin fuerzas, distinguió a lo lejos un barco: un buque norteamericano que solía merodear en aguas internacionales próximas a Cuba. Barco salvador de muchos hombres, mujeres, niños y ancianos durante los años en que los cubanos eran considerados una especie especial de emigrantes.</p>
-
-  <p>Mientras la nave se aproximaba, el cuerpo del joven descendía a las profundidades del mar. Incapaz de realizar el menor esfuerzo, se rindió a su destino.</p>
-
-  <p>Los marines americanos, al llegar, solo atinaron a ver cómo se hundía el cuerpo, aparentemente joven y vigoroso. A pesar del desesperado intento de rescate, no fue posible recuperarlo.</p>
-
-  <p>Recibió el Padre al ahogado exclamando en su idioma de fe y amor:</p>
-
-  <p style="text-align: center; font-style: italic; color: #0066cc;">—¡Hijo mío! Tuyo es el Reino de los Cielos. ¡Amén!—</p>
-
-  <p style="text-align: center; font-style: italic; color: #0066cc;">—¡Amén!—</p>
-
-  <p>Respondieron al unísono las silentes voces de los miles de cadáveres que yacen en el fondo del mar del Estrecho de la Florida.</p>
-
-  <p style="text-align: right; font-weight: bold;">Fin</p>
-
-
-
- <div id="Comentarios" class="tab-content">
- 
- 
-    <div class="comment-box">
-      <textarea rows="5" placeholder="Escribe tu comentario aquí..."></textarea>
-      <button>Enviar</button>
-    </div>
-    <p><em>*Esta sección aún no guarda comentarios. Para activarla se necesita conexión a base de datos o servicio externo.</em></p>
-  </section>
-
-  <div id="Contacto" class="tab-content">
-  
-<h2>Contacto</h2>
-    <p>Para consultas, puedes escribir a: <strong>rihero7256@gmail.com</strong></p>
-  </section>
-
-  <!-- Contador de visitas -->
-    <!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=21149118&style=0036&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>                                    
-                                    
-                                        
-                                          
-                            
+  <div id="comentarios" class="tab-content">
+    <h2>Comentarios</h2>
+    <p>Aquí los lectores podrán dejar sus opiniones en futuras versiones del sitio.</p>
   </div>
 
-  <footer>
-    &copy; 2025 Ricardo Hernández. Todos los derechos reservados.
-  </footer>
-<script>
-  function showTab(tabId) {
-    const tabs = document.querySelectorAll('.tab-content');
-    const buttons = document.querySelectorAll('.tab-button');
-    
-    tabs.forEach(tab => {
-      tab.classList.remove('active');
-    });
-    
-    buttons.forEach(btn => {
-      btn.classList.remove('active');
-    });
+  <div id="contacto" class="tab-content">
+    <h2>Contacto</h2>
+    <p>Para contactar con el autor, puede escribir a:</p>
+    <p><strong>📧 ricardohernandezletras@gmail.com</strong></p>
+  </div>
 
-    document.getElementById(tabId).classList.add('active');
-    event.target.classList.add('active');
-  }
-</script>
+  <!-- SCRIPT DE FUNCIONAMIENTO -->
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-button');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
-Agregado sistema de pestañas dinámicas 
