@@ -1,0 +1,4 @@
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 1em; background-color: #003366; color: white;">
+  <h1 style="margin: 0; font-size: 1.5em;">Ricardo Hernández Letras</h1>
+  <img src="foto-ricardo.png" alt="Foto de Ricardo" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+</header>
