@@ -258,6 +258,26 @@
   </p>
 
   <p style="text-align: right; font-weight: bold;">Fin</p>
+<!-- Sección de Comentarios -->
+<section id="comentarios" style="padding: 20px; background-color: #ffffff; border-radius: 10px; margin: 40px auto; max-width: 800px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  <h2 style="color: #0033cc; border-bottom: 2px solid #cc0000; padding-bottom: 5px;">Comentarios</h2>
+  
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://ricardo-letras.vercel.app';  // URL de tu sitio
+      this.page.identifier = 'comentarios'; // Identificador único
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ricardohernandezletras.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Por favor, habilita JavaScript para ver los comentarios.</noscript>
+</section>
 
 </section>
 
