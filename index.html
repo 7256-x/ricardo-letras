@@ -258,6 +258,8 @@
   </p>
 
   <p style="text-align: right; font-weight: bold;">Fin</p>
+
+<!-- SECCIÓN DE COMENTARIOS -->
 <h2 class="seccion" id="comentarios">Comentarios</h2>
 <div class="contenido">
   <div id="disqus_thread"></div>
@@ -275,91 +277,27 @@
   </script>
   <noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios</a>.</noscript>
 </div>
-<h2 class="seccion" id="comentarios">Comentarios</h2>
+
+<!-- SECCIÓN DE CONTACTO -->
+<h2 class="seccion" id="contacto">Contacto</h2>
 <div class="contenido">
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = 'https://ricardo-letras.vercel.app';
-      this.page.identifier = 'ricardo-letras';
-    };
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios</a>.</noscript>
+  <p>📧 Puede escribir al autor a: <a href="mailto:ricardohernandezletras@gmail.com">ricardohernandezletras@gmail.com</a></p>
 </div>
 
-<h2 class="seccion" id="comentarios">Comentarios</h2>
-<div class="contenido">
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = 'https://ricardo-letras.vercel.app';
-      this.page.identifier = 'ricardo-letras';
-    };
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios</a>.</noscript>
-</div>
-  <noscript>Por favor, habilita JavaScript para ver los comentarios.</noscript>
-</section>
+<!-- SCRIPT DE FUNCIONAMIENTO DE LAS PESTAÑAS -->
+<script>
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-button');
 
-</section>
+    tabs.forEach(tab => tab.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
 
-</section>
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
 
-</section>
-
-</section>
-
-</section>
-
-</section>
-
-</section>
-  </p>
-
-</section>
-  </p>
-
-</section>
- 
-
-  <div id="comentarios" class="tab-content">
-    <h2>Comentarios</h2>
-    <p>Aquí los lectores podrán dejar sus opiniones en futuras versiones del sitio.</p>
-  </div>
-
-  <div id="contacto" class="tab-content">
-    <h2>Contacto</h2>
-    <p>Para contactar con el autor, puede escribir a:</p>
-    <p><strong>📧 ricardohernandezletras@gmail.com</strong></p>
-  </div>
-
-  <!-- SCRIPT DE FUNCIONAMIENTO -->
-  <script>
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab-content');
-      const buttons = document.querySelectorAll('.tab-button');
-
-      tabs.forEach(tab => tab.classList.remove('active'));
-      buttons.forEach(btn => btn.classList.remove('active'));
-
-      document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
-    }
-  </script>
-
+<!-- CIERRE DE BODY Y HTML -->
 </body>
-<header style="display: flex; justify-content: space-between; align-items: center; padding: 1em; background-color: #003366; color: white;">
-  <h1 style="margin: 0; font-size: 1.5em;">Ricardo Hernández
 </html>
