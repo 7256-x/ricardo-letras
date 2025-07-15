@@ -256,5 +256,45 @@
     —¡Hijo mío! Tuyo es el reino de los cielos. ¡Amén!<br><br>
     —¡Amén! —respondieron al unísono las silentes voces de los miles de cadáveres que yacen en el fondo del mar del Estrecho de la Florida.
   </p>
+<!-- SECCIÓN DE COMENTARIOS -->
+<h2 class="seccion" id="comentarios">Comentarios</h2>
+<div class="contenido">
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://ricardo-letras.vercel.app';
+      this.page.identifier = 'ricardo-letras';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios</a>.</noscript>
+</div>
 
+<!-- SECCIÓN DE CONTACTO -->
+<h2 class="seccion" id="contacto">Contacto</h2>
+<div class="contenido">
+  <p>📧 Puede escribir al autor a: <a href="mailto:ricardohernandezletras@gmail.com">ricardohernandezletras@gmail.com</a></p>
+</div>
+
+<!-- SCRIPT DE FUNCIONAMIENTO DE LAS PESTAÑAS -->
+<script>
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-button');
+
+    tabs.forEach(tab => tab.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
   
