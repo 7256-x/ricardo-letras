@@ -258,9 +258,22 @@
   </p>
 
   <p style="text-align: right; font-weight: bold;">Fin</p>
-<!-- Sección de Comentarios -->
-<section id="comentarios" style="padding: 20px; background-color: #ffffff; border-radius: 10px; margin: 40px auto; max-width: 800px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-  <h2 style="color: #0033cc; border-bottom: 2px solid #cc0000; padding-bottom: 5px;">Comentarios</h2>
+
+<!-- Sección de Comentarios con Disqus -->
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "https://ricardo-letras.vercel.app";  
+    this.page.identifier = "inicio"; 
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js'; 
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios</a>.</noscript
   
   <div id="disqus_thread"></div>
   <script>
