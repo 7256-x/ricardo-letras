@@ -64,8 +64,7 @@
     <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
     <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
     <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
-<button class="tab-button" onclick="showTab('admin')" id="adminBtn" style="display: none;">Estadísticas</button>
-  </nav>
+<button class="tab-button" onclick="pedirClave()">Estadísticas</button>
 
   <!-- SECCIONES -->
 
@@ -299,32 +298,33 @@
   }
 </script>
 
-<!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=21168497&style=0001&nbdigits=6&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>
-
-                                  
-   <!-- SECCIÓN SECRETA: ESTADÍSTICAS -->
-<div id="admin" class="tab-content">
+<div id="admin" class="tab-content" style="display: none;">
   <h2>Estadísticas del sitio</h2>
   <div style="text-align: center; margin-top: 40px;">
     <img src="https://hitwebcounter.com/counter/counter.php?page=12393137&style=0006&nbdigits=6&type=page&initCount=000000" title="contador de visitas" alt="counter" border="0" />
     <p style="font-size: 0.9em; color: #555;">Visitantes al sitio</p>
   </div>
-</div>                                 
-                                        
-                                          
-                            
-<script>
-  window.onload = function () {
-    const clave = prompt("Ingresa la clave de acceso al panel privado:");
-    if (clave === "ricardo2025") {
-      document.getElementById("adminBtn").style.display = "inline-block";
-      showTab('admin');
-    }
-  };
-</script>
+</div>
 
+<script>
+  function pedirClave() {
+    const clave = prompt("Ingresa la clave secreta para ver las estadísticas:");
+    if (clave === "ricardo2025") {
+      mostrarEstadisticas();
+    } else {
+      alert("Clave incorrecta.");
+    }
+  }
+
+  function mostrarEstadisticas() {
+    const tabs = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-button');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById('admin').style.display = 'block';
+  }
+</script>
 
 </body>
 </html>
