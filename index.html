@@ -11,15 +11,15 @@
       background-color: #f8f9fa;
     }
 
-{.marquee-container 
+    .marquee-container {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 10; /* superior al fondo pero inferior al botón */
-  pointer-events: none; /* evita que interfiera con el botón */
+  z-index: 10;
+  pointer-events: none;
 }
 
 .marquee-text {
@@ -35,11 +35,16 @@
 
 @keyframes scroll-once {
   0% {
-    transform: translateX(100%); /* Parte desde fuera de la pantalla a la derecha */
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(0); /* Se detiene completamente cuando el texto entra */
+    transform: translateX(0);
   }
+}
+@keyframes scroll-once }
+    { 0% }
+    {transform: translateX(100%); /* Parte desde fuera de la pantalla a la derecha */}
+  100% {transform: translateX(0); /* Se detiene completamente cuando el texto entra */}
     .hero {
   background-image: url('portada-ricardo.png');
   background-size: cover;
@@ -115,15 +120,15 @@
 </head>
 <body>
 
-  <!-- TEXTO DESLIZANTE SUPERIOR SOLO EN PORTADA -->
+<!-- PORTADA HERO -->
+<div class="hero">
+
   <div class="marquee-container">
     <div class="marquee-text">
       "Bienvenido a mi sitio web literario". Hoy ponemos a disposición de los lectores, el poema: Se cae La Habana y el cuento: Balseros
     </div>
   </div>
 
-  <!-- PORTADA HERO -->
-  <div class="hero">
   <button onclick="entrarSitio()" style="
     position: absolute;
     top: 52%;
@@ -139,8 +144,7 @@
     font-weight: bold;
     z-index: 10;
   ">Entrar al sitio</button>
-  </div>
-
+</div>
   <!-- MENÚ DE PESTAÑAS -->
   <nav id="main-nav" style="display: none;">
     <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
