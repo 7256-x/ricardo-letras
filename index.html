@@ -1,4 +1,4 @@
-6<!DOCTYPE html><html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -213,7 +213,9 @@ nav {
   <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
   }
 }
-</div><!-- BOTÓN PRIVADO -->
+<!-- BOTÓN PRIVADO -->
+<button onclick="mostrarEstadisticas()" class="glow-button">🖋️</button>
+
 <style>
 @keyframes glow {
   0% { text-shadow: 0 0 5px #fff; transform: scale(1); }
@@ -233,7 +235,26 @@ nav {
 }
 </style>
 
+<!-- SECCIÓN SECRETA DE ESTADÍSTICAS -->
+<div id="seccion-estadisticas" style="display: none; padding: 2em; max-width: 800px; margin: auto; text-align: center;">
+  <h2>Estadísticas del sitio</h2>
+  <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek"></div>
+  <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
+  <br>
+  <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+</div>
+
 <script>
+  function mostrarEstadisticas() {
+    const clave = prompt("Introduce la clave para acceder a las estadísticas:");
+    if (clave === "clave-secreta-123") {
+      document.getElementById("seccion-estadisticas").style.display = "block";
+      alert("Acceso concedido.");
+    } else {
+      alert("Clave incorrecta.");
+    }
+  }
+</script>
   function mostrarEstadisticas() {
     const clave = prompt("Introduce la clave para acceder a las estadísticas:");
     if (clave === "clave-secreta-123") {
