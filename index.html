@@ -233,5 +233,16 @@ nav {
 }
 </style>
 
-<button onclick="mostrarEstadisticas()" class="glow-button">🖋️</button></body>
+<script>
+  function mostrarEstadisticas() {
+    const clave = prompt("Introduce la clave para acceder a las estadísticas:");
+    if (clave === "clave-secreta-123") {
+      document.getElementById("seccion-estadisticas").style.display = "block";
+      alert("Acceso concedido.");
+    } else {
+      alert("Clave incorrecta.");
+    }
+  }
+</script>
+</body>
 </html>
