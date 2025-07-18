@@ -41,17 +41,19 @@
     transform: translateX(0); /* Se detiene completamente cuando el texto entra */
   }
     .hero {
-      background-image: url('portada-ricardo.png');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      position: relative;
+  background-image: url('portada-ricardo.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative; /* ¡esto es crucial! */
+  z-index: 1;
+}
     }
 
     .hero button {
