@@ -263,6 +263,22 @@
   }
 }
   </script>
-<button onclick="mostrarEstadisticas()" style="position: fixed; bottom: 10px; right: 10px; z-index: 999; background-color: #003366; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-size: 0.9em;">🔒 Ver estadísticas</button>
+    function mostrarEstadisticas() {
+  const clave = prompt("Introduce la clave para acceder a las estadísticas:");
+  if (clave === "clave-secreta-123") {
+    document.getElementById("seccion-estadisticas").style.display = "block";
+  } else {
+    alert("Clave incorrecta.");
+  }
+}
+  <!-- SECCIÓN OCULTA DE ESTADÍSTICAS -->
+<div id="seccion-estadisticas" style="display: none;">
+  <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek"></div>
+  <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
+  <br><a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+</div>
+
+<!-- BOTÓN SECRETO SOLO PARA TI -->
+<button onclick="mostrarEstadisticas()" style="position: fixed; bottom: 10px; right: 10px; z-index: 999; background-color: #003366; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-size: 0.9em;">🔒 Ver estadísticas</button>  
 </body>
 </html>
