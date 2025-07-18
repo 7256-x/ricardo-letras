@@ -42,7 +42,6 @@
   background-position: center;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -51,14 +50,17 @@
   z-index: 1;
 }
 
+/* FOTO CIRCULAR */
 .circle-photo-container {
+  position: absolute;
+  top: 22%;  /* ← AJUSTABLE */
+  left: 8%;  /* ← AJUSTABLE */
   width: 160px;
   height: 160px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid white;
-  margin-bottom: 20px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .circle-photo-container img {
@@ -67,7 +69,12 @@
   object-fit: cover;
 }
 
+/* BOTÓN FUNCIONAL */
 .boton-entrar {
+  position: absolute;
+  top: 58%;   /* ← AJUSTABLE */
+  left: 46%;  /* ← AJUSTABLE */
+  transform: translate(-50%, -50%);
   padding: 12px 24px;
   font-size: 1em;
   background-color: #cc0000;
@@ -76,12 +83,12 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  z-index: 3;
+  z-index: 10;
 }
 
 .boton-entrar:hover {
   background-color: #a00000;
-}
+}}
 
 nav {
   text-align: center;
