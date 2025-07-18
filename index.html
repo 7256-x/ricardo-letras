@@ -111,6 +111,36 @@
   </style>
 </head>
 <body>
+
+  <!-- Parte del index.html con marco dinámico para la imagen del rostro --><!-- PORTADA HERO --><div class="hero">
+  <!-- TEXTO DESLIZANTE -->
+  <div class="marquee-container">
+    <div class="marquee-text">
+      "Bienvenido a mi sitio web literario". Hoy ponemos a disposición de los lectores, el poema: Se cae La Habana y el cuento: Balseros
+    </div>
+  </div>  <!-- MARCO PARA LA FOTO DINÁMICA -->  <div class="circle-photo-container">
+    <img src="foto-cara.png" alt="Foto de Ricardo" class="circle-photo">
+  </div>  <!-- BOTÓN FUNCIONAL --><button onclick="entrarSitio()">Entrar al sitio</button>
+
+</div><!-- CSS dentro del <style> en el <head> --><style>
+.circle-photo-container {
+  position: absolute;
+  top: 18%; /* Ajusta según ubicación deseada */
+  left: 10%; /* Ajusta según ubicación deseada */
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  z-index: 3;
+}
+
+.circle-photo-container img.circle-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style><!-- Explicación --><!-- Coloca tu nueva imagen con el nombre "foto-cara.png" en la misma carpeta que el index.html -->
        </div>
     </div>
 
