@@ -210,7 +210,15 @@ nav {
   <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek"></div>
   <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
   <br>
-  <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+  <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>function mostrarEstadisticas() {
+  const clave = prompt("Introduce la clave para acceder a las estadísticas:");
+  if (clave === "clave-secreta-123") {
+    document.getElementById("seccion-estadisticas").style.display = "block";
+    alert("Acceso concedido.");
+  } else {
+    alert("Clave incorrecta.");
+  }
+}
 </div><!-- BOTÓN PRIVADO -->
 <style>
 @keyframes glow {
