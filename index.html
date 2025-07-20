@@ -155,20 +155,23 @@
 </head>
 <body>
 
-  <div class="hero">
-    <div class="marquee-container">
-      <div class="marquee-text">
-        "Bienvenido a mi sitio Web literario". Hoy ponemos a tu disposición el poema: "Se cae La Habana" y el cuento: "Balseros".
-      </div>
+  <!-- PORTADA HERO -->
+<div class="hero">
+  <!-- Texto deslizante -->
+  <div class="marquee-container">
+    <div class="marquee-text">
+      "Bienvenido a mi sitio Web literario". Hoy ponemos a tu disposición el poema: "Se cae La Habana" y el cuento: "Balseros".
     </div>
-
-    <div class="circle-photo-container">
-      <img src="foto-cara.png" alt="Foto de Ricardo" />
-    </div>
-
-    <button onclick="entrarSitio()" class="boton-entrar">Entrar al sitio</button>
   </div>
 
+  <!-- Círculo para insertar imagen personal -->
+  <div class="circle-photo-container">
+    <img src="foto-cara.png" alt="Foto de Ricardo" />
+  </div>
+
+  <!-- Botón funcional -->
+  <button onclick="entrarSitio()" class="boton-entrar">Entrar al sitio</button>
+</div>
   <nav id="main-nav" style="display: none;">
     <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
     <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
