@@ -189,7 +189,25 @@
     <h2>Cuentos</h2>
     <p>Aquí puedes publicar tus cuentos.</p>
   </div>
-  <div id="comentarios" class="tab-content">
+  <!-- Sección de Comentarios -->
+<div id="comentarios" class="tab-content">
+  <h2>Comentarios</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://ricardo-letras.vercel.app';  // Cambia si tu URL cambia
+      this.page.identifier = 'ricardo-letras';              // Debe ser único para cada página
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Por favor activa JavaScript para ver los <a href="https://disqus.com/?ref_noscript" rel="nofollow">comentarios</a>.</noscript>
+</div>
     <h2>Comentarios</h2>
     <p>Aquí se incluirán los comentarios con Disqus, si así lo deseas.</p>
   </div>
