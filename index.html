@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ricardo Hernández Letras</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
 
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      color: white;
+      font-size: 0.9em;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px 0;
+      animation: scroll-once 10s ease-out forwards;
+    }
+
+    @keyframes scroll-once {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .hero {
+      background-image: url('portada-nueva.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .boton-entrar {
+      position: absolute;
+      top: 56%;
+      left: 47%;
+      transform: translate(-50%, -50%);
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #cc3366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 10;
+    }
+
+    .boton-entrar:hover {
+      background-color: #a00000;
+    }
+
+    nav {
+      text-align: center;
+      background-color: #003366;
+      padding: 1em;
+    }
+
+    .tab-button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      margin: 0;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .tab-button:hover {
+      background-color: #005599;
+    }
+
+    .tab-button.active {
+      background-color: #cc0000;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    #contenedor-flotante {
+      position: absolute;
+      top: 60%;
+      left: 75%;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      cursor: move;
+      z-index: 999;
+    }
+
+    #foto-flotante {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px #fff; transform: scale(1); }
+      50% { box-shadow: 0 0 15px #fff; transform: scale(1.2); }
+      100% { box-shadow: 0 0 5px #fff; transform: scale(1); }
+    }
+
+    .glow-button {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+      border: none;
+      cursor: pointer;
+      animation: glow 2s ease-in-out infinite;
+      z-index: 999;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA -->
+  <div class="hero">
+    <!-- Foto flotante -->
+    <div id="contenedor-flotante">
+      <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+    </div>
+
+    <!-- Texto deslizante -->
+    <div class="marquee-container">
+      <div class="marquee-text">
+        "Bienvenido a mi sitio Web literario". Hoy ponemos a tu disposición el poema: "Se cae La Habana" y el cuento: "Balseros".
+      </div>
+    </div>
+
+    <!-- Botón para entrar -->
+    <button onclick="entrarSitio()" class="boton-entrar">Entrar al sitio</button>
+  </div>
+
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <nav id="main-nav" style="display: none;">
+    <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
+    <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
+    <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
+    <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+    <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+  </nav>
+
+  <!-- SECCIONES -->
+  <div id="biografia" class="tab-content">
+    <h2>Biografía</h2>
+    <p>Ricardo Hernández Rodríguez nació el 7/2/1956 en Colón, Matanzas, Cuba. Reside en La Habana desde 1962.</p>
+    <p>Graduado de Pedagogía en Química. Ejerció como profesor y gestor de recursos humanos. Estudió en FORMATUR (Cuba), La Salle (México) y U. Católica de Santo Domingo.</p>
+    <p>Autor de <strong>"Versos Callejeros"</strong> y <strong>"Cuentos de suspense, amor y muerte"</strong>, publicados en Amazon.com.</p>
+  </div>
+
+  <div id="poemas" class="tab-content">
+    <h2>Poemas</h2>
+    <p><strong>Se cae La Habana</strong></p>
+    <p>
+      La Habana se está cayendo,<br>
+      se desmorona en pedazos.<br>
+      Las calles llenas de baches,<br>
+      los almendrones pasando.<br>
+      <em>...</em><br>
+      Con el pasado vive soñando.
+    </p>
+  </div>
+
+  <div id="cuentos" class="tab-content">
+    <h2>Cuentos</h2>
+    <p><strong>Balseros</strong></p>
+    <p><em>Dedicado a mi hermano Nibaldo, real protagonista de esta historia</em></p>
+    <p>(Fragmento o enlace completo al cuento)</p>
+  </div>
+
+  <div id="comentarios" class="tab-content">
+    <h2>Comentarios</h2>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://ricardo-letras.vercel.app';
+        this.page.identifier = 'ricardo-letras';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios</a>.</noscript>
+  </div>
+
+  <div id="contacto" class="tab-content">
+    <h2>Contacto</h2>
+    <p>📧 ricardohernandezletras@gmail.com</p>
+  </div>
+
+  <!-- SCRIPT FUNCIONALIDAD -->
+  <script>
+    function entrarSitio() {
+      document.querySelector('.hero').style.display = 'none';
+      document.getElementById('main-nav').style.display = 'block';
+      showTab('biografia');
+    }
+
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
