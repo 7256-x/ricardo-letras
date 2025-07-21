@@ -156,11 +156,12 @@ f<!DOCTYPE html>
 <body>
 
 <!-- PORTADA HERO -->
-<div class="hero">
+<div class="hero" style="background-image: url('./portada-nueva.png');">
   <!-- Círculo flotante para foto -->
-<div id="contenedor-flotante">
-  <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
-</div>
+  <div id="contenedor-flotante">
+    <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+  </div>
+
   <!-- Texto deslizante -->
   <div class="marquee-container">
     <div class="marquee-text">
@@ -168,6 +169,9 @@ f<!DOCTYPE html>
     </div>
   </div>
 
+  <!-- Botón funcional -->
+  <button onclick="entrarSitio()" class="boton-entrar">Entrar al sitio</button>
+</div>
   
   <!-- Botón funcional -->
   <!-- Círculo de foto movible -->
