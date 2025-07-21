@@ -112,26 +112,23 @@ f<!DOCTYPE html>
     .tab-content.active {
       display: block;
     }
-   /* Círculo de imagen personal movible */
-#contenedor-foto {
+ #contenedor-flotante {
   position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 150px;
-  height: 150px;
+  top: 60%;
+  left: 75%;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
   border: 3px solid white;
-  z-index: 999;
   cursor: move;
+  z-index: 999;
 }
 
-#contenedor-foto img {
+#foto-flotante {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
     /* BOTÓN SECRETO (LUZ PARPADEANTE) */
     @keyframes glow {
@@ -160,6 +157,10 @@ f<!DOCTYPE html>
 
 <!-- PORTADA HERO -->
 <div class="hero">
+  <!-- Círculo flotante para foto -->
+<div id="contenedor-flotante">
+  <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+</div>
   <!-- Texto deslizante -->
   <div class="marquee-container">
     <div class="marquee-text">
