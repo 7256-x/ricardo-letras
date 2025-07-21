@@ -352,6 +352,31 @@ Fin.
       }
     }
   </script>
+  <script>
+  const contenedor = document.getElementById("contenedor-foto");
+
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  contenedor.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offsetX = e.clientX - contenedor.getBoundingClientRect().left;
+    offsetY = e.clientY - contenedor.getBoundingClientRect().top;
+    contenedor.style.transition = "none";
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      contenedor.style.left = `${e.clientX - offsetX}px`;
+      contenedor.style.top = `${e.clientY - offsetY}px`;
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+    contenedor.style.transition = "left 0.2s, top 0.2s";
+  });
+    </script>
 </body>
 </html>
 
