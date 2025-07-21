@@ -360,23 +360,26 @@ Fin.
   let isDragging = false;
   let offsetX, offsetY;
 
-  contenedor.addEventListener("mousedown", (e) => {
+<script>
+  const contenedor = document.getElementById("contenedor-flotante");
+  let offsetX, offsetY, isDragging = false;
+
+  contenedor.addEventListener("mousedown", function (e) {
     isDragging = true;
     offsetX = e.clientX - contenedor.getBoundingClientRect().left;
     offsetY = e.clientY - contenedor.getBoundingClientRect().top;
     contenedor.style.transition = "none";
   });
 
-  document.addEventListener("mousemove", (e) => {
+  document.addEventListener("mousemove", function (e) {
     if (isDragging) {
       contenedor.style.left = `${e.clientX - offsetX}px`;
       contenedor.style.top = `${e.clientY - offsetY}px`;
     }
   });
 
-  document.addEventListener("mouseup", () => {
+  document.addEventListener("mouseup", function () {
     isDragging = false;
-    contenedor.style.transition = "left 0.2s, top 0.2s";
   });
 </script>
 </body>
