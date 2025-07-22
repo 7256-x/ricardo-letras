@@ -347,5 +347,18 @@ Fin.</p>
     }
   }
 </script>
+<!-- BOTÓN DISQUS SECRETO -->
+<button onclick="irADisqus()" class="glow-button" style="bottom: 40px;" title="Moderar comentarios"></button>
+
+<script>
+  function irADisqus() {
+    const clave = prompt("Introduce la clave para acceder al panel de comentarios:");
+    if (clave === "comentarios-123") {
+      window.open("https://ricardo-letras-disqus-com-1.disqus.com/admin/moderate/", "_blank");
+    } else {
+      alert("Clave incorrecta.");
+    }
+  }
+</script>
 </body>
 </html>
