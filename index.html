@@ -154,6 +154,26 @@ i<!DOCTYPE html>
       z-index: 999;
       opacity: 0.7;
     }
+    @keyframes glow {
+  0% { box-shadow: 0 0 5px #fff; transform: scale(1); }
+  50% { box-shadow: 0 0 15px #fff; transform: scale(1.2); }
+  100% { box-shadow: 0 0 5px #fff; transform: scale(1); }
+}
+
+.glow-button {
+  position: absolute;
+  top: 88%;          /* Ajustable según ubicación deseada */
+  left: 77.5%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  animation: glow 2s ease-in-out infinite;
+  z-index: 1000;
+  opacity: 0.7;
+}
   </style>
 </head>
 <body>
@@ -331,6 +351,27 @@ Con el pasado vive soñando. </p>
       document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
       document.getElementById(tabId).classList.add('active');
     }
-  </script>
+  function mostrarEstadisticas() {
+  const clave = prompt("Introduce la clave para acceder a las estadísticas:");
+  if (clave === "clave-secreta-123") {
+    document.getElementById("seccion-estadisticas").style.display = "block";
+    alert("Acceso concedido.");
+  } else {
+    alert("Clave incorrecta.");
+  
+    }
+    </script>
+  
+<!-- BOTÓN SECRETO (LUZ PARPADEANTE) -->
+<button onclick="mostrarEstadisticas()" class="glow-button" title="Ver estadísticas"></button>
+
+<!-- SECCIÓN OCULTA DE ESTADÍSTICAS -->
+<div id="seccion-estadisticas" style="display: none; padding: 2em; max-width: 800px; margin: auto; text-align: center;">
+  <h2>Estadísticas del sitio</h2>
+  <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek">000000</div>
+  <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
+  <br>
+  <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+</div>
 </body>
 </html>
