@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ricardo Hernández Letras</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
 
+    .hero {
+      background-image: url('portada-nueva.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .marquee-container {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      color: white;
+      font-size: 0.9em;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px 0;
+      animation: scroll-once 10s ease-out forwards;
+    }
+
+    @keyframes scroll-once {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .boton-entrar {
+      position: absolute;
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #cc3366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 10;
+    }
+
+    .boton-entrar:hover {
+      background-color: #a00000;
+    }
+
+    #contenedor-flotante {
+      position: absolute;
+      top: 65%;
+      left: 75%;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      z-index: 999;
+    }
+
+    #foto-flotante {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px #fff; transform: scale(1); }
+      50% { box-shadow: 0 0 15px #fff; transform: scale(1.2); }
+      100% { box-shadow: 0 0 5px #fff; transform: scale(1); }
+    }
+
+    .glow-button {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+      border: none;
+      cursor: pointer;
+      animation: glow 2s ease-in-out infinite;
+      z-index: 999;
+      opacity: 0.7;
+    }
+
+    /* Contenedor de estadísticas oculto */
+    #seccion-estadisticas {
+      display: none;
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="marquee-container">
+      <div class="marquee-text">
+        "Bienvenido a mi sitio Web literario". Hoy ponemos a tu disposición el poema: "Se cae La Habana" y el cuento: "Balseros".
+      </div>
+    </div>
+
+    <div id="contenedor-flotante">
+      <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+    </div>
+
+    <button onclick="entrarSitio()" class="boton-entrar">Entrar al sitio</button>
+    <button onclick="mostrarEstadisticas()" class="glow-button" title="Acceso privado"></button>
+  </div>
+
+  <!-- SECCIÓN DE ESTADÍSTICAS OCULTA -->
+  <div id="seccion-estadisticas">
+    <h2>Estadísticas del sitio</h2>
+    <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek">000000</div>
+    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
+    <br><a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+  </div>
+
+  <script>
+    function entrarSitio() {
+      document.querySelector('.hero').style.display = 'none';
+      // Aquí puedes mostrar el contenido principal, si tienes más secciones.
+      alert("Bienvenido al sitio de Ricardo Hernández.");
+    }
+
+    function mostrarEstadisticas() {
+      const clave = prompt("Introduce la clave para acceder a las estadísticas:");
+      if (clave === "clave-secreta-123") {
+        document.getElementById("seccion-estadisticas").style.display = "block";
+        alert("Acceso concedido.");
+      } else {
+        alert("Clave incorrecta.");
+      }
+    }
+  </script>
+
+</body>
+</html>
