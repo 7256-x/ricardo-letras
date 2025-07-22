@@ -346,7 +346,34 @@ Fin.</p>
     } else {
       alert("Clave incorrecta.");
     }
+  
+  <script>
+  function menuSecreto() {
+    const opcion = prompt("¿Qué deseas ver?\n1. Estadísticas\n2. Comentarios");
+
+    if (opcion === "1") {
+      const clave = prompt("Introduce la clave para acceder a estadísticas:");
+      if (clave === "clave-estadisticas") {
+        document.getElementById("seccion-estadisticas").style.display = "block";
+        alert("Acceso concedido.");
+      } else {
+        alert("Clave incorrecta.");
+      }
+    }
+
+    else if (opcion === "2") {
+      const clave = prompt("Introduce la clave para acceder a comentarios:");
+      if (clave === "comentarios-123") {
+        window.open("https://ricardo-letras.disqus.com/admin/moderate/", "_blank");
+      } else {
+        alert("Clave incorrecta.");
+      }
+    }
+
+    else {
+      alert("Opción no válida.");
+    }
   }
-</script>
+  </script>
 </body>
 </html>
