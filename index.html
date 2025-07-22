@@ -176,22 +176,31 @@ nav {
   <div id="cuentos" class="tab-content">
     <!-- Cuentos aquí -->
   </div>
-  <div id="comentarios" class="tab-content">
-    <h2>Comentarios</h2>
-    <div id="disqus_thread"></div>
-    <script>
-      var disqus_config = function () {
-        this.page.url = 'https://ricardo-letras.vercel.app';
-        this.page.identifier = 'ricardo-letras';
-      };
-      (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
-  </div>  <div id="contacto" class="tab-content">
+ <div id="comentarios" class="tab-content">
+  <h2>Comentarios</h2>
+
+  <!-- Área de comentarios de Disqus -->
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://ricardo-letras.vercel.app';
+      this.page.identifier = 'ricardo-letras';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <!-- Enlace privado para entrar a tu panel de Disqus -->
+  <p style="text-align: right; margin-top: 20px;">
+    <a href="https://ricardo-letras.disqus.com/admin" target="_blank" rel="noopener noreferrer" style="font-size: 0.9em; color: #555;">
+      🔐 Acceder como administrador
+    </a>
+  </p>
+ </div> </div>  <div id="contacto" class="tab-content">
     <h2>Contacto</h2>
     <p>📧 ricardohernandezletras@gmail.com</p>
   </div>  <div id="seccion-estadisticas" style="display: none; padding: 2em; max-width: 800px; margin: auto; text-align: center;">
