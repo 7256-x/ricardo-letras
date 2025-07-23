@@ -52,26 +52,26 @@
       z-index: 1;
     }
 
-    .boton-entrar {
-      position: absolute;
-      top: 90%;
-      left: 47%;
-      transform: translate(-50%, -50%);
-      padding: 12px 24px;
-      font-size: 1em;
-      background-color: #cc3366;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      z-index: 10;
-    }
+   .boton-entrar {
+  position: absolute;
+  top: 90%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  padding: 12px 30px;
+  font-size: 1em;
+  background-color: #5c3c2b; /* Color similar al fondo de la portada */
+  color: white;
+  border: none;
+  border-radius: 6px; /* Bordes suaves tipo adoquín */
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
 
-    .boton-entrar:hover {
-      background-color: #a00000;
-    }
-
+.boton-entrar:hover {
+  background-color: #3e291f; /* Tono más oscuro al pasar el mouse */
+}
     #contenedor-flotante {
       position: absolute;
       top: 60%;
@@ -149,6 +149,22 @@
       50% { box-shadow: 0 0 15px #fff; transform: scale(1.2); }
       100% { box-shadow: 0 0 5px #fff; transform: scale(1); }
     }
+    .boton-volver {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #5c3c2b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.boton-volver:hover {
+  background-color: #3e291f;
+}
   </style>
 </head>
 <body>
@@ -223,6 +239,7 @@ Fin
     
       
     </p>
+     <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
   </div>
 
   <div id="cuentos" class="tab-content">
@@ -280,6 +297,7 @@ Fin.</p>
     https://www.amazon.com/dp/B0DV2FX2FV
     </a>
   </p>
+    <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
   </div>
   <div id="comentarios" class="tab-content">
     <h2>Comentarios</h2>
@@ -297,10 +315,12 @@ Fin.</p>
       })();
     </script>
     <noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios</a>.</noscript>
+  <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
   </div>
   <div id="contacto" class="tab-content">
     <h2>Contacto</h2>
     <p>📧 ricardohernandezletras@gmail.com</p>
+    <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
   </div>
 
  
@@ -327,6 +347,11 @@ Fin.</p>
       } else {
         alert("Clave incorrecta.");
       }
+    }
+    function volverAPortada() {
+  document.querySelector('.hero').style.display = 'flex';
+  document.getElementById('main-nav').style.display = 'none';
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     }
   </script>
 <!-- SCRIPT PARA EL BOTÓN -->
