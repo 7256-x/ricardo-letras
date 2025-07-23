@@ -273,10 +273,38 @@ Fin.</p>
   </p>
   </div>
     
- 
+ <div id="comentarios" class="tab-content">
+  <h2>Comentarios</h2>
+
+  <!-- Contenedor Disqus -->
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://ricardo-letras.vercel.app';
+      this.page.identifier = 'ricardo-letras';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ricardo-letras.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>
+    Por favor habilita JavaScript para ver los 
+    <a href="https://disqus.com/?ref_noscript">comentarios proporcionados por Disqus</a>.
+  </noscript>
+
+  <!-- Botón administrador con clave -->
+  <div style="margin-top: 20px; text-align: center;">
+    <button onclick="mostrarAccesoComentarios()" style="background-color: #cc0000; color: white; border: none; padding: 10px 16px; border-radius: 5px; font-weight: bold; cursor: pointer;">
+      Acceder como administrador
+    </button>
+  </div>
+ </div>
     <div id="contacto" class="tab-content">
-    <h2>Contacto</h2>
-    <p>📧 ricardohernandezletras@gmail.com</p>
+  <h2>Contacto</h2>
+  <p>📧 ricardohernandezletras@gmail.com</p>
     </div>
   
   </div>  <div id="seccion-estadisticas" style="display: none; padding: 2em; max-width: 800px; margin: auto; text-align: center;">
