@@ -303,6 +303,18 @@ Fin.</p>
     <p>📧 ricardohernandezletras@gmail.com</p>
   </div>
 
+  <!-- SCRIPT PARA EL BOTÓN -->
+<script>
+  function mostrarEstadisticas() {
+    const clave = prompt("Introduce la clave para acceder a las estadísticas:");
+    if (clave === "clave-secreta-123") {
+      document.getElementById("seccion-estadisticas").style.display = "block";
+      alert("Acceso concedido.");
+    } else {
+      alert("Clave incorrecta.");
+    }
+  }
+</script>
   <!-- SCRIPT FINAL -->
   <script>
     function entrarSitio() {
