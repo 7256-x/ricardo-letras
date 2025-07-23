@@ -165,6 +165,25 @@
 .boton-volver:hover {
   background-color: #3e291f;
 }
+    .boton-adoquin {
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.boton-adoquin:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
   </style>
 </head>
 <body>
@@ -181,7 +200,9 @@
       </div>
     </div>
 
-    <button onclick="entrarSitio()" class="boton-entrar">Entrar al sitio</button>
+    <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio">
+  <img src="adoquin-boton.png" alt="Entrar al sitio" style="width: 100%; height: auto; border-radius: 10px;" />
+    </button>
     <button onclick="mostrarSecreto()" class="glow-button" title="Secreto"></button>
   </div>
 
