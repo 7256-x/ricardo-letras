@@ -307,7 +307,23 @@ Fin.</p>
   <p>📧 ricardohernandezletras@gmail.com</p>
     </div>
   
-  
+   <div id="comentarios" class="tab-content">
+    <h2>Comentarios</h2>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://ricardo-letras.vercel.app';
+        this.page.identifier = 'ricardo-letras';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios</a>.</noscript>
+   </div>
     </script>
 </body>
 </html>
