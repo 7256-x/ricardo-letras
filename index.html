@@ -272,9 +272,23 @@ Fin.</p>
     </a>
   </p>
   </div>
-   <div id="comentarios" class="tab-content">
+   
+<div id="comentarios" class="tab-content">
   <h2>Comentarios</h2>
-
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://ricardo-letras.vercel.app';
+      this.page.identifier = 'ricardo-letras';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+</div>
   <!-- Área de comentarios de Disqus -->
   <div id="disqus_thread"></div>
   <script>
@@ -288,6 +302,12 @@ Fin.</p>
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
     })();
+    <!-- ENLACE SECRETO A PANEL DE COMENTARIOS -->
+<div style="margin-top: 20px;">
+  <button onclick="mostrarAccesoComentarios()" style="background-color: #003366; color: white; border: none; padding: 10px 16px; border-radius: 5px; font-weight: bold; cursor: pointer;">
+    Acceder al panel de comentarios
+  </button>
+</div>
   </script>
 
   <!-- Enlace privado para entrar a tu panel de Disqus -->
@@ -329,5 +349,17 @@ Fin.</p>
         alert("Clave incorrecta");
       }
     }
-  </script></body>
+  </script>
+    <!-- SCRIPT DE ACCESO AL PANEL DE COMENTARIOS (SOLO CON CLAVE) -->
+<script>
+  function mostrarAccesoComentarios() {
+    const clave = prompt("Introduce la clave secreta para acceder al panel de comentarios:");
+    if (clave === "clave-secreta-123") {
+      window.open("https://ricardo-letras.disqus.com/admin", "_blank");
+    } else {
+      alert("Clave incorrecta. No tienes permiso.");
+    }
+  }
+</script>
+</body>
 </html>
