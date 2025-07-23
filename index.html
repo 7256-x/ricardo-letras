@@ -307,57 +307,7 @@ Fin.</p>
   <p>📧 ricardohernandezletras@gmail.com</p>
     </div>
   
-  </div>  <div id="seccion-estadisticas" style="display: none; padding: 2em; max-width: 800px; margin: auto; text-align: center;">
-    <h2>Estadísticas del sitio</h2>
-    <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek">000000</div>
-    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
-    <br><a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
-  </div>  <script>
-    function entrarSitio() {
-      document.querySelector('.hero').style.display = 'none';
-      document.getElementById('main-nav').style.display = 'block';
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-      document.getElementById('biografia').classList.add('active');
-    }
-
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-      document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
-      document.getElementById(tabId).classList.add('active');
-    }
-
-    function mostrarSecreto() {
-      const clave = prompt("Introduce la clave secreta:");
-      if (clave === "clave-secreta-123") {
-        document.getElementById('seccion-estadisticas').style.display = 'block';
-        showTab('comentarios');
-        alert("Acceso a Comentarios y Estadísticas activado");
-      } else {
-        alert("Clave incorrecta");
-      }
-    }
-  </script>
-    <!-- SCRIPT DE ACCESO AL PANEL DE COMENTARIOS (SOLO CON CLAVE) -->
-<script>
-  function mostrarAccesoComentarios() {
-    const clave = prompt("Introduce la clave secreta para acceder al panel de comentarios:");
-    if (clave === "clave-secreta-123") {
-      window.open("https://ricardo-letras.disqus.com/admin", "_blank");
-    } else {
-      alert("Clave incorrecta. No tienes permiso.");
-    }
   
-</script>
-  
-  function mostrarAccesoComentarios() {
-    const clave = prompt("Introduce la clave secreta para acceder al panel de comentarios:");
-    if (clave === "clave-secreta-123") {
-      window.open("https://ricardo-letras.disqus.com/admin", "_blank");
-    } else {
-      alert("Clave incorrecta. No tienes permiso.");
-    }
-  }
     </script>
 </body>
 </html>
