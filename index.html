@@ -325,21 +325,7 @@ Fin.</p>
   </div>
     <div id="comentarios" class="tab-content">
     <h2>Comentarios</h2>
-    <div id="disqus_thread"></div>
-    <script>
-      var disqus_config = function () {
-        this.page.url = 'https://ricardo-letras.vercel.app';
-        this.page.identifier = 'ricardo-letras';
-      };
-      (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://ricardo-letras-disqus-com-1.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
-    <noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios</a>.</noscript>
-  <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
+      <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
   </div>
   <div id="contacto" class="tab-content">
     <h2>Contacto</h2>
@@ -385,7 +371,7 @@ Fin.</p>
     if (clave === "clave-secreta-123") {
       document.getElementById("seccion-estadisticas").style.display = "block";
       alert("Acceso concedido.");
-    } else {
+    } else {ñ
       alert("Clave incorrecta.");
     }
   }
