@@ -402,5 +402,23 @@ Fin.</p>
     }
   }
 </script>
+  <script>
+function recargarCusdis(idSeccion) {
+  const contenedor = document.querySelector(`#${idSeccion} #cusdis_thread`);
+  if (contenedor) {
+    const iframe = document.querySelector(`#${idSeccion} iframe[src*="cusdis.com"]`);
+    if (iframe) {
+      iframe.remove(); // Elimina iframe anterior
+    }
+
+    const nuevoScript = document.createElement("script");
+    nuevoScript.src = "https://cusdis.com/js/cusdis.es.js";
+    nuevoScript.async = true;
+    nuevoScript.defer = true;
+    contenedor.innerHTML = contenedor.outerHTML; // Fuerza reinicio
+    contenedor.parentNode.replaceChild(contenedor, contenedor);
+    contenedor.appendChild(nuevoScript);
+  }
+}
 </body>
 </html>
