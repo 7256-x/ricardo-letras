@@ -262,6 +262,7 @@ Fin
     https://www.amazon.com/ebook/dp/B0DSJQT76R
     </a>
     </p>
+    
   <p style="text-align: right;">
   <a href="#comentarios" class="enlace-comentarios">¿Te gustó? Déjanos tu comentario</a>
   </p>
@@ -437,6 +438,18 @@ Fin.</p>
     });
   });
 </script>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById('comentarios');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
