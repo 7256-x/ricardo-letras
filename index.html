@@ -170,7 +170,7 @@
   top: 92%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 140px;
+  width: 140px;p
   height: auto;
   border: none;
   background: none;
@@ -395,5 +395,16 @@ Fin.</p>
 </script>
   <!-- Script de Cusdis -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  document.querySelectorAll('a[href="#comentarios"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.getElementById('comentarios');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script> 
 </body>
 </html>
