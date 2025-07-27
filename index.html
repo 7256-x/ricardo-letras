@@ -421,5 +421,24 @@ Fin.</p>
       });
     });
   </script>
+ <!-- Scripts de Cusdis -->
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById('comentarios');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
 </body>
 </html>
