@@ -406,5 +406,20 @@ Fin.</p>
     });
   });
 </script> 
+<body>
+  <!-- Aquí va todo el contenido visible de tu página -->
+
+  <!-- Agrega aquí el script justo antes del cierre de body -->
+  <script>
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById('comentarios');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
