@@ -881,10 +881,9 @@ Fin.</p>
 </div>
 
 <!-- SECCIÓN COMENTARIOS -->
-<div id="comentarios" class="tab-content">
+ <div id="comentarios" class="tab-content">
   <h2>Comentarios</h2>
-
-  <!-- CUSDIS COMENTARIOS -->
+  <!-- Sección de Comentarios con Cusdis -->
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="75427542-5fae-4aac-b8a5-801e82606b2c"
@@ -896,6 +895,34 @@ Fin.</p>
   <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
 </div>
 
+<!-- Scripts -->
+<script>
+  // Ir a la sección de comentarios
+  function irAComentarios() {
+    const seccion = document.getElementById("comentarios");
+    if (seccion) {
+      seccion.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.error("No se encontró el elemento #comentarios");
+    }
+  }
+
+  // Volver a la portada y subir hasta arriba
+  function volverAPortada() {
+    document.querySelector('.hero').style.display = 'flex';
+    document.getElementById('main-nav').style.display = 'none';
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Activar enlace "¿Te gustó? Déjanos tu comentario"
+  document.querySelectorAll('.enlace-comentarios').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      irAComentarios();
+    });
+  });
+</script>
 </body>
 </html>
 
@@ -1020,23 +1047,6 @@ Fin.</p>
     }
   }
   </script>
-<script>
-  function irAComentarios() {
-    const seccion = document.getElementById("comentarios");
-    if (seccion) {
-      seccion.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.error("No se encontró el elemento #comentarios");
-    }
-  }
-<script>
-  function irAComentarios() {
-    const seccion = document.getElementById("comentarios");
-    if (seccion) {
-      seccion.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.error("No se encontró el elemento #comentarios");
-    }
-  }
+
 </script></body>
 </html>
