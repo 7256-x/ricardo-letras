@@ -510,5 +510,64 @@ Fin.</p>
       console.error("No se encontró el elemento #comentarios");
     }
   }
-</script></body>
+</script>
+  <!-- Botón fijo "Volver arriba" -->
+<style>
+  #btnArriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    background: #004080; /* azul bandera cubana */
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+    display: none;
+    transition: background 0.3s ease;
+  }
+  #btnArriba:hover {
+    background: #00264d;
+  }
+</style>
+
+<button id="btnArriba" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+  ⬆ Volver arriba
+</button>
+
+<script>
+  // Mostrar u ocultar el botón según el scroll
+  const btn = document.getElementById("btnArriba");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Al regresar desde comentarios, subir a la portada
+  window.addEventListener("pageshow", function() {
+    window.scrollTo(0, 0);
+  });
+</script>
+
+<!-- Tu botón normal "Volver a la portada" -->
+<a href="#top" style="
+  display: block;
+  margin: 40px auto;
+  width: fit-content;
+  padding: 12px 20px;
+  background: #004080;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+">
+  🏠 Volver a la portada
+</a>
+</body>
 </html>
