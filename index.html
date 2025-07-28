@@ -231,7 +231,7 @@
   <h2>Poemas</h2>
   <p>Aquí irán los poemas en formato HTML.</p>
 
-  <!-- ENLACE FUNCIONAL A COMENTARIOS -->
+
   <div style="text-align: right; margin-top: 20px;">
   <button onclick="irAComentarios()" style="
     background-color: #003366;
@@ -416,5 +416,14 @@
     }
   }
   </script>
-</body>
+<script>
+  function irAComentarios() {
+    const seccion = document.getElementById("comentarios");
+    if (seccion) {
+      seccion.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.error("No se encontró el elemento #comentarios");
+    }
+  }
+</script></body>
 </html>
