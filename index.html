@@ -525,5 +525,16 @@ Fin.</p>
       console.error("No se encontró el elemento #comentarios");
     }
   }
-</script></body>
+</script>
+  <script>
+  document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+    enlace.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+  </script>
+</body>
 </html>
