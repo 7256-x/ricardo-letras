@@ -373,5 +373,20 @@
     });
   });
 </script>
+  <script>
+  function mostrarSeccion(id) {
+    var secciones = document.getElementsByClassName('tab-content');
+    for (var i = 0; i < secciones.length; i++) {
+      secciones[i].style.display = 'none';
+    }
+    document.getElementById(id).style.display = 'block';
+
+    // Para que desplace suavemente hasta la sección
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  </script>
 </body>
 </html>
