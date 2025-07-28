@@ -242,8 +242,7 @@
     background-color: #004080; 
     color: white;">
     Volver a la portada
-  </button>
-    </div>  
+  <button onclick="volverAPortada()" style="...">Volver a la portada</button>
 <!-- SECCIÓN POEMAS -->
 <div id="poemas" class="tab-content">
   <h2>Poemas</h2>
@@ -522,22 +521,18 @@ Fin.</p>
     }
   }
   </script>
+
 <script>
-  function irAComentarios() {
-    const seccion = document.getElementById("comentarios");
-    if (seccion) {
-      seccion.scrollIntoView({ behavior: "smooth" });
+  function volverAPortada() {
+    const portada = document.getElementById('portada');
+    if (portada) {
+      portada.scrollIntoView({ behavior: 'smooth' });
     } else {
-      console.error("No se encontró el elemento #comentarios");
+      // En caso de que no exista el id 'portada', sube al top de la página
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 </script>
-<script>
-  function volverAPortada() {
-    document.getElementById('portada').scrollIntoView({ behavior: 'smooth' });
-  }
-</script>
-</body>
 </body>
 </html>
 
