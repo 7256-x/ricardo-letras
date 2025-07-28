@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -255,23 +256,22 @@
 <div id="cuentos" class="tab-content">
   <h2>Cuentos</h2>
   <p>Aquí irán los cuentos en formato HTML.</p>
-
-  <!-- ENLACE FUNCIONAL A COMENTARIOS -->
-  <div style="text-align: right; margin-top: 20px;">
-  <a href="#comentarios" style="
-    display: inline-block;
-    background-color: #003366;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
+<div style="text-align: right; margin-top: 20px;">
+  <button onclick="irAComentarios()" style="
+    background-color: #0´ffffff;
+    color: #ffffff;/*COLOR DE LETRA BLANCA*/
+  padding: 10px 20px;
+    border: none;
     border-radius: 10px;
     font-weight: bold;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
-  " onmouseover="this.style.backgroundColor='#005599';" onmouseout="this.style.backgroundColor='#003366';">
-    <a href="javascript:mostrarSeccion('comentarios')">¿Te gustó? Déjanos tu comentario</a>
-  </a>
-  </div>
+    cursor: pointer;
+  " onmouseover="this.style.backgroundColor='#005599';"
+      onmouseout="this.style.backgroundColor='#033366';">
+     <a href="javascript:mostrarSeccion('comentarios')">¿Te gustó? Déjanos tu comentario</a> 
+  </button>
+</div>   
 
   <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
 </div>
