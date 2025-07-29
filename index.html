@@ -1,4 +1,4 @@
-<!DOCTYPE html>ok
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -231,8 +231,7 @@
      </section></p>
  
 </p>
-    <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
-    </div>
+    <button onclick="volverArriba()" style="...">Volver arriba</button>
 
 <!-- SECCIÓN POEMAS -->
 <div id="poemas" class="tab-content">
@@ -292,8 +291,7 @@ Fin
   </button>
 </div>
   
-  <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
-</div>
+  <button onclick="volverArriba()" style="...">Volver arriba</button>
 
 <!-- SECCIÓN CUENTOS -->
 <div id="cuentos" class="tab-content">
@@ -368,8 +366,7 @@ Fin.</p>
   </button>
 </div>   
 
-  <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
-</div>
+  <button onclick="volverArriba()" style="...">Volver arriba</button>
 <!-- SECCIÓN COMENTARIOS -->
 <div id="comentarios" class="tab-content">
   <h4 style="font-size: 16px; line-height: 1.3; text-align: justify; margin-bottom: 6px; font-weight: bold;">
@@ -393,42 +390,38 @@ Fin.</p>
 <div id="contacto" class="tab-content">
     <h2>Contacto</h2>
     <p>📧 ricardohernandezletras@gmail.com</p>
-    <button class="boton-volver" onclick="volverAPortada()">Volver a la portada</button>
-  </div>
+    
 
- 
-  <!-- SCRIPT FINAL -->
-  <script>
-    function entrarSitio() {
-      document.querySelector('.hero').style.display = 'none';
-      document.getElementById('main-nav').style.display = 'block';
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-      document.getElementById('biografia').classList.add('active');
-    }
-
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-      document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
-      document.getElementById(tabId).classList.add('active');
-    }
-
-    function mostrarSecreto() {
-      const clave = prompt("Introduce la clave para acceder:");
-      if (clave === "clave-secreta-123") {
-        document.getElementById("comentarios").style.display = "block";
-      } else {
-        alert("Clave incorrecta.");
-      }
-    }
-    function volverAPortada() {
-  document.querySelector('.hero').style.display = 'flex';
-  document.getElementById('main-nav').style.display = 'none';
-  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-    }
-  </script>
-<!-- SCRIPT PARA EL BOTÓN -->
+ <!-- SCRIPT FINAL -->
 <script>
+  function entrarSitio() {
+    document.querySelector('.hero').style.display = 'none';
+    document.getElementById('main-nav').style.display = 'block';
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.getElementById('biografia').classList.add('active');
+  }
+
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  }
+
+  function mostrarSecreto() {
+    const clave = prompt("Introduce la clave para acceder:");
+    if (clave === "clave-secreta-123") {
+      document.getElementById("comentarios").style.display = "block";
+    } else {
+      alert("Clave incorrecta.");
+    }
+  }
+
+  // ✅ Nueva función para el botón "Volver arriba"
+  function volverArriba() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   function mostrarEstadisticas() {
     const clave = prompt("Introduce la clave para acceder a las estadísticas:");
     if (clave === "clave-secreta-123") {
@@ -438,39 +431,8 @@ Fin.</p>
       alert("Clave incorrecta.");
     }
   }
-</script>
-  <!-- Script de Cusdis -->
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-<script>
-  document.querySelectorAll('a[href="#comentarios"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.getElementById('comentarios');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-</script> 
-<body>
-  <!-- Aquí va todo el contenido visible de tu página -->
 
-  <!-- Agrega aquí el script justo antes del cierre de body -->
-  <script>
-    document.querySelectorAll('.enlace-comentarios').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.getElementById('comentarios');
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
- <!-- Scripts de Cusdis -->
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-
-<script>
+  // ✅ Manejo único para los enlaces de comentarios
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.enlace-comentarios').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -482,21 +444,7 @@ Fin.</p>
       });
     });
   });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.enlace-comentarios').forEach(link => {
-      link.addEventLidstener('click', function(e) {
-        e.preventDefault();
-        const target = document.getElementById('comentarios');
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  });
-</script>
-  <script>
+
   function mostrarSeccion(id) {
     var secciones = document.getElementsByClassName('tab-content');
     for (var i = 0; i < secciones.length; i++) {
@@ -504,14 +452,13 @@ Fin.</p>
     }
     document.getElementById(id).style.display = 'block';
 
-    // Para que desplace suavemente hasta la sección
+    // Scroll suave hasta la sección
     const target = document.getElementById(id);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
   }
-  </script>
-<script>
+
   function irAComentarios() {
     const seccion = document.getElementById("comentarios");
     if (seccion) {
@@ -520,5 +467,10 @@ Fin.</p>
       console.error("No se encontró el elemento #comentarios");
     }
   }
+</script>
+
+<!-- Script de Cusdis (una sola vez) -->
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+  
 </script></body>
 </html>
