@@ -394,7 +394,7 @@ Fin.</p>
   
 
   <!-- SCRIPT FINAL -->
-<script>
+  <script>
   function entrarSitio() {
     document.querySelector('.hero').style.display = 'none';
     document.getElementById('main-nav').style.display = 'block';
@@ -402,53 +402,40 @@ Fin.</p>
   }
 
   function showTab(tabId) {
-    // Oculta todo
+    // Quita "active" de todos los botones y secciones
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
 
-    // Activa botón
+    // Marca activo el botón correcto
     const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
     if (boton) boton.classList.add('active');
 
-    // Muestra sección
+    // Muestra la sección correspondiente
     const seccion = document.getElementById(tabId);
     if (seccion) seccion.classList.add('active');
+  }
+
+  function volverArriba() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function mostrarSecreto() {
     const clave = prompt("Introduce la clave para acceder:");
     if (clave === "clave-secreta-123") {
-      showTab('comentarios');
+      showTab('comentarios'); // en vez de forzar display:block
     } else {
       alert("Clave incorrecta.");
     }
   }
 
-  // ✅ Nueva función para el botón "Volver arriba"
-  function volverArriba() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function mostrarEstadisticas() {
-    const clave = prompt("Introduce la clave para acceder a las estadísticas:");
-    if (clave === "clave-secreta-123") {
-      document.getElementById("seccion-estadisticas").style.display = "block";
-      alert("Acceso concedido.");
-    } else {
-      alert("Clave incorrecta.");
-    }
-  }
-
-  // ✅ Manejo único para los enlaces de comentarios
+  // ✅ Enlaces directos a comentarios
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.enlace-comentarios').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         showTab('comentarios');
         const target = document.getElementById('comentarios');
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     });
   });
@@ -462,7 +449,7 @@ Fin.</p>
   }
 </script>
 
-<!-- Script de Cusdis (una sola vez) -->
+<!-- Script de Cusdis -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </body>
 </html>
