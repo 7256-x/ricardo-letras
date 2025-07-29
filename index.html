@@ -390,28 +390,35 @@ Fin.</p>
 <div id="contacto" class="tab-content">
     <h2>Contacto</h2>
     <p>📧 ricardohernandezletras@gmail.com</p>
-    
+    <button onclick="volverArriba()" style="...">Volver arriba</button>
+  
 
- <!-- SCRIPT FINAL -->
+  <!-- SCRIPT FINAL -->
 <script>
   function entrarSitio() {
     document.querySelector('.hero').style.display = 'none';
     document.getElementById('main-nav').style.display = 'block';
-    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-    document.getElementById('biografia').classList.add('active');
+    showTab('biografia'); // ✅ inicia con Biografía
   }
 
   function showTab(tabId) {
+    // Oculta todo
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-    document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
-    document.getElementById(tabId).classList.add('active');
+
+    // Activa botón
+    const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+    if (boton) boton.classList.add('active');
+
+    // Muestra sección
+    const seccion = document.getElementById(tabId);
+    if (seccion) seccion.classList.add('active');
   }
 
   function mostrarSecreto() {
     const clave = prompt("Introduce la clave para acceder:");
     if (clave === "clave-secreta-123") {
-      document.getElementById("comentarios").style.display = "block";
+      showTab('comentarios');
     } else {
       alert("Clave incorrecta.");
     }
@@ -437,6 +444,7 @@ Fin.</p>
     document.querySelectorAll('.enlace-comentarios').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
+        showTab('comentarios');
         const target = document.getElementById('comentarios');
         if (target) {
           target.scrollIntoView({ behavior: 'smooth' });
@@ -445,32 +453,16 @@ Fin.</p>
     });
   });
 
-  function mostrarSeccion(id) {
-    var secciones = document.getElementsByClassName('tab-content');
-    for (var i = 0; i < secciones.length; i++) {
-      secciones[i].style.display = 'none';
-    }
-    document.getElementById(id).style.display = 'block';
-
-    // Scroll suave hasta la sección
-    const target = document.getElementById(id);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
   function irAComentarios() {
+    showTab('comentarios');
     const seccion = document.getElementById("comentarios");
     if (seccion) {
       seccion.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.error("No se encontró el elemento #comentarios");
     }
   }
 </script>
 
 <!-- Script de Cusdis (una sola vez) -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-  
 </script></body>
 </html>
