@@ -489,56 +489,5 @@ Fin.
     z-index: 10000;
     background: transparent;
   }
-</style>
-
-<!-- Área invisible para activar el cartel -->
-<div id="area-secreta"></div>
-
-<script>
-  let toques = 0;
-  let temporizador;
-
-  document.getElementById('area-secreta').addEventListener('click', function() {
-    toques++;
-    clearTimeout(temporizador);
-
-    temporizador = setTimeout(() => {
-      if (toques >= 3) {
-        const cartel = document.getElementById('mantenimiento');
-        if (cartel.style.display === 'none') {
-          cartel.style.display = 'flex';
-          iniciarContador();
-        } else {
-          cartel.style.display = 'none';
-        }
-      }
-      toques = 0;
-    }, 400); // tiempo entre toques
-  });
-
-  function iniciarContador() {
-    // Ajusta aquí el tiempo de mantenimiento
-    const fin = new Date();
-    fin.setHours(fin.getHours() + 2); // +2 horas
-
-    const intervalo = setInterval(() => {
-      const ahora = new Date().getTime();
-      const distancia = fin - ahora;
-
-      if (distancia <= 0) {
-        clearInterval(intervalo);
-        document.getElementById('contador').textContent = "¡La página ya está disponible!";
-        return;
-      }
-
-      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-      document.getElementById('contador').textContent =
-        `Volvemos en ${horas}h ${minutos}m ${segundos}s`;
-    }, 1000);
-  }
-</script>
 </body>
 </html>
