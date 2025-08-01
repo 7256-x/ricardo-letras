@@ -208,12 +208,14 @@
 </div>
 
 <!-- MENÚ DE NAVEGACIÓN -->
-<nav id="main-nav" style="display: none;">
-  <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
-  <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
-  <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
-  <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
-  <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+<nav id="main-nav" style="display:none;">
+  <ul>
+    <li><button class="tab-button" onclick="showTab('biografia')">Biografía</button></li>
+    <li><button class="tab-button" onclick="showTab('poemas')">Poemas</button></li>
+    <li><button class="tab-button" onclick="showTab('cuentos')">Cuentos</button></li>
+    <li><button class="tab-button" onclick="showTab('comentarios')">Comentarios</button></li>
+    <li><button class="tab-button" onclick="showTab('contacto')">Contacto</button></li>
+  </ul>
 </nav>
 
 <!-- SECCIONES -->
@@ -367,9 +369,7 @@
 
 
 
-
-
- <!-- SECCIÓN CONTACTO -->
+<!-- SECCIÓN CONTACTO -->
 <div id="contacto" class="tab-content">
   <h2>Contacto</h2>
 
@@ -386,6 +386,7 @@
     </a>
   </p>
 </div>
+
  <!-- SCRIPT FINAL -->
   <script>
   function entrarSitio() {
