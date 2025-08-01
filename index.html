@@ -362,21 +362,24 @@
        data-page-title="Página principal">
   </div>
 
-  <!-- SECCIÓN CONTACTO -->
+ <!-- SECCIÓN CONTACTO -->
 <div id="contacto" class="tab-content">
   <h2>Contacto</h2>
-  <p>📧 
+
+  <p class="contacto-correo">
+    📩 
     <a href="mailto:ricardohernandezletras@gmail.com">
       ricardohernandezletras@gmail.com
     </a>
   </p>
+
   <p>🌐 También puedes visitar mi página: 
     <a href="https://ricardo-letras.vercel.app" target="_blank">
       ricardo-letras.vercel.app
     </a>
   </p>
 </div>
-  <!-- SCRIPT FINAL -->
+ <!-- SCRIPT FINAL -->
   <script>
   function entrarSitio() {
     document.querySelector('.hero').style.display = 'none';
@@ -451,5 +454,23 @@
     no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
   };
 </script>
+ <style>
+  /* Estilo para la sección de contacto */
+  .contacto-correo {
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .contacto-correo a {
+    color: #0044cc; /* azul moderno */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .contacto-correo a:hover {
+    text-decoration: underline;
+  }
+ </style>
 </body>
 </html>
