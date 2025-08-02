@@ -320,12 +320,12 @@
     </a>
   </p>
 </div>
- <!-- SCRIPT FINAL -->
-  <script>
+<!-- SCRIPT FINAL -->
+<script>
   function entrarSitio() {
     document.querySelector('.hero').style.display = 'none';
     document.getElementById('main-nav').style.display = 'block';
-    showTab('biografia'); // ✅ inicia con Biografía
+    showTab('biografia'); // inicia con Biografía
   }
 
   function showTab(tabId) {
@@ -349,13 +349,13 @@
   function mostrarSecreto() {
     const clave = prompt("Introduce la clave para acceder:");
     if (clave === "clave-secreta-123") {
-      showTab('comentarios'); // en vez de forzar display:block
+      showTab('comentarios');
     } else {
       alert("Clave incorrecta.");
     }
   }
 
-  // ✅ Enlaces directos a comentarios
+  // Enlaces directos a comentarios
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.enlace-comentarios').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -366,18 +366,10 @@
       });
     });
   });
-
-  function irAComentarios() {
-    showTab('comentarios');
-    const seccion = document.getElementById("comentarios");
-    if (seccion) {
-      seccion.scrollIntoView({ behavior: "smooth" });
-    }
-  }
 </script>
+
 <!-- Script de Cusdis -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js" data-lang="es"></script>
-
 <script>
   window.CUSDIS_LOCALE = {
     powered_by: "Comentarios con Cusdis",
@@ -395,23 +387,5 @@
     no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
   };
 </script>
- <style>
-  /* Estilo para la sección de contacto */
-  .contacto-correo {
-    font-size: 1.1em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 10px 0;
-  }
-  .contacto-correo a {
-    color: #0044cc; /* azul moderno */
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .contacto-correo a:hover {
-    text-decoration: underline;
-  }
- </style>
 </body>
 </html>
