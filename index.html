@@ -52,27 +52,31 @@
       z-index: 1;
     }
 
-    .boton-entrar {
-      position: absolute;
-      top: 90%;
-      left: 47%;
-      transform: translate(-50%, -50%);
-      padding: 12px 30px;
-      font-size: 1em;
-      background-color: #5c3c2b; /* Color similar al fondo de la portada */
-      color: white;
-      border: none;
-      border-radius: 6px; /* Bordes suaves tipo adoquín */
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      z-index: 10;
-    }
+    .boton-adoquin {
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;       /* 🔹 tamaño controlado */
+  height: auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
 
-    .boton-entrar:hover {
-      background-color: #3e291f;
-    }
+.boton-adoquin img {
+  width: 100%;       /* 🔹 se adapta al ancho del botón */
+  height: auto;
+  border-radius: 12px; /* esquinas suaves tipo adoquín */
+}
 
+.boton-adoquin:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+}
     #contenedor-flotante {
       position: absolute;
       top: 4%;
