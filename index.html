@@ -191,6 +191,71 @@
     .boton-volver:hover {
       background-color: #3e291f;
     }
+    /* Estilo general */
+.tab-content h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Línea decorativa debajo de cada título */
+.tab-content h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 12px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Colores por sección */
+#biografia h2 {
+  color: #003366;
+}
+#biografia h2::after {
+  background: #003366;
+}
+
+#poemas h2 {
+  color: #5c3c2b;
+}
+#poemas h2::after {
+  background: #5c3c2b;
+}
+
+#cuentos h2 {
+  color: #cc0000;
+}
+#cuentos h2::after {
+  background: #cc0000;
+}
+
+#comentarios h2 {
+  color: #006633;
+}
+#comentarios h2::after {
+  background: #006633;
+}
+
+#contacto h2 {
+  color: #884dff;
+}
+#contacto h2::after {
+  background: #884dff;
+}
+
+/* Subtítulos */
+.tab-content h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.4em;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-left: 4px solid currentColor;
+  padding-left: 10px;
+  color: inherit;
+}
   </style>
 </head>
 <body>
