@@ -425,38 +425,6 @@ Con el pasado vive soñando. </p>
     error: "Error, inténtalo de nuevo",
     no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
   };
-</script>
-  <!-- Aquí irían tus secciones -->
-  
-  <!-- JS para navegación -->
-  <script>
-    // Mostrar menú al entrar al sitio
-    function entrarSitio() {
-      document.getElementById('main-nav').style.display = 'block';
-      showTab('biografia'); // Mostrar biografía por defecto
-      window.scrollTo({ top: document.getElementById('main-nav').offsetTop, behavior: 'smooth' });
-    }
 
-    // Control de pestañas
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => tab.classList.remove('active'));
-
-      const selectedTab = document.getElementById(tabId);
-      if (selectedTab) {
-        selectedTab.classList.add('active');
-      }
-
-      const buttons = document.querySelectorAll('.tab-button');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-    }
-
-    function mostrarSecreto() {
-      alert('✨ Gracias por visitar mi sitio literario ✨');
-    }
-  </script>
-</body>
-</html>
 </body>
 </html>
