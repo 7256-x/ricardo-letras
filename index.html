@@ -250,7 +250,65 @@
   <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
   <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
 </nav>
-  
+  <!-- SECCIONES PRINCIPALES -->
+
+<div id="biografia" class="tab-content">
+  <h2>Biografía</h2>
+  <p>
+    Ricardo Hernández Rodríguez, nacido en Colón, Matanzas, y residente en La Habana desde 1962. 
+    Licenciado en Pedagogía, especialista en Química. Autor de los libros 
+    <em>Versos Callejeros. Las cosas que amo</em> y 
+    <em>Cuentos de suspense, amor y muerte</em>.
+  </p>
+  <button class="tab-button" onclick="showTab('comentarios')">Ver comentarios</button>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+
+<div id="poemas" class="tab-content">
+  <h2>Poemas</h2>
+  <h3>Poema destacado</h3>
+  <p><strong>Se cae La Habana</strong></p>
+  <p>
+    Aquí puedes añadir el texto completo del poema o un extracto.
+  </p>
+  <button class="tab-button" onclick="showTab('comentarios')">Ver comentarios</button>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+
+<div id="cuentos" class="tab-content">
+  <h2>Cuentos</h2>
+  <h3>Cuento destacado</h3>
+  <p><strong>Balseros</strong></p>
+  <p>
+    Aquí puedes añadir el cuento completo o un fragmento con enlace al texto íntegro.
+  </p>
+  <button class="tab-button" onclick="showTab('comentarios')">Ver comentarios</button>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+
+<div id="comentarios" class="tab-content">
+  <h2>Comentarios</h2>
+  <p>Tu opinión es importante. Comparte tus impresiones aquí.</p>
+  <!-- Cusdis configurado en español -->
+  <div id="cusdis_thread"
+       data-host="https://cusdis.com"
+       data-app-id="75427542-5fae-4aac-b8a5-801e82606b2c"
+       data-page-id="ricardo-letras"
+       data-page-url="https://ricardo-letras.vercel.app"
+       data-page-title="Ricardo Hernández Letras"
+       data-lang="es">
+  </div>
+  <button class="boton-volver" onclick="volverPortada()">Volver a la portada</button>
+</div>
+
+<div id="contacto" class="tab-content">
+  <h2>Contacto</h2>
+  <p>Si deseas comunicarte conmigo, escribe a: 
+    <a href="mailto:ricardohernandezletras@gmail.com">ricardohernandezletras@gmail.com</a>
+  </p>
+  <button class="tab-button" onclick="showTab('comentarios')">Ver comentarios</button>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
     <!-- SCRIPT FINAL -->
 <script>
   function entrarSitio() {
@@ -317,6 +375,27 @@
     error: "Error, inténtalo de nuevo",
     no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
   };
+<script>
+// Mostrar secciones
+function showTab(tabId) {
+  const contents = document.querySelectorAll('.tab-content');
+  contents.forEach(content => content.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  document.getElementById('main-nav').scrollIntoView({ behavior: 'smooth' });
+}
 
+// Volver arriba (inicio de la página actual)
+function volverArriba() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Volver a la portada
+function volverPortada() {
+  document.getElementById('main-nav').style.display = 'none';
+  const sections = document.querySelectorAll('.tab-content');
+  sections.forEach(sec => sec.classList.remove('active'));
+  document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
 </body>
 </html>
