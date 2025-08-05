@@ -286,4 +286,104 @@
   <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
 </div>
 
+<div id="comentarios" class="tab-content">
+  <h2>Comentarios</h2>
+  <p>Tu opinión es importante. Comparte tus impresiones aquí.</p>
+
+  <!-- Cusdis en español -->
+  <div id="cusdis_thread"
+       data-host="https://cusdis.com"
+       data-app-id="75427542-5fae-4aac-b8a5-801e82606b2c"
+       data-page-id="ricardo-letras"
+       data-page-url="https://ricardo-letras.vercel.app"
+       data-page-title="Ricardo Hernández Letras"
+       data-lang="es">
+  </div>
+
+  <button class="boton-volver" onclick="volverPortada()">Volver a la portada</button>
+</div>
+
+<div id="contacto" class="tab-content">
+  <h2>Contacto</h2>
+  <p>Si deseas comunicarte conmigo, escribe a: 
+    <a href="mailto:ricardohernandezletras@gmail.com">ricardohernandezletras@gmail.com</a>
+  </p>
   
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  function entrarSitio() {
+    document.querySelector('.hero').style.display = 'none';
+    document.getElementById('main-nav').style.display = 'block';
+    showTab('biografia'); // inicia con Biografía
+  }
+
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+    const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+    if (boton) boton.classList.add('active');
+
+    const seccion = document.getElementById(tabId);
+    if (seccion) seccion.classList.add('active');
+  }
+
+  // Volver al inicio de la página
+  function volverArriba() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Volver a la portada (oculta menú y secciones)
+  function volverPortada() {
+    document.getElementById('main-nav').style.display = 'none';
+    document.querySelectorAll('.tab-content').forEach(sec => sec.classList.remove('active'));
+    document.querySelector('.hero').style.display = 'flex';
+    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Clave secreta
+  function mostrarSecreto() {
+    const clave = prompt("Introduce la clave para acceder:");
+    if (clave === "clave-secreta-123") {
+      showTab('comentarios');
+    } else {
+      alert("Clave incorrecta.");
+    }
+  }
+
+  // Enlaces directos a comentarios
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTab('comentarios');
+        document.getElementById('comentarios').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+</script>
+
+<!-- Script Cusdis en español -->
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  window.CUSDIS_LOCALE = {
+    powered_by: "Comentarios con Cusdis",
+    post_comment: "Publicar comentario",
+    loading: "Cargando...",
+    email: "Correo electrónico",
+    nickname: "Nombre",
+    reply: "Responder",
+    cancel: "Cancelar",
+    content: "Comentario",
+    submit: "Enviar",
+    submitting: "Enviando...",
+    approved: "Tu comentario está pendiente de aprobación",
+    error: "Error, inténtalo de nuevo",
+    no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
+  };
+</script>
+</body>
+</html>  
