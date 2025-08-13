@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ricardo Hernández Letras</title>
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://ricardo-letras.vercel.app/" />
+
+  <!-- SEO básico -->
+  <meta name="description" content="Sitio literario de Ricardo Hernández Rodríguez con poemas, cuentos y reflexiones. Autor de 'Versos Callejeros' y 'Cuentos de suspense, amor y muerte'.">
+  <meta name="keywords" content="poesía cubana, cuentos, literatura cubana, Ricardo Hernández Rodríguez, poemas de amor, cuentos de suspense">
+  <meta name="author" content="Ricardo Hernández Rodríguez">
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ricardo-letras.vercel.app/">
+  <meta property="og:title" content="Ricardo Hernández | Letras que respiran">
+  <meta property="og:description" content="Versos y relatos que atraviesan el alma. Bienvenido al espacio donde las palabras se vuelven luz y la tinta late en cada página.">
+  <meta property="og:image" content="https://ricardo-letras.vercel.app/portada-nueva-2025.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ricardo Hernández | Letras que respiran">
+  <meta name="twitter:description" content="Versos y relatos que atraviesan el alma. Bienvenido al espacio donde las palabras se vuelven luz y la tinta late en cada página.">
+  <meta name="twitter:image" content="https://ricardo-letras.vercel.app/portada-nueva-2025.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Ricardo Hernández Letras",
+    "url":"https://ricardo-letras.vercel.app",
+    "description":"Sitio literario con poemas, cuentos y reflexiones de Ricardo Hernández Rodríguez."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Ricardo Hernández Rodríguez",
+    "alternateName":"Rihero",
+    "url":"https://ricardo-letras.vercel.app",
+    "image":"https://ricardo-letras.vercel.app/foto-default.jpg",
+    "jobTitle":"Escritor y poeta"
+  }
+  </script>
+
+  <style>
+    :root {
+      --azul:#003366; --azul-hover:#005599; --rojo:#cc0000; --marron:#5c3c2b;
+      --verde:#006633; --lila:#884dff; --bg:#f8f9fa; --card:#ffffff; --texto:#333;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Arial, sans-serif; background-color:var(--bg); color:var(--texto);
+    }
+    .hero{
+      background-image:url('portada-nueva-2025.png');
+      background-size:cover; background-position:center;
+      min-height:100vh; display:flex; justify-content:center; align-items:center;
+      text-align:center; color:#fff; position:relative;
+    }
+    nav{
+      text-align:center; background-color:var(--azul); padding:1em; display:none;
+    }
+    .tab-button{
+      background-color:var(--azul); color:#fff; border:none; padding:10px 16px;
+      cursor:pointer; font-weight:bold; font-size:1em;
+    }
+    .tab-button:hover{ background-color:var(--azul-hover) }
+    .tab-button.active{ background-color:var(--rojo) }
+    .tab-content{
+      display:none; padding:2em; max-width:900px; margin:40px auto; line-height:1.8;
+      background:var(--card); border-radius:15px;
+      box-shadow:0 6px 20px rgba(0,0,0,.15);
+    }
+    .tab-content.active{ display:block }
+  </style>
+</head>
+<body>
+
+  <!-- Portada -->
+  <section class="hero">
+    <button id="entrar" style="padding:1em 2em; background:#cc0000; color:#fff; border:none; font-size:1.2em; cursor:pointer;">Entrar al sitio</button>
+  </section>
+
+  <!-- Menú -->
+  <nav id="menu">
+    <button class="tab-button" data-tab="biografia">Biografía</button>
+    <button class="tab-button" data-tab="poemas">Poemas</button>
+    <button class="tab-button" data-tab="cuentos">Cuentos</button>
+    <button class="tab-button" data-tab="contacto">Contacto</button>
+  </nav>
+
+  <!-- Contenido -->
+  <div id="biografia" class="tab-content">
+    <h2>Biografía</h2>
+    <p>Aquí irá tu biografía.</p>
+  </div>
+  <div id="poemas" class="tab-content">
+    <h2>Poemas</h2>
+    <p>Aquí irán tus poemas.</p>
+  </div>
+  <div id="cuentos" class="tab-content">
+    <h2>Cuentos</h2>
+    <p>Aquí irán tus cuentos.</p>
+  </div>
+  <div id="contacto" class="tab-content">
+    <h2>Contacto</h2>
+    <p>Formulario o datos de contacto aquí.</p>
+  </div>
+
+  <script>
+    // Mostrar menú y contenido al entrar
+    document.getElementById('entrar').addEventListener('click', function(){
+      document.querySelector('.hero').style.display = 'none';
+      document.getElementById('menu').style.display = 'block';
+      document.getElementById('biografia').classList.add('active');
+    });
+
+    // Tabs
+    document.querySelectorAll('.tab-button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
