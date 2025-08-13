@@ -1,1 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ricardo Hernández Letras</title>
+  
+  <!-- SEO Básico -->
+  <meta name="description" content="Ricardo Hernández Rodríguez - Sitio literario con poemas, cuentos y reflexiones. Autor de 'Versos Callejeros' y 'Cuentos de suspense, amor y muerte'.">
+  <meta name="keywords" content="poesía cubana, cuentos de suspense, literatura cubana, Ricardo Hernández Rodríguez, poemas de amor, cuentos de muerte">
+  <meta name="author" content="Ricardo Hernández Rodríguez">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ricardo Hernández Letras - Poemas y Cuentos">
+  <meta property="og:description" content="Descubre poemas y cuentos de Ricardo Hernández Rodríguez. Literatura con emoción y verdad.">
+  <meta property="og:image" content="https://ricardo-letras.vercel.app/portada-nueva.png">
+  <meta property="og:url" content="https://ricardo-letras.vercel.app">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ricardo Hernández Letras - Poemas y Cuentos">
+  <meta name="twitter:description" content="Descubre poemas y cuentos de Ricardo Hernández Rodríguez.">
+  <meta name="twitter:image" content="https://ricardo-letras.vercel.app/portada-nueva.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ricardo Hernández Rodríguez",
+  "alternateName": "Rihero",
+  "url": "https://ricardo-letras.vercel.app",
+  "image": "https://ricardo-letras.vercel.app/foto-default.jpg",
+  "sameAs": [
+    "https://www.facebook.com/tu-perfil",
+    "https://www.instagram.com/tu-perfil",
+    "https://twitter.com/tu-perfil"
+  ],
+  "jobTitle": "Escritor y poeta",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Ricardo Hernández Letras"
+  },
+  "alumniOf": "Instituto Superior Pedagógico Enrique José Varona",
+  "knowsAbout": ["poesía", "cuentos", "literatura cubana", "suspense", "amor"],
+  "author": [
+    {
+      "@type": "Book",
+      "name": "Versos Callejeros. Las cosas que amo",
+      "publisher": "Amazon",
+      "datePublished": "2023"
+    },
+    {
+      "@type": "Book",
+      "name": "Cuentos de suspense, amor y muerte",
+      "publisher": "Amazon",
+      "datePublished": "2024"
+    }
+  ]
+}
+</script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      color: white;
+      font-size: 0.9em;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px 0;
+      animation: scroll-once 10s ease-out forwards;
+    }
+
+    @keyframes scroll-once {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .hero {
+      background-image: url('portada-nueva.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .boton-adoquin {
+      position: absolute;
+      top: 92%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 160px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .boton-adoquin img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .boton-adoquin:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    }
+
+    #contenedor-flotante {
+      position: absolute;
+      top: 4%;
+      left: 89%;
+      width: 90px;
+      height: 95px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      z-index: 999;
+    }
+
+    #foto-flotante {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    nav {
+      text-align: center;
+      background-color: #003366;
+      padding: 1em;
+    }
+
+    .tab-button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .tab-button:hover {
+      background-color: #005599;
+    }
+
+    .tab-button.active {
+      background-color: #cc0000;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2em;
+      max-width: 900px;
+      margin: 40px auto;
+      line-height: 1.8;
+      color: #333;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Botón invisible (oculto hasta instalar contador) */
+    .glow-button {
+      display: none;
+    }
+
+    .boton-volver {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #5c3c2b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9em;
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .boton-volver:hover {
+      background-color: #3e291f;
+    }
+
+    /* Letras bonitas en encabezados */
+    .tab-content h2, 
+    .tab-content h3 {
+      font-family: 'Georgia', serif !important;
+      font-weight: normal;
+      letter-spacing: 0.5px;
+    }
+
+    .tab-content h2::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 4px;
+      margin: 12px auto 0 auto;
+      border-radius: 2px;
+    }
+
+    /* Colores por sección */
+    #biografia h2 { color: #003366; }
+    #biografia h2::after { background: #003366; }
+
+    #poemas h2 { color: #5c3c2b; }
+    #poemas h2::after { background: #5c3c2b; }
+
+    #cuentos h2 { color: #cc0000; }
+    #cuentos h2::after { background: #cc0000; }
+
+    #comentarios h2 { color: #006633; }
+    #comentarios h2::after { background: #006633; }
+
+    #contacto h2 { color: #884dff; }
+    #contacto h2::after { background: #884dff; }
+  </style>
+</head>
+<body>
+
+<!-- Encabezado principal oculto para SEO -->
+<h1 style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+  Ricardo Hernández Rodríguez - Poemas y Cuentos
+</h1>
+
+<!-- PORTADA -->
+<div class="hero">
+  <div id="contenedor-flotante">
+    <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+  </div>
+
+  <div class="marquee-container">
+    <div class="marquee-text">
+      "Bienvenido a mi sitio Web literario". 📚 En su estreno presentamos: Poema "Se cae La Habana" y el cuento: "Balseros".
+    </div>
+  </div>
+
+  <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio">
+    <img src="adoquin-boton.png" alt="Entrar al sitio" />
+  </button>
+</div>
+
+<!-- MENÚ DE NAVEGACIÓN -->
+<nav id="main-nav" style="display: none;">
+  <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
+  <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
+  <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
+  <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+  <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+</nav>
+
+<!-- SECCIÓN BIOGRAFÍA -->
+<div id="biografia" class="tab-content">
+  <h2>Biografía</h2>
+   <p>Ricardo Hernández Rodríguez, nacido el 7 de febrero de 1956 en Colón, Matanzas, Cuba.<br>
+  Reside en La Habana desde 1961.</p>
+
+  <p style="text-align: justify;">Maestro de profesión, es Licenciado en Pedagogía con especialidad en Química por el Instituto Superior Pedagógico 
+  Enrique José Varona (La Habana, Cuba). Inició su vida laboral como profesor de Química en la Escuela Secundaria Básica 
+  del Reparto Habana del Este. Posteriormente, los caminos de la vida lo llevaron a desempeñarse en distintas ramas de la 
+  esfera económica, vinculadas principalmente a los recursos humanos.</p>
+
+  <p style="text-align: justify;">Ha realizado estudios de posgrado en FORMATUR (Cuba), la Universidad de La Salle (México) y la Universidad Católica de 
+  Santo Domingo (República Dominicana).</p>
+
+  <p>Es autor del poemario<em>"Versos Callejeros. Las cosas que amo"</em> y el libro<em>"Cuentos de suspense, amor y muerte"</em>, ambos publicados en Amazon.com</p>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+
+<!-- SECCIÓN POEMAS -->
+<div id="poemas" class="tab-content">
+  <h2>Poemas</h2>
+  <p style="text-align: justify;">"Se cae La Habana" fueron los primeros versos que escribí después de un prolongado 
+  <strong>mutis literario</strong>, que se extendió por más de cuatro lustros, tras abandonar el Taller Literario 
+  del que formé parte en los primeros años de la década del setenta.</p>
+
+  <p style="text-align: justify;">Recuerdo con cariño todos los rostros jóvenes que coincidimos allí, especialmente el de su conductor, Silvino. 
+  Dios quiera que aún viva y que esta publicación le llegue. Quizás sin saberlo, fue mi primer maestro en esta labor de escribir.</p>
+  <h3>"Se cae La Habana"</h3>
+  <p>
+  <p>La Habana se está cayendo,  <br>
+se desmorona en pedazos.  <br>
+Las calles llenas de baches,  <br>
+los almendrones pasando.  </p>
+
+<p>Sus noches no tienen luces.  <br>
+Travestis, putas y machos buscan  <br>
+turistas viejos o nacionales bien pertrechados.  </p>
+
+<p>Niños crecen sin dioses,  <br>
+no hay reyes magos,  <Brasil>
+penan de encantos.  <br>
+Parques desaparecen.  <br>
+Los almendrones pasando.  </p>
+
+<p>La Habana grita su llanto,  <br>
+llora su risa, gime su encanto.  <br>
+Con el pasado vive soñando. </p> </em>
+  fin.
+  </p>
+  <hr>
+  <p style="text-align: center; font-style: italic;">
+  El poema forma parte del libro <strong>"Versos callejeros. Las cosas que amo"</strong> de Ricardo Hernández Rodríguez.<br>
+  <a href="https://www.amazon.com/ebook/dp/B0DSJQT76R" target="_blank">Ver en Amazon</a>
+  </p>
+
+  <p style="margin-top:20px; text-align:center;">
+  <a href="#comentarios" class="enlace-comentarios">Tú opinión es importante.Deja un comentario</a>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+
+<!-- SECCIÓN CUENTOS -->
+<div id="cuentos" class="tab-content">
+  <h2>Cuentos</h2>
+    <p>"En memoria de los miles de Cubanos y Cubanas desaparecidos en el estrecho de la Florida”</p>
+    <p>Historia ficticia inspirada en un hecho real: la increíble travesía del Sr. Nibaldo Hernández Rodríguez (mi hermano) y un amigo de la infancia, 
+      quienes se lanzaron al mar en busca del sueño americano.</p>
+</p> ¿Llegarían?................</p>
+  <h3>"Balseros"</h3>
+  <p>
+     <p style="text-align: justify;">"En medio del mar no se ve tierra". Escribió el poeta.</p>
+  <p style="text-align: justify;">—¡Cojones! No se ve nada —pensó en voz alta el solitario balsero al observar la oscuridad que lo rodeaba en una noche sin estrellas. Autoamarrado con cuerdas de henequén a una desgastada cámara para neumáticos que le servía de embarcación, navegaba por las intimidantes aguas del estrecho de la Florida. Este tipo de balsas constituye el invento más liviano e inseguro utilizado por los cubanos para escapar de la isla. No obstante la fragilidad del improvisado navío, balsa y tripulante lograron sobrevivir a la tormenta que los sorprendió recién desaparecidos los últimos rayos de sol en el lejano horizonte.</p>
+
+  <p style="text-align: justify;">Estaba por concluir la segunda noche desde que abandonara el país por un punto de las costas del este de La Habana, cercano a la bahía de la ciudad. Lo hizo en unión de un amigo de la infancia, cuya amistad se consolidó en una de las abundantes prisiones existentes en la isla. Ambos cumplían condena por motivos políticos. En su caso particular fue sentenciado a un año y medio de encarcelamiento. Motivo: planear el ingreso a la sede de una embajada diplomática con el propósito de solicitar asilo, acción que no llegó siquiera a intentar.</p>
+
+ <p style="text-align: justify;">Cómo lo hicieran otros miles antes y lo continúan haciendo muchos más hasta el presente, se lanzaron a la mar los imberbes jóvenes en busca de un sueño que no podían concretar en sus propias almohadas. Se los impedía la falta de libertad para construir el futuro añorado. No comulgaban con el incierto provenir que le imponían desde la fuerza de una ideología totalitaria. Doctrina ajena a la idiosincrasia de una nación que a su pesar, ha observado pasivamente durante décadas como maltratan, tergiversan y aniquilan las más naturales y sublimes tradiciones acumuladas durante siglos de existencia.</p>
+
+<p style="text-align: justify;">Partieron los intrépidos aventureros el jueves santo del año mil novecientos noventa. Lo hicieron después de celebrar con sus respectivas familias la tradicional cena que se realiza en tan significativa fecha. En honor a la verdad aquellas comidas se podrían catalogar como una merienda o refrigerio, dado las insuficiencia en cantidad y calidad de las raciones servidas. Era el resultado de la escasez que ya imponía el recién iniciado periodo especial. Contradictorio nombre surgido de la retorcida costumbre de los gobernantes del país, quienes acostumbran utilizar llamativos y absurdos adjetivos para referirse a determinados periodos o hechos negativos.  Acontecimientos por los que ha atravesado el país en su etapa post revolucionaria, estancada desde su propio inicio. Esto a pesar de algunos logros exhibidos con exagerada elocuencia y alcanzados a expensas de extender la miseria entre la mayoría de la población, limitando las libertades personales de los ciudadanos.</p>
+
+
+<p style="text-align: justify;">Con la barriga vacía pero, llenos de esperanzas y fe emprendieron los jóvenes la aventura de sus vidas. Ambos profesaban la fe católica, aunque como buenos sincréticos que al fin y al cabo eran, cumplieron con el ritual aconsejado por los padrinos de una de las religiones afrocubanas que florecen en la nación. Arrojaron una docena de huevos en dirección a la costa mientras se alejaban de la misma. El rito al parecer surtió el efecto esperado. Impulsados por unos remos cortos tipo Kayak acoplados a los costados de las balsas,  remaron sin contratiempos durante toda la madrugada. El propósito era alejarse lo más posible de la orilla. </p>
+
+<p style="text-align: justify;">En la avanzada mañana del viernes se encontraban bien lejos. Mar adentro disfrutaban los navegantes de una plácida navegación sin haber sido detectados por los guardas fronteras y sin la temida aparición de los vientos cuaresmales. Corrientes de aire propios de la época del año que suelen provocar fuertes marejadas y terribles tormentas. Eventos que en el mejor de los casos provocan perder el rumbo y muchas veces hasta la vida misma. Cansados por el esfuerzo hecho dormían confiados sobre las rústicas embarcaciones, las cuales guiadas por las corrientes marinas se desplazaban rumbo norte para beneplácito de los improvisados navegantes.</p>
+
+<p style="text-align: justify;">Pronto cambiaria el panorama. A la hora en que según reza el refrán cubano "mataron a Lola"*, el calor que los azotaba era asfixiante, mezcla del vapor que desprendía el salitre de las calientes aguas y de un cielo despejado desde donde el sol, parecía lanzar rayos de fuego. Una fuerte explosión hizo despertar a uno de los soñolientos navegantes. Atónito observó como  su compañero de travesía volaba por los aires al reventar la cámara para neumáticos donde viajaba. Si aquella escena le causó un pánico indescriptible, la próxima secuencia justificaría el enloquecimiento instantáneo del más curtido de los marineros. Se disponía nuestro protagonista, ir en auxilio del compañero accidentado cuando descubrió que una hambrienta manada de la más temida y sanguinaria fiera de los mares, perseguía a la caravana de jóvenes sin que estos percibieran el peligro que los acechaba. Al producirse el estruendo los tiburones lejos de dispersarse se precipitaron al lugar. Esperaron por el descenso del infortunado al que prácticamente no permitieron amerizar. Lo atacaron con increíble ferocidad y en cuestión de segundos destrozaron sin misericordia alguna,  el cálido cuerpo del soñador balsero, quien perdió la vida sin haber despertado del todo para vivir su última y más horrorosa pesadilla.</p>
+
+<p style="text-align: justify;">Desde la corta distancia en que despavorido y perplejo presenció el desgarrador espectáculo, el otro chico entró en estado de pánico. A punto de colapsar, gritar, patear, pedilr auxilio u otra histérica y comprensiva reacción, lo sorprendió una arqueada de vómito agrio que tragó por puro instinto de sobre vivencia. Evitó así que de caer el contenido de su estómago al agua, los gigantescos mamíferos lo percibieron y agregaran al sangriento festín. Perdió el conocimiento por el terror experimentado como si dios hubiera intervinido para prevenir una demencia segura. Quedó inconscientemente acurrucado dentro del hueco que se forma en el centro de los neumáticos cuando éstos se inflan. Por suerte el fondo de la misma estaba protegido por una madera resistente y de igual diámetro que su circunferencia total, lo que se hace para proporcionar mayor seguridad al tripulante.</p>
+
+<p style="text-align: justify;">No recobraría la razón el desmayado hasta que al desaparecer la luz solar lo sorprendió la tormenta que lo obligara a amarrarse a la balsa. Para ello utilizó los pedazos de soga de henequén llevadas con ese propósito. Constituyó la única y desesperada medida para no sucumbir a las inmensas y continúas olas que lo azotaron hasta poco antes de expirar la segunda noche del trágico trayecto. </p>
+
+<p style="text-align: justify;">En la soledad del oscuro y ya calmado mar, rememoró los acontecimientos que culminaron con la cruel masacre de su acompañante. Luego de una larga meditación y temiendo la posibilidad que se repitiera el sanguinario un hecho en su persona, consideró la variante de regresar. Era consciente de que al continuar sólo, disminuían las probabilidades de culminar con éxito el recorrido. La idea del retorno ganaría peso tras realizar una complicada ojeada a los insumos y materiales recopilados para el viaje. Excepto unos trozos de galletas y algo de agua mezclada con sales de rehidratación, la tormenta se lo llevó todo. Las pérdidas también incluían los remos y la brújula, preciado instrumento que le indicaba el rumbo y constituía el obsequio de uno de sus hermanos previo a la cita con el destino. A la deriva decepcionado y adolorido engulló los restos de galletas, bebiendo algo del preciado líquido hidratante. Logró dormirse en la oscuridad de la más triste y desgarradora madrugada que había experimentado en su corta existencia.</p>
+
+<p style="text-align: justify;">En el amanecer del sábado salpicaduras de gotas de aguas producidas por otra manada le hicieron despertar sobresaltado. Para su tranquilidad se trataba de alborotadores y amigables delfines. El acompañamiento de los simpáticos animalitos, aunque duró todo el día no llegó a borrar los horribles momentos vividos durante la jornada anterior, sin embargo se tranquilizó un poco atento a los saltos, danzas y sonidos de los mamíferos. Por la noche en la soledad del frío mar y con el desconsuelo de haber perdido al entrañable acompañante de celda y travesía, reflexionó con mayor detenimiento acerca de los recientes sucesos. La muerte en la que nunca había pensado se había mostrado en una de sus peores facetas y comprendió que las posibilidades de sobrevivir eran muy pocas. El resto de la velada a pesar de exhibir todavía un cielo borroso, transcurrió sin incidentes que alterasen la paz nocturnal.</p>
+
+<p style="text-align: justify;">La mañana del domingo revelaba a los ojos del improvisado tripulante un hermoso paisaje marino. El mar tibio, sereno y transparente motivó al joven que se mostró más dispuesto a reanudar el viaje. Después de consagrar un cálido pensamiento al fallecido amigo, enjuagó las lágrimas de despedida y desayunó las últimas migas de galletas. Las acompañó con todo el potable líquido que aún existía, como si presintiera cercano el fin de la aventura. Cuan gladiador que enfrenta cruenta batalla vocifero el tradicional grito de guerra cubano:</p>
+<p style="text-align: justify;">-¡Pingaaaaaaaaaaaaaaaaaa!- *</p>
+<p style="text-align: justify;">Descargó un manotazo sobre la superficie del apacible mar, con tal fuerza que el ruido del impacto hubiera resultado suficiente para ahuyentar hasta a los mismísimos depredadores que dieron cuenta de la vida amiga. Sin importar el ardor que le producían las llagas en las quemadas piernas al entrar en contacto con el agua salada, comenzó a remar con renovado y esperanzador ímpetu. Utilizaba ahora los brazos como remos,  propulsados estos por las patas de ranas que le proporcionaban más daño que beneficios. Olvidando el dolor pero con la fe intacta en Díos, remó seguro de que este lo guiaba hacia el objetivo propuesto.</p>
+
+<p style="text-align: justify;">Cerca del mediodía se detuvo totalmente desfallecido. El descomunal esfuerzo realizado, la falta de alimentos y agua, así como los efectos del sol comenzaron a pasarle factura a un cuerpo y alma ya resentidos. Adentrada la tarde desorientado e irrazonable, comenzó a alucinar. Murmullos provenientes de las profundidades de un mar todavía apacible y más transparente aún, invadieron el calenturiento cerebro del navegante. En el desvariar de su razonamiento emergieron del mar peces de maravillosos colores, saltando y dando vueltas alrededor del navío. Luego metamorfoseados en personas ahogándose o siendo destripadas por extraños seres marinos, semejantes a los monstruos mitológicos que poblaban los mares en la antigüedad, terminó por enloquecer. La porfía entre razón y locura pugnaban por mantenerlo a bordo o arrojarse al mar en salvación de las imaginarias víctimas. Las que en señal de auxilio extendían sus brazos suplicando ayuda. Para mayor angustia, visualizó entre el conglomerado de figuras sufrientes, la imagen del amigo descuartizado por los tiburones. El asesinado con siniestra sonrisa desdibujada en el desfigurado rostro, le reclamaba insistentemente su presencia en el abismo marítimo donde agonizaba.</p>
+
+<p style="text-align: justify;">Despojándose de la protectora camisa blanca que lo resguardaba de las inclemencias del clima y descalzándose de las dañinas patas de rana, se dispuso a arrojarse al mar. El reflejo de una luz no proveniente en esta ocasión de las alturas lo cegó, haciéndole perder el equilibrio. Extenuado física y mentalmente, incapaz de mantenerse en pie por sus propios medios y de discernir entre la realidad y la fantasía, se desplomó. Quedó expuesto de cara al sol sobre la vieja cámara de neumáticos que le sirviera de seguro sostén. Maltratada en exceso por el medio hostil durante los días de travesía, la frágil embarcación comenzó a desinflarse y "hacer agua" rápidamente. </p>
+<p style="text-align: justify;">Ya sin fuerzas y antes de comenzar a hundirse junto con la endeble balsa, el desdichado muchacho distinguió a lo lejos un barco. Se trataba del buque norteamericano que usualmente merodeaba en aguas internacionales próximo a las costas cubanas. Barco que resultó la salvación de muchos hombres, mujeres, niños y ancianos durante los años en que los cubanos eran considerados por las leyes de ese país, como una especie diferente y especial de emigrantes. Quienes en esa época lograban alcanzarlo salvaban sus vidas, sueños de un futuro mejor y obtenían la residencia del país más poderoso del mundo. Infortunadamente la distancia entre salvadores y agonizante era mucha. Mientras la nave se aproximaba a máxima velocidad, continuaba inexorable el descenso a las profundidades del moribundo cuerpo. Rendido a su suerte era incapaz el muchacho de realizar el menor de los esfuerzos para revertir la situación.</p>
+
+<p style="text-align: justify;">No alcanzó la embarcación norteamericana llegar a tiempo al lugar donde habían divisado la figura erguida sobre lo que asemejaba ser una rústica balsa. Cuando los marines americanos finalmente arribaron al lugar exacto del avistamiento, solo atinaron a observar desconsoladamente, como se hundía en las profundidades del mar un cuerpo aparentemente joven y vigoroso. A pesar del esfuerzo realizado por más de uno, sumergidos en desesperado intento de rescate, no fue posible recuperar el cuerpo. </p>
+<p style="text-align: justify;">Recibió el Padre al ahogado, exclamando en su idioma de fe y amor: </p>
+<p style="text-align: justify;">-¡Hijo mío! Tuyo es el reino de los cielos. ¡Amén!-.</p>
+<p style="text-align: justify;">
+    ¡Amén! —respondieron al unísono las silentes voces de los miles de cadáveres 
+    que yacen en el fondo del mar del Estrecho de la Florida.
+  </p>
+
+  <p><strong>Fin.</strong></p>
+
+  <p>
+    Esta historia forma parte del libro 
+    <strong>"Cuentos de suspense, amor y muerte"</strong> 
+    de Ricardo Hernández Rodríguez:<br>
+    <a href="https://www.amazon.com/dp/B0DV2FX2FV" target="_blank">Ver en Amazon</a>
+  </p>
+
+  <p style="margin-top:20px; text-align:center;">
+  
+  <a href="#comentarios" class="enlace-comentarios">Tú opinión es importante. Deja un comentario</a>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+
+<!-- SECCIÓN COMENTARIOS -->
+<div id="comentarios" class="tab-content">
+  <h2>Comentarios</h2>
+  Para comentar no es obligatorio poner el correo electrónico, es opcional. Reply= Responder. Comentar.
+  <!-- Cusdis en español -->
+  <div id="cusdis_thread"
+       data-host="https://cusdis.com"
+       data-app-id="75427542-5fae-4aac-b8a5-801e82606b2c"
+       data-page-id="ricardo-letras"
+       data-page-url="https://ricardo-letras.vercel.app"
+       data-page-title="Ricardo Hernández Letras"
+       data-lang="es">
+  </div>
+  <button class="boton-volver" onclick="volverPortada()">Volver a la portada</button>
+</div>
+
+<!-- SECCIÓN CONTACTO -->
+<div id="contacto" class="tab-content">
+  <h2>Contacto</h2>
+  <p>
+    Si deseas comunicarte conmigo, escribe a: 
+    <a href="mailto:ricardohernandezletras@gmail.com">
+      ricardohernandezletras@gmail.com
+    </a>
+  </p>
+  <button class="boton-volver" onclick="volverPortada()">Volver a la portada</button>
+</div>
+<!-- Script Cusdis -->
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+
+    const seccion = document.getElementById(tabId);
+    if (seccion) seccion.classList.add('active');
+
+    const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+    if (boton) boton.classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function volverArriba() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function volverPortada() {
+    document.getElementById('main-nav').style.display = 'none';
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelector('.hero').style.display = 'flex';
+    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTab('comentarios');
+        document.getElementById('comentarios').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+</script>
+<!-- SCRIPTS -->
+<script>
+  function entrarSitio() {
+    document.querySelector('.hero').style.display = 'none';
+    document.getElementById('main-nav').style.display = 'block';
+    showTab('biografia'); // inicia con Biografía
+  }
+
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+    const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+    if (boton) boton.classList.add('active');
+
+    const seccion = document.getElementById(tabId);
+    if (seccion) seccion.classList.add('active');
+  }
+
+  // Volver al inicio de la página
+  function volverArriba() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Volver a la portada (oculta menú y secciones)
+  function volverPortada() {
+    document.getElementById('main-nav').style.display = 'none';
+    document.querySelectorAll('.tab-content').forEach(sec => sec.classList.remove('active'));
+    document.querySelector('.hero').style.display = 'flex';
+    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Clave secreta
+  function mostrarSecreto() {
+    const clave = prompt("Introduce la clave para acceder:");
+    if (clave === "clave-secreta-123") {
+      showTab('comentarios');
+    } else {
+      alert("Clave incorrecta.");
+    }
+  }
+
+  // Enlaces directos a comentarios
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTab('comentarios');
+        document.getElementById('comentarios').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+</script>
+
+<!-- Script Cusdis en español -->
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  window.CUSDIS_LOCALE = {
+    powered_by: "Comentarios con Cusdis",
+    post_comment: "Publicar comentario",
+    loading: "Cargando...",
+    email: "Correo electrónico",
+    nickname: "Nombre",
+    reply: "Responder",
+    cancel: "Cancelar",
+    content: "Comentario",
+    submit: "Enviar",
+    submitting: "Enviando...",
+    approved: "Tu comentario está pendiente de aprobación",
+    error: "Error, inténtalo de nuevo",
+    no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
+  };
+</script>
+</body>
+</html>  
 
