@@ -23,47 +23,47 @@
   <meta name="twitter:title" content="Ricardo Hernández Letras - Poemas y Cuentos">
   <meta name="twitter:description" content="Descubre poemas y cuentos de Ricardo Hernández Rodríguez.">
   <meta name="twitter:image" content="https://ricardo-letras.vercel.app/portada-nueva-2025-v2.png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ricardo Hernández Rodríguez",
-  "alternateName": "Rihero",
-  "url": "https://ricardo-letras.vercel.app",
-  "image": "https://ricardo-letras.vercel.app/foto-default.jpg",
-  "sameAs": [
-    "https://www.facebook.com/tu-perfil",
-    "https://www.instagram.com/tu-perfil",
-    "https://twitter.com/tu-perfil"
-  ],
-  "jobTitle": "Escritor y poeta",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Ricardo Hernández Letras"
-  },
-  "alumniOf": "Instituto Superior Pedagógico Enrique José Varona",
-  "knowsAbout": ["poesía", "cuentos", "literatura cubana", "suspense", "amor"],
-  "author": [
-    {
-      "@type": "Book",
-      "name": "Versos Callejeros. Las cosas que amo",
-      "publisher": "Amazon",
-      "datePublished": "2023"
-    },
-    {
-      "@type": "Book",
-      "name": "Cuentos de suspense, amor y muerte",
-      "publisher": "Amazon",
-      "datePublished": "2024"
-    }
-  ]
-}
-</script>
+
+  <!-- Estilos principales -->
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
+    }
+
+    /* PORTADA */
+    .hero {
+      background-image: url('portada-nueva-2025-v2.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    #contenedor-flotante {
+      position: absolute;
+      top: 4%;
+      left: 89%;
+      width: 90px;
+      height: 95px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      z-index: 999;
+    }
+
+    #foto-flotante {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
     }
 
     .marquee-container {
@@ -93,20 +93,7 @@
       100% { transform: translateX(0); }
     }
 
-   .hero {
-  background-image: url('portada-nueva-2025-v2.png'); /* nombre exacto */
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-   }
-
+    /* BOTÓN ADOQUÍN */
     .boton-adoquin {
       position: absolute;
       top: 92%;
@@ -131,176 +118,14 @@
       transform: translate(-50%, -50%) scale(1.05);
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
     }
-
-    #contenedor-flotante {
-      position: absolute;
-      top: 4%;
-      left: 89%;
-      width: 90px;
-      height: 95px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid white;
-      z-index: 999;
-    }
-
-    #foto-flotante {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-    }
-
-    nav {
-      text-align: center;
-      background-color: #003366;
-      padding: 1em;
-    }
-
-    .tab-button {
-      background-color: #003366;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1em;
-    }
-
-    .tab-button:hover {
-      background-color: #005599;
-    }
-
-    .tab-button.active {
-      background-color: #cc0000;
-    }
-
-    .tab-content {
-      display: none;
-      padding: 2em;
-      max-width: 900px;
-      margin: 40px auto;
-      line-height: 1.8;
-      color: #333;
-      background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      animation: fadeIn 0.6s ease-in-out;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Botón invisible (oculto hasta instalar contador) */
-    .glow-button {
-      display: none;
-    }
-
-    .boton-volver {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 20px;
-      background-color: #5c3c2b;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.9em;
-      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .boton-volver:hover {
-      background-color: #3e291f;
-    }
-
-    /* Letras bonitas en encabezados */
-    .tab-content h2, 
-    .tab-content h3 {
-      font-family: 'Georgia', serif !important;
-      font-weight: normal;
-      letter-spacing: 0.5px;
-    }
-
-    .tab-content h2::after {
-      content: "";
-      display: block;
-      width: 70px;
-      height: 4px;
-      margin: 12px auto 0 auto;
-      border-radius: 2px;
-    }
-
-    /* Colores por sección */
-    #biografia h2 { color: #003366; }
-    #biografia h2::after { background: #003366; }
-
-    #poemas h2 { color: #5c3c2b; }
-    #poemas h2::after { background: #5c3c2b; }
-
-    #cuentos h2 { color: #cc0000; }
-    #cuentos h2::after { background: #cc0000; }
-
-    #comentarios h2 { color: #006633; }
-    #comentarios h2::after { background: #006633; }
-
-    #contacto h2 { color: #884dff; }
-    #contacto h2::after { background: #884dff; }
   </style>
 </head>
 <body>
 
-<!-- Encabezado principal oculto para SEO -->
+<!-- Encabezado oculto para SEO -->
 <h1 style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
   Ricardo Hernández Rodríguez - Poemas y Cuentos
 </h1>
-
-<style>
-  .hero {
-    background-image: url('portada-nueva-2025-v2.png'); /* Cambiado */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Botón adoquín sigue igual */
-  .boton-adoquin {
-    position: absolute;
-    top: 92%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 160px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    z-index: 10;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  }
-
-  .boton-adoquin img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-  }
-
-  .boton-adoquin:hover {
-    transform: translate(-50%, -50%) scale(1.05);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
-  }
-</style>
 
 <!-- PORTADA -->
 <div class="hero">
@@ -319,7 +144,18 @@
   </button>
 </div>
 
+<!-- Función JS para entrar al sitio -->
+<script>
+  function entrarSitio() {
+    const hero = document.querySelector('.hero');
+    hero.style.display = 'none';
+    const nav = document.getElementById('main-nav');
+    if(nav) nav.style.display = 'block';
+  }
+</script>
 
+</body>
+</html>
 <!-- MENÚ DE NAVEGACIÓN -->
 <nav id="main-nav" style="display: none;">
   <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
