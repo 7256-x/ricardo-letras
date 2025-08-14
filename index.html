@@ -260,6 +260,48 @@
   Ricardo Hernández Rodríguez - Poemas y Cuentos
 </h1>
 
+<style>
+  .hero {
+    background-image: url('portada-nueva-2025-v2.png'); /* Cambiado */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Botón adoquín sigue igual */
+  .boton-adoquin {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .boton-adoquin img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .boton-adoquin:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+  }
+</style>
+
 <!-- PORTADA -->
 <div class="hero">
   <div id="contenedor-flotante">
@@ -276,7 +318,6 @@
     <img src="adoquin-boton.png" alt="Entrar al sitio" />
   </button>
 </div>
-
 <!-- MENÚ DE NAVEGACIÓN -->
 <nav id="main-nav" style="display: none;">
   <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
