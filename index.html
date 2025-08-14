@@ -1,3 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ricardo Hernández Letras</title>
+  
+  <!-- SEO Básico -->
+  <meta name="description" content="Ricardo Hernández Rodríguez - Sitio literario con poemas, cuentos y reflexiones. Autor de 'Versos Callejeros' y 'Cuentos de suspense, amor y muerte'.">
+  <meta name="keywords" content="poesía cubana, cuentos de suspense, literatura cubana, Ricardo Hernández Rodríguez, poemas de amor, cuentos de muerte">
+  <meta name="author" content="Ricardo Hernández Rodríguez">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ricardo Hernández Letras - Poemas y Cuentos">
+  <meta property="og:description" content="Descubre poemas y cuentos de Ricardo Hernández Rodríguez. Literatura con emoción y verdad.">
+  <meta property="og:image" content="portada-nueva.png">
+  <meta property="og:url" content="https://ricardo-letras.vercel.app">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ricardo Hernández Letras - Poemas y Cuentos">
+  <meta name="twitter:description" content="Descubre poemas y cuentos de Ricardo Hernández Rodríguez.">
+  <meta name="twitter:image" content="portada-nueva.png">
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ricardo Hernández Rodríguez",
+    "alternateName": "Rihero",
+    "url": "https://ricardo-letras.vercel.app",
+    "image": "foto-default.jpg",
+    "sameAs": [
+      "https://www.facebook.com/tu-perfil",
+      "https://www.instagram.com/tu-perfil",
+      "https://twitter.com/tu-perfil"
+    ],
+    "jobTitle": "Escritor y poeta",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ricardo Hernández Letras"
+    },
+    "alumniOf": "Instituto Superior Pedagógico Enrique José Varona",
+    "knowsAbout": ["poesía", "cuentos", "literatura cubana", "suspense", "amor"],
+    "author": [
+      {
+        "@type": "Book",
+        "name": "Versos Callejeros. Las cosas que amo",
+        "publisher": "Amazon",
+        "datePublished": "2023"
+      },
+      {
+        "@type": "Book",
+        "name": "Cuentos de suspense, amor y muerte",
+        "publisher": "Amazon",
+        "datePublished": "2024"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      color: white;
+      font-size: 0.9em;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px 0;
+      animation: scroll-once 10s ease-out forwards;
+    }
+
+    @keyframes scroll-once {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .hero {
+      background-image: url('portada-nueva.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .boton-adoquin {
+      position: absolute;
+      top: 92%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 160px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .boton-adoquin img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .boton-adoquin:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    }
+
+    #contenedor-flotante {
+      position: absolute;
+      top: 4%;
+      left: 89%;
+      width: 90px;
+      height: 95px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      z-index: 999;
+    }
+
+    #foto-flotante {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+  Ricardo Hernández Rodríguez - Poemas y Cuentos
+</h1>
+
+<div class="hero">
+  <div id="contenedor-flotante">
+    <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+  </div>
+
+  <div class="marquee-container">
+    <div class="marquee-text">
+      "Bienvenido a mi sitio Web literario". 📚 En su estreno presentamos: Poema "Se cae La Habana" y el cuento: "Balseros".
+    </div>
+  </div>
+
+  <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio">
+    <img src="adoquin-boton.png" alt="Entrar al sitio" />
+  </button>
+</div>
 <!-- MENÚ DE NAVEGACIÓN -->
 <nav id="main-nav" style="display: none;">
   <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
