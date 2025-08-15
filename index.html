@@ -102,191 +102,130 @@
   </script>
     <!-- ===== Fin Bloque SEO ===== --> 
 
-  <!-- Preload de la imagen de portada -->
-  <link rel="preload" as="image" href="/portada-nueva.png">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-    }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
 
-    .marquee-container {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      pointer-events: none;
-    }
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
 
-    .marquee-text {
-      display: inline-block;
-      padding-left: 100%;
-      color: white;
-      font-size: 0.9em;
-      font-style: italic;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 5px 0;
-      animation: scroll-once 10s ease-out forwards;
-    }
+  .marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    color: white;
+    font-size: 0.9em;
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 0;
+    animation: scroll-once 10s ease-out forwards;
+  }
 
-    @keyframes scroll-once {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(0); }
-    }
+  @keyframes scroll-once {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+  }
 
-    /* Portada */
-    <div style="text-align: center; margin-top: 20px;">
-  <img src="portada-nueva.png" alt="Portada del sitio" style="max-width: 100%; height: auto;">
-</div>
-    .hero {
-      background-image: url('/portada-nueva.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      position: relative;
-      z-index: 1;
-    }
+  /* Portada */
+  .hero {
+    background-image: url('/portada-nueva.png'); /* archivo en la raíz */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+  }
 
-    .boton-adoquin {
-      position: absolute;
-      top: 92%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 160px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      z-index: 10;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
+  .boton-adoquin {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
 
-    .boton-adoquin img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-    }
+  .boton-adoquin img { width: 100%; height: auto; border-radius: 12px; }
+  .boton-adoquin:hover { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6); }
 
-    .boton-adoquin:hover {
-      transform: translate(-50%, -50%) scale(1.05);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
-    }
+  #contenedor-flotante {
+    position: absolute;
+    top: 4%;
+    left: 89%;
+    width: 90px;
+    height: 95px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    z-index: 999;
+  }
 
-    #contenedor-flotante {
-      position: absolute;
-      top: 4%;
-      left: 89%;
-      width: 90px;
-      height: 95px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid white;
-      z-index: 999;
-    }
+  #foto-flotante { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 
-    #foto-flotante {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-    }
+  nav { text-align: center; background-color: #003366; padding: 1em; }
 
-    nav {
-      text-align: center;
-      background-color: #003366;
-      padding: 1em;
-    }
+  .tab-button {
+    background-color: #003366; color: white; border: none;
+    padding: 10px 16px; cursor: pointer; font-weight: bold; font-size: 1em;
+  }
+  .tab-button:hover { background-color: #005599; }
+  .tab-button.active { background-color: #cc0000; }
 
-    .tab-button {
-      background-color: #003366;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1em;
-    }
+  .tab-content {
+    display: none; padding: 2em; max-width: 900px; margin: 40px auto;
+    line-height: 1.8; color: #333; background: #ffffff; border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); animation: fadeIn 0.6s ease-in-out;
+  }
+  .tab-content.active { display: block; }
 
-    .tab-button:hover { background-color: #005599; }
-    .tab-button.active { background-color: #cc0000; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 
-    .tab-content {
-      display: none;
-      padding: 2em;
-      max-width: 900px;
-      margin: 40px auto;
-      line-height: 1.8;
-      color: #333;
-      background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      animation: fadeIn 0.6s ease-in-out;
-    }
+  .glow-button { display: none; }
 
-    .tab-content.active { display: block; }
+  .boton-volver {
+    display: inline-block; margin-top: 30px; padding: 10px 20px;
+    background-color: #5c3c2b; color: white; border: none; border-radius: 6px;
+    cursor: pointer; font-size: 0.9em; box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  }
+  .boton-volver:hover { background-color: #3e291f; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .glow-button { display: none; }
-
-    .boton-volver {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 20px;
-      background-color: #5c3c2b;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.9em;
-      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .boton-volver:hover { background-color: #3e291f; }
-
-    .tab-content h2, .tab-content h3 {
-      font-family: 'Georgia', serif !important;
-      font-weight: normal;
-      letter-spacing: 0.5px;
-    }
-
-    .tab-content h2::after {
-      content: "";
-      display: block;
-      width: 70px;
-      height: 4px;
-      margin: 12px auto 0;
-      border-radius: 2px;
-    }
-
-    #biografia h2 { color: #003366; }
-    #biografia h2::after { background: #003366; }
-    #poemas h2 { color: #5c3c2b; }
-    #poemas h2::after { background: #5c3c2b; }
-    #cuentos h2 { color: #cc0000; }
-    #cuentos h2::after { background: #cc0000; }
-    #comentarios h2 { color: #006633; }
-    #comentarios h2::after { background: #006633; }
-    #contacto h2 { color: #884dff; }
-    #contacto h2::after { background: #884dff; }
+  .tab-content h2, .tab-content h3 {
+    font-family: 'Georgia', serif !important; font-weight: normal; letter-spacing: 0.5px;
+  }
+  .tab-content h2::after {
+    content: ""; display: block; width: 70px; height: 4px; margin: 12px auto 0; border-radius: 2px;
+  }
+  #biografia h2 { color: #003366; }   #biografia h2::after { background: #003366; }
+  #poemas h2 { color: #5c3c2b; }      #poemas h2::after { background: #5c3c2b; }
+  #cuentos h2 { color: #cc0000; }     #cuentos h2::after { background: #cc0000; }
+  #comentarios h2 { color: #006633; } #comentarios h2::after { background: #006633; }
+  #contacto h2 { color: #884dff; }    #contacto h2::after { background: #884dff; }
   </style>
-</head>
-<body>
-
-<!-- Encabezado principal oculto para SEO -->
+  <!-- Encabezado principal oculto para SEO -->
 <h1 style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
   Ricardo Hernández Rodríguez - Poemas y Cuentos
 </h1>
