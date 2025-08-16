@@ -94,18 +94,28 @@
     }
 
     .hero {
-      background-image: url('portada-nueva.png');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      position: relative;
-      z-index: 1;
-    }
+    body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.portada {
+  background-image: url("portada-nueva-2025.jpg");
+  background-size: cover;        /* Cubre toda la pantalla */
+  background-position: center;   /* Centrada */
+  background-repeat: no-repeat;
+  background-attachment: fixed;  /* Se queda fija */
+  height: 100vh;                 /* Ocupa toda la altura visible */
+  width: 100%;
+}
+
+/* 🔧 Ajuste especial para móviles (iOS/Android) */
+@media (max-width: 768px) {
+  .portada {
+    background-attachment: scroll; /* Evita errores de "zoom raro" en móviles */
+  }
+}
 
     .boton-adoquin {
       position: absolute;
