@@ -277,7 +277,15 @@
   </button>
 </div>
 
-
+<!-- MENÚ DE NAVEGACIÓN -->
+<nav id="main-nav" style="display: none;">
+  <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
+  <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
+  <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
+  <button class="tab-button" onclick="showTab('tienda')">Tienda</button> <!-- NUEVO -->
+  <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+  <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+</nav>
 
 <!-- SECCIÓN BIOGRAFÍA -->
 <div id="biografia" class="tab-content">
@@ -374,7 +382,40 @@ El miedo y lo desconocido se entrelazan en una carrera vertiginosa que atraviesa
    <a href="#comentarios" class="enlace-comentarios">Tú opinión es importante. Deja un comentario</a>
   <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
 </div>
+<!-- SECCIÓN TIENDA -->
+<div id="tienda" class="tab-content">
+  <h2>Tienda</h2>
+  <p style="text-align: justify;">
+    Aquí puedes adquirir mis libros en formato PDF de manera directa y segura a través de Gumroad.
+    Una vez realizada la compra, recibirás el archivo automáticamente en tu correo electrónico 📧.
+  </p>
 
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+    <!-- Producto 1 -->
+    <div style="background:#f1f1f1; padding:20px; border-radius:12px; width:250px; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
+      <img src="portada-versos.jpg" alt="Versos Callejeros" style="max-width:100%; border-radius:8px;">
+      <h3 style="margin:15px 0 10px 0;">Versos Callejeros</h3>
+      <p style="font-style:italic; font-size:0.9em;">Las cosas que amo</p>
+      <a href="https://ricardo.gumroad.com/l/versos" target="_blank" 
+         style="display:inline-block; margin-top:10px; padding:10px 16px; background:#003366; color:white; text-decoration:none; border-radius:8px;">
+         Comprar PDF
+      </a>
+    </div>
+
+    <!-- Producto 2 -->
+    <div style="background:#f1f1f1; padding:20px; border-radius:12px; width:250px; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
+      <img src="portada-cuentos.jpg" alt="Cuentos de suspense" style="max-width:100%; border-radius:8px;">
+      <h3 style="margin:15px 0 10px 0;">Cuentos de suspense</h3>
+      <p style="font-style:italic; font-size:0.9em;">Amor y muerte</p>
+      <a href="https://ricardo.gumroad.com/l/cuentos" target="_blank" 
+         style="display:inline-block; margin-top:10px; padding:10px 16px; background:#cc0000; color:white; text-decoration:none; border-radius:8px;">
+         Comprar PDF
+      </a>
+    </div>
+  </div>
+
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
 <!-- SECCIÓN COMENTARIOS -->
 <div id="comentarios" class="tab-content">
   <h2>Comentarios</h2>
