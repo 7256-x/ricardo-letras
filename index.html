@@ -378,6 +378,7 @@ la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
   <p style="margin-top:20px; text-align:center;">
 
 <a href="#comentarios" class="enlace-comentarios">Tú opinión es importante. Deja un comentario</a>
+    <a href="#comentarios" onclick="recargarCusdis()">Comentarios</a>
   <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
 </div>
   
@@ -419,7 +420,7 @@ la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
  <!-- SECCIÓN COMENTARIOS -->
 <div id="comentarios" class="tab-content">
   <h2>Comentarios</h2>
-  <!-- Cusdis en español -->
+  <!-- Contenedor de Cusdis -->
   <div id="cusdis_thread"
        data-host="https://cusdis.com"
        data-app-id="75427542-5fae-4aac-b8a5-801e82606b2c"
@@ -428,7 +429,20 @@ la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
        data-page-title="Ricardo Hernández Letras"
        data-lang="es">
   </div>
-<button class="boton-volver" onclick="volverPortada()">Volver a la portada</button>
+
+  <!-- Script de Cusdis -->
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+  <!-- Script para recargar Cusdis al mostrar la pestaña -->
+  <script>
+    function recargarCusdis() {
+      if (window.CUSDIS) {
+        window.CUSDIS.renderTo('#cusdis_thread');
+      }
+    }
+  </script>
+</div>
+  <button class="boton-volver" onclick="volverPortada()">Volver a la portada</button>
   
   <!-- Script necesario para mostrar los cuadros -->
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
