@@ -6,14 +6,4 @@
       "destination": "https://ricardohernandezletras.com/$1",
       "permanent": true
     }
-  ],
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
-}
+
