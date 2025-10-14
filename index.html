@@ -259,21 +259,6 @@
  
   </style>
 </head>
-
-function showTab(tabName, element) {
-  const tabs = document.querySelectorAll('.tab-content');
-  tabs.forEach(tab => tab.style.display = 'none');
-
-  const buttons = document.querySelectorAll('.tab-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-
-  // Muestra la sección elegida
-  const selected = document.getElementById(tabName);
-  if (selected) selected.style.display = 'block';
-
-  // Marca el botón actual como activo
-  if (element) element.classList.add('active');
-}
 <body>
 
 <!-- Encabezado principal oculto para SEO -->
