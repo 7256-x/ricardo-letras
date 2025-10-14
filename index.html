@@ -473,7 +473,6 @@ la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
   <button class="boton-volver" onclick="volverPortada()">Volver a la portada</button>
 </div>
 
-  
 <!-- 🎭 NUEVA SECCIÓN INVITADOS -->
 <section id="invitados" class="tab-content" style="display:none; padding:40px; text-align:center; background-color:#f4f4f4;">
   <h2 style="font-size:2em; color:#002b5b; margin-bottom:10px;">Invitados</h2>
@@ -482,7 +481,8 @@ la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
     Voces que enriquecen este espacio con su sensibilidad y su mirada propia.
   </p>
 
-  <div style="background-color:#ffffff; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; max-width:800px; margin:0 auto; text-align:justify;">
+  <div style="background-color:#ffffff; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1);
+padding:25px; max-width:800px; margin:0 auto; text-align:justify;">
     <h3 style="color:#002b5b; text-align:center;">Título del escrito</h3>
     <p style="text-align:center; font-weight:bold; color:#444;">¡Próximamente!: Julio A. Cumberbacht Padrón</p>
 
@@ -490,8 +490,7 @@ la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
 
     <hr style="margin:20px 0; border:none; border-top:1px solid #ccc;">
     <p>
-      "Julio Alberto Cumberbacht Padrón, amigo y maestro. Escritor, poeta, músico y compositor. Licenciado en Educación en la especialidad de español y literatura. Profesor de idioma inglés. Ha sido premiado en concursos literarios. En el año 2002, Julio Alberto Cumberbacht creó la tertulia 'Lira y Verso' en la librería Ateneo Cervantes de La Habana.  
-      La principal fuente de inspiración de este creador es la MUJER."
+      "Julio Alberto Cumberbacht Padrón, amigo y maestro. Escritor, poeta, músico y compositor..."
     </p>
   </div>
 
@@ -502,108 +501,51 @@ la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
   </p>
 </section>
 
-<!-- ⚙️ SCRIPT PARA CAMBIO DE SECCIONES -->
+<!-- ⚙️ SCRIPT PARA CAMBIO DE SECCIONES CON FADE-IN -->
+<style>
+  .tab-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+  }
+  .tab-content.visible {
+    display: block;
+    opacity: 1;
+  }
+</style>
+
 <script>
   function showTab(tabName, element) {
-    // Oculta todas las secciones
     const tabs = document.querySelectorAll('.tab-content');
-    tabs.forEach(tab => tab.style.display = 'none');
+    tabs.forEach(tab => {
+      tab.classList.remove('visible');
+      setTimeout(() => tab.style.display = 'none', 300);
+    });
 
-    // Quita la clase "active" de todos los botones
     const buttons = document.querySelectorAll('.tab-button');
     buttons.forEach(btn => btn.classList.remove('active'));
 
-    // Muestra la sección seleccionada
     const selected = document.getElementById(tabName);
-    if (selected) selected.style.display = 'block';
-
-    // Marca el botón actual como activo
-    if (element) element.classList.add('active');
-  }
-</script>
-    
-
- <!-- Script Cusdis -->
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-
-<script>
-  function showTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-
-    const seccion = document.getElementById(tabId);
-    if (seccion) seccion.classList.add('active');
-
-    const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
-    if (boton) boton.classList.add('active');
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function volverArriba() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function volverPortada() {
-    document.getElementById('main-nav').style.display = 'none';
-    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-    document.querySelector('.hero').style.display = 'flex';
-    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.enlace-comentarios').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        showTab('comentarios');
-        document.getElementById('comentarios').scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  });
-</script>
-<!-- SCRIPTS -->
-<script>
-  function entrarSitio() {
-    document.querySelector('.hero').style.display = 'none';
-    document.getElementById('main-nav').style.display = 'block';
-    showTab('biografia'); // inicia con Biografía
-  }
-
-  function showTab(tabId) {
-    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-
-    const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
-    if (boton) boton.classList.add('active');
-
-    const seccion = document.getElementById(tabId);
-    if (seccion) seccion.classList.add('active');
-  }
-
-  // Volver al inicio de la página
-  function volverArriba() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // Volver a la portada (oculta menú y secciones)
-  function volverPortada() {
-    document.getElementById('main-nav').style.display = 'none';
-    document.querySelectorAll('.tab-content').forEach(sec => sec.classList.remove('active'));
-    document.querySelector('.hero').style.display = 'flex';
-    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  // Clave secreta
-  function mostrarSecreto() {
-    const clave = prompt("Introduce la clave para acceder:");
-    if (clave === "clave-secreta-123") {
-      showTab('comentarios');
-    } else {
-      alert("Clave incorrecta.");
+    if (selected) {
+      selected.style.display = 'block';
+      setTimeout(() => selected.classList.add('visible'), 50);
     }
+
+    if (element) element.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Enlaces directos a comentarios
+  function volverArriba() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function volverPortada() {
+    document.getElementById('main-nav').style.display = 'none';
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('visible'));
+    document.querySelector('.hero').style.display = 'flex';
+    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.enlace-comentarios').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -613,26 +555,6 @@ la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
       });
     });
   });
-</script>
-
-<!-- Script Cusdis en español -->
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-<script>
-  window.CUSDIS_LOCALE = {
-    powered_by: "Comentarios con Cusdis",
-    post_comment: "Publicar comentario",
-    loading: "Cargando...",
-    email: "Correo electrónico",
-    nickname: "Nombre",
-    reply: "Responder",
-    cancel: "Cancelar",
-    content: "Comentario",
-    submit: "Enviar",
-    submitting: "Enviando...",
-    approved: "Tu comentario está pendiente de aprobación",
-    error: "Error, inténtalo de nuevo",
-    no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
-  };
 </script>
 </body>
 </html>  
