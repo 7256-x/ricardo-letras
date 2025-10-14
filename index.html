@@ -459,6 +459,116 @@ la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </div>
   
+<!-- ===============================
+     SECCIÓN CONTACTO
+=============================== -->
+<section id="contacto" class="tab-content" style="display:none; padding:40px; text-align:center;">
+  <h2>Contacto</h2>
+  <p>Puedes enviarme un mensaje a: ejemplo@correo.com</p>
+</section>
 
+<!-- ===============================
+     NUEVA SECCIÓN INVITADOS
+=============================== -->
+<section id="invitados" class="tab-content" style="display:none; padding:40px; text-align:center; background-color:#f4f4f4;">
+  <h2 style="font-size:2em; color:#002b5b; margin-bottom:10px;">Invitados</h2>
+  <p style="max-width:700px; margin:0 auto 30px; font-style:italic; color:#333;">
+    Un rincón para compartir las letras de amigos y colegas.  
+    Voces que enriquecen este espacio con su sensibilidad y su mirada propia.
+  </p>
+
+  <div style="background-color:#ffffff; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; max-width:800px; margin:0 auto; text-align:justify;">
+    <h3 style="color:#002b5b; text-align:center;">Título del escrito</h3>
+    <p style="text-align:center; font-weight:bold; color:#444;">¡Próximamente!: Julio A. Cumberbacht Padrón</p>
+    <p>Texto completo del escrito del autor invitado.</p>
+    <hr style="margin:20px 0; border:none; border-top:1px solid #ccc;">
+    <p>
+      "Julio Alberto Cumberbacht Padrón, amigo y maestro. Escritor, poeta, músico y compositor. Licenciado en Educación en la especialidad de español y literatura. Profesor de idioma inglés. Ha sido premiado en concursos literarios. En el año 2002, Julio Alberto Cumberbacht creó la tertulia 'Lira y Verso' en la librería Ateneo Cervantes de La Habana.  
+      La principal fuente de inspiración de este creador es la MUJER."
+    </p>
+  </div>
+
+  <p style="margin-top:20px; text-align:center;">
+    <a href="#comentarios" onclick="recargarCusdis()">Comentarios</a>
+    <a href="#comentarios" class="enlace-comentarios">Tu opinión es importante. Deja un comentario</a>
+    <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+  </p>
+</section>
+
+<!-- ===============================
+     ESTILOS PARA TRANSICIÓN
+=============================== -->
+<style>
+  .tab-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+  }
+  .tab-content.visible {
+    display: block;
+    opacity: 1;
+  }
+</style>
+
+<!-- ===============================
+     SCRIPT DE PESTAÑAS
+=============================== -->
+<script>
+  function showTab(tabName, element) {
+    // Oculta todas las secciones
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+      tab.classList.remove('visible');
+      setTimeout(() => tab.style.display = 'none', 300);
+    });
+
+    // Quita la clase "active" de todos los botones
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Muestra la sección seleccionada con fade-in
+    const selected = document.getElementById(tabName);
+    if (selected) {
+      selected.style.display = 'block';
+      setTimeout(() => selected.classList.add('visible'), 50);
+    }
+
+    // Marca el botón actual como activo
+    if (element) element.classList.add('active');
+
+    // Scroll suave hacia arriba
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function volverArriba() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function volverPortada() {
+    document.getElementById('main-nav').style.display = 'none';
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('visible'));
+    document.querySelector('.hero').style.display = 'flex';
+    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Enlaces que abren la sección de comentarios
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTab('comentarios');
+        document.getElementById('comentarios').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+</script>
+
+<!-- ===============================
+     SCRIPT CUSDIS (OPCIONAL)
+=============================== -->
+<!--
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="TU_APP_ID" data-page-id="pagina-ejemplo" data-page-title="Página de ejemplo" data-page-url="https://tusitio.com"></div>
+-->
 </body>
 </html>  
