@@ -497,6 +497,7 @@ Fin
     });
   });
 </script>
+
 <!-- SCRIPTS -->
 <script>
   function entrarSitio() {
@@ -516,12 +517,10 @@ Fin
     if (seccion) seccion.classList.add('active');
   }
 
-  // Volver al inicio de la página
   function volverArriba() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Volver a la portada (oculta menú y secciones)
   function volverPortada() {
     document.getElementById('main-nav').style.display = 'none';
     document.querySelectorAll('.tab-content').forEach(sec => sec.classList.remove('active'));
@@ -529,18 +528,28 @@ Fin
     document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
   }
 
- <!-- SECCIÓN OCULTA DE ESTADÍSTICAS -->
-<div id="seccion-estadisticas" style="display: none; padding: 2em; max-width: 800px; margin: auto; text-align: center;">
+  // Enlaces directos a comentarios
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTab('comentarios');
+        document.getElementById('comentarios').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+</script>
+
+<!-- SECCIÓN OCULTA DEL CONTADOR -->
+<div id="contador" class="tab-content" style="display: none; text-align:center; padding:2em;">
   <h2>Estadísticas del sitio</h2>
   <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek">000000</div>
   <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
-  <br><a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
-  
+  <br>
+  <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+</div>
 
-<div id="sfcdwym551duqgqzxdkc45w8dc5jy7crqyj"></div> <script type="text/javascript" src=" https://counter1.optistats.ovh/private/counter.js?c=dwym551duqgqzxdkc45w8dc5jy7crqyj&down=async " async></script> <br> https://www.freecounterstat.com Contadores de sitios web</a><noscript> https://www.freecounterstat.com <img src=" https://counter1.optistats.ovh/private/freecounterstat.php?c=dwym551duqgqzxdkc45w8dc5jy7crqyj " border="0" title="Contadores de sitios web" alt="contadores de sitios web"></a></noscript>
-  
-Mostrar texto citado
-  <!-- BOTÓN INVISIBLE DE ACCESO AL CONTADOR DE VISITAS -->
+<!-- BOTÓN INVISIBLE DE ACCESO AL CONTADOR -->
 <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2576/2576-preview.mp3"></audio>
 
 <script>
@@ -556,7 +565,7 @@ Mostrar texto citado
   botonInvisible.style.zIndex = "9999";
   document.body.appendChild(botonInvisible);
 
-  // Al hacer clic en el botón
+  // Al hacer clic
   botonInvisible.addEventListener("click", function() {
     const clickSound = document.getElementById("clickSound");
     clickSound.currentTime = 0;
@@ -566,7 +575,7 @@ Mostrar texto citado
     if (clave === "rcl1982") {
       const contador = document.getElementById("contador");
       if (contador) {
-        contador.style.display = "block"; // mostrar el contador
+        contador.style.display = "block";
         mostrarMensajeAcceso();
         contador.scrollIntoView({ behavior: "smooth" });
       } else {
@@ -602,19 +611,6 @@ Mostrar texto citado
     }, 2000);
   }
 </script>
-  
-</div>
-  // Enlaces directos a comentarios
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.enlace-comentarios').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        showTab('comentarios');
-        document.getElementById('comentarios').scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  });
-</script>
 
 <!-- Script Cusdis en español -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
@@ -634,19 +630,6 @@ Mostrar texto citado
     error: "Error, inténtalo de nuevo",
     no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
   };
- 
 </script>
-  <!-- SECCIÓN OCULTA DEL CONTADOR -->
-<div id="contador" class="tab-content" style="display: none;">
-  <!-- 🔸
-<div id="sfcdwym551duqgqzxdkc45w8dc5jy7crqyj"></div> <script type="text/javascript" src=" https://counter1.optistats.ovh/private/counter.js?c=dwym551duqgqzxdkc45w8dc5jy7crqyj&down=async " async></script> <br> https://www.freecounterstat.com Contadores de sitios web</a><noscript> https://www.freecounterstat.com <img src=" https://counter1.optistats.ovh/private/freecounterstat.php?c=dwym551duqgqzxdkc45w8dc5jy7crqyj " border="0" title="Contadores de sitios web" alt="contadores de sitios web"></a></noscript>
-
-
-Mostrar texto citado
-  -->
-  <a href="https://www.freecounterstat.com" title="contador de visitas">
-    <img src="https://counter11.stat.ovh/private/contadorxyz12345.gif" border="0" alt="contador de visitas" />
-  </a>
-</div>
 </body>
 </html>  
