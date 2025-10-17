@@ -540,15 +540,43 @@ Fin
   });
 </script>
 
-<!-- SECCIÓN OCULTA DEL CONTADOR -->
-<div id="contador" class="tab-content" style="display: none; text-align:center; padding:2em;">
-  <h2>Estadísticas del sitio</h2>
-  <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek">000000</div>
-  <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
-  <br>
-  <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
-</div>
+<!-- CONTADOR DE VISITAS (con exclusión del autor) -->
+<script>
+  const contadorURL = "https://www.freecounterstat.com/count/abc123.js"; // ← reemplaza con tu enlace real
 
+  function getCookie(nombre) {
+    let valor = "; " + document.cookie;
+    let partes = valor.split("; " + nombre + "=");
+    if (partes.length === 2) return partes.pop().split(";").shift();
+  }
+
+  function setCookie(nombre, valor, dias) {
+    const fecha = new Date();
+    fecha.setTime(fecha.getTime() + dias * 24 * 60 * 60 * 1000);
+    document.cookie = `${nombre}=${valor}; expires=${fecha.toUTCString()}; path=/`;
+  }
+
+  if (!getCookie("soyRicardo")) {
+    const esAutor = confirm("¿Eres Ricardo (autor del sitio)?");
+    if (esAutor) {
+      setCookie("soyRicardo", "true", 365);
+      console.log("Contador desactivado para Ricardo.");
+    } else {
+      setCookie("soyRicardo", "false", 365);
+      var s = document.createElement("script");
+      s.src = contadorURL;
+      document.body.appendChild(s);
+    }
+  } else {
+    if (getCookie("soyRicardo") === "true") {
+      console.log("Contador desactivado para Ricardo (cookie detectada).");
+    } else {
+      var s = document.createElement("script");
+      s.src = contadorURL;
+      document.body.appendChild(s);
+    }
+  }
+</script>
 <!-- BOTÓN INVISIBLE DE ACCESO AL CONTADOR -->
 <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2576/2576-preview.mp3"></audio>
 
