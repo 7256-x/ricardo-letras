@@ -540,7 +540,43 @@ Fin
   });
 </script>
 
-  
+<!-- SECCIÓN CONTADOR -->
+<div id="contador" class="tab-content" style="display: none; text-align:center; padding:2em;">
+  <h2>Estadísticas del sitio</h2>
+  <div id="contador-wrapper"></div>
+</div>
+
+<script>
+(function () {
+  // URL exacta de tu contador (FreeCounterStat / Optistats)
+  const contadorScript = `
+    <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek">000000</div>
+    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
+    <br>
+    <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+  `;
+
+  // Verificar si es el autor
+  let esAutor = localStorage.getItem("esAutor");
+
+  // Si aún no se definió, preguntar
+  if (esAutor === null) {
+    const respuesta = confirm("¿Eres Ricardo (autor del sitio)?");
+    esAutor = respuesta ? "true" : "false";
+    localStorage.setItem("esAutor", esAutor);
+  }
+
+  // Si NO eres el autor → insertar el contador
+  if (esAutor === "false") {
+    document.getElementById("contador-wrapper").innerHTML = contadorScript;
+    console.log("Contador activado para visitantes.");
+  } else {
+    document.getElementById("contador-wrapper").innerHTML =
+      "<p style='color:gray;'>🧿 Tus visitas no se contabilizan, Ricardo.</p>";
+    console.log("Contador desactivado para Ricardo.");
+  }
+})();
+</script>
 <!-- Script Cusdis en español -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 <script>
