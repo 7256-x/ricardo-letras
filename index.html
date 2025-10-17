@@ -540,7 +540,39 @@ Fin
   });
 </script>
 
+<!-- SECCIÓN CONTADOR -->
+<div id="contador" class="tab-content" style="display: none; text-align:center; padding:2em;">
+  <h2>Estadísticas del sitio</h2>
+  <div id="contador-wrapper"></div>
+</div>
 
+<!-- SCRIPT CONTADOR (con exclusión para Ricardo) -->
+<script>
+  (function () {
+    // --- CONFIGURACIÓN ---
+    const contadorURL = "https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async"; 
+    const esAutor = localStorage.getItem("esAutor") === "true";
+
+    // Si no hay cookie, preguntamos una vez
+    if (localStorage.getItem("esAutor") === null) {
+      const respuesta = confirm("¿Eres Ricardo (autor del sitio)?");
+      localStorage.setItem("esAutor", respuesta ? "true" : "false");
+    }
+
+    // Si NO eres el autor, se carga el contador real
+    if (!esAutor) {
+      const s = document.createElement("script");
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = contadorURL;
+      document.getElementById("contador-wrapper").appendChild(s);
+    } else {
+      document.getElementById("contador-wrapper").innerHTML =
+        "<p style='color:gray;'>Contador desactivado para el autor.</p>";
+      console.log("Contador desactivado para Ricardo.");
+    }
+  })();
+</script>
 
 <!-- Script Cusdis en español -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
