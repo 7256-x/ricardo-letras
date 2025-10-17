@@ -529,15 +529,13 @@ Fin
     document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
   }
 
-  // Clave secreta
-  function mostrarSecreto() {
-    const clave = prompt("Introduce la clave para acceder:");
-    if (clave === "clave-secreta-123") {
-      showTab('comentarios');
-    } else {
-      alert("Clave incorrecta.");
-    }
-  }
+ <!-- SECCIÓN OCULTA DE ESTADÍSTICAS -->
+<div id="seccion-estadisticas" style="display: none; padding: 2em; max-width: 800px; margin: auto; text-align: center;">
+  <h2>Estadísticas del sitio</h2>
+  <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek">000000</div>
+  <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
+  <br><a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+</div>
   // Enlaces directos a comentarios
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.enlace-comentarios').forEach(link => {
