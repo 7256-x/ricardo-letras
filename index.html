@@ -631,5 +631,42 @@ Fin
     no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
   };
 </script>
+  <!-- CONTADOR DE VISITAS (con exclusión del autor) -->
+<script>
+  const contadorURL = "https://www.freecounterstat.com/count/abc123.js"; // ← reemplaza con tu enlace real
+
+  function getCookie(nombre) {
+    let valor = "; " + document.cookie;
+    let partes = valor.split("; " + nombre + "=");
+    if (partes.length === 2) return partes.pop().split(";").shift();
+  }
+
+  function setCookie(nombre, valor, dias) {
+    const fecha = new Date();
+    fecha.setTime(fecha.getTime() + dias * 24 * 60 * 60 * 1000);
+    document.cookie = `${nombre}=${valor}; expires=${fecha.toUTCString()}; path=/`;
+  }
+
+  if (!getCookie("soyRicardo")) {
+    const esAutor = confirm("¿Eres Ricardo (autor del sitio)?");
+    if (esAutor) {
+      setCookie("soyRicardo", "true", 365);
+      console.log("Contador desactivado para Ricardo.");
+    } else {
+      setCookie("soyRicardo", "false", 365);
+      var s = document.createElement("script");
+      s.src = contadorURL;
+      document.body.appendChild(s);
+    }
+  } else {
+    if (getCookie("soyRicardo") === "true") {
+      console.log("Contador desactivado para Ricardo (cookie detectada).");
+    } else {
+      var s = document.createElement("script");
+      s.src = contadorURL;
+      document.body.appendChild(s);
+    }
+  }
+                  </script>
 </body>
 </html>  
