@@ -575,63 +575,7 @@ te  responda
   });
 </script>
 
-<!-- SECCIÓN CONTADOR -->
-<div id="contador" class="tab-content" style="display: none; text-align:center; padding:2em;">
-  <h2>Estadísticas del sitio</h2>
-  <div id="contador-wrapper"></div>
-  <div id="boton-estadisticas" style="margin-top:1em;"></div>
-</div>
 
-<script>
-(function () {
-  // --- CONFIGURACIÓN ---
-  const CLAVE_RICARDO = "RICARDO2025"; // tu clave secreta
-  const LINK_ESTADISTICAS = "https://www.freecounterstat.com/stats/8jbaf994he5b37sdaj8amg4ldyafdgq7"; // tu panel de estadísticas
-  const contadorScriptURL = "https://counter1.optistats.ovh/private/counter.js?c=8jbaf994he5b37sdaj8amg4ldyafdgq7&down=async";
-
-  // --- PREGUNTAR CADA VEZ ---
-  const esAutor = confirm("¿Eres Ricardo (autor del sitio)?");
-  const contenedor = document.getElementById("contador-wrapper");
-  const boton = document.getElementById("boton-estadisticas");
-
-  if (!esAutor) {
-    // Visitantes → el contador se carga oculto, no visible
-    const script = document.createElement("script");
-    script.src = contadorScriptURL;
-    script.async = true;
-    script.style.display = "none";
-    document.body.appendChild(script);
-    console.log("✅ Contador activo y oculto para visitantes.");
-  } else {
-    // Ricardo → no se cuenta su visita y puede acceder a estadísticas
-    contenedor.innerHTML = "<p style='color:gray;'>🧿 Tus visitas no se contabilizan, Ricardo.</p>";
-    boton.innerHTML = `
-      <button id="verEstadisticas" style="
-        background:#333;
-        color:#fff;
-        padding:0.6em 1.2em;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;
-        font-size:0.9em;
-        box-shadow:0 2px 5px rgba(0,0,0,0.3);
-      ">
-        🔐 Ver estadísticas completas
-      </button>
-    `;
-
-    // Al hacer clic, pide clave
-    document.getElementById("verEstadisticas").addEventListener("click", () => {
-      const clave = prompt("Introduce tu clave secreta:");
-      if (clave === CLAVE_RICARDO) {
-        window.open(LINK_ESTADISTICAS, "_blank");
-      } else if (clave !== null) {
-        alert("❌ Clave incorrecta.");
-      }
-    });
-  }
-})();
-</script>
 <!-- Script Cusdis en español -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 <script>
