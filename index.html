@@ -1,3 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ricardo Hernández Letras</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* PORTADA */
+    .hero {
+      background-image: url('portada-nueva.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      color: white;
+      font-size: 0.9em;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px 0;
+      animation: scroll-once 10s ease-out forwards;
+    }
+
+    @keyframes scroll-once {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .boton-adoquin {
+      position: absolute;
+      top: 91%;
+      left: 89%;
+      transform: translate(-50%, -50%);
+      width: 160px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .boton-adoquin img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .boton-adoquin:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    }
+
+    #contenedor-flotante {
+      position: absolute;
+      top: 4%;
+      left: 89%;
+      width: 90px;
+      height: 95px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      z-index: 999;
+    }
+
+    #foto-flotante {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    /* MENÚ LATERAL PORTADA */
+    .side-menu {
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px 25px;
+      border-radius: 18px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .side-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.05em;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .side-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background: #ffffff;
+      transition: width 0.3s ease;
+    }
+
+    .side-menu a:hover::after {
+      width: 100%;
+    }
+
+    .side-menu a:hover {
+      color: #ffeb3b;
+      transform: translateX(4px);
+    }
+
+    /* MENÚ DE NAVEGACIÓN */
+    nav {
+      text-align: center;
+      background-color: #003366;
+      padding: 1em;
+      display: none;
+    }
+
+    .tab-button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .tab-button:hover {
+      background-color: #005599;
+    }
+
+    .tab-button.active {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Encabezado SEO oculto -->
+<h1 style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+  Ricardo Hernández Rodríguez - Poemas y Cuentos
+</h1>
+
+<!-- PORTADA -->
+<div class="hero">
+  <div id="contenedor-flotante">
+    <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+  </div>
+
+  <div class="marquee-container">
+    <div class="marquee-text">
+      Bienvenido a mi sitio literario. 📚 En esta 3ra entrega te invito a soñar despierto con el poema ‘Sueño’ y a descubrir la profundidad humana del cuento ‘Pura’.
+    </div>
+  </div>
+
+  <!-- MENÚ LATERAL PORTADA -->
+  <div class="side-menu">
+    <a href="#biografia" onclick="showTab('biografia'); return false;">Biografía</a>
+    <a href="#poemas" onclick="showTab('poemas'); return false;">Poemas</a>
+    <a href="#cuentos" onclick="showTab('cuentos'); return false;">Cuentos</a>
+    <a href="#tienda" onclick="showTab('tienda'); return false;">Tienda</a>
+    <a href="#invitados" onclick="showTab('invitados'); return false;">Invitados</a>
+    <a href="#comentarios" onclick="showTab('comentarios'); return false;">Comentarios</a>
+    <a href="#contacto" onclick="showTab('contacto'); return false;">Contacto</a>
+  </div>
+
+  <!-- BOTÓN PORTADA -->
+  <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio">
+    <img src="adoquin-boton.png" alt="Entrar al sitio" />
+  </button>
+</div>
+
+<!-- MENÚ DE NAVEGACIÓN -->
+<nav id="main-nav">
+  <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
+  <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
+  <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
+  <button class="tab-button" onclick="showTab('tienda')">Tienda</button>
+  <button class="tab-button" onclick="showTab('invitados')">Invitados</button>
+  <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+  <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+</nav>
+  <!-- SECCIONES DE CONTENIDO -->
+<div id="biografia" class="tab-content">
+  <h2>Biografía</h2>
+  <p>Aquí va tu biografía...</p>
+</div>
+
+<div id="poemas" class="tab-content">
+  <h2>Poemas</h2>
+  <p>Aquí se mostrarán tus poemas...</p>
+</div>
+
+<div id="cuentos" class="tab-content">
+  <h2>Cuentos</h2>
+  <p>Aquí se mostrarán tus cuentos...</p>
+</div>
+
+<div id="tienda" class="tab-content">
+  <h2>Tienda</h2>
+  <p>Productos disponibles...</p>
+</div>
+
+<div id="invitados" class="tab-content">
+  <h2>Invitados</h2>
+  <p>Contenido de invitados...</p>
+</div>
+
+<div id="comentarios" class="tab-content">
+  <h2>Comentarios</h2>
+  <p>Zona de comentarios...</p>
+</div>
+
+<div id="contacto" class="tab-content">
+  <h2>Contacto</h2>
+  <p>Formulario de contacto...</p>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+  function entrarSitio() {
+    document.querySelector('.hero').style.display = 'none';
+    document.getElementById('main-nav').style.display = 'block';
+    showTab('biografia'); // Muestra la sección de Biografía por defecto
+  }
+
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+
+    // Marca también el botón correspondiente como activo
+    const btn = document.querySelector(`#main-nav .tab-button[onclick*="${tabId}"]`);
+    if (btn) btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
 <!-- SECCIÓN BIOGRAFÍA -->
 <div id="biografia" class="tab-content">
   <h2>Biografía</h2>
