@@ -253,6 +253,42 @@
     #contacto h2::after { background: #884dff; }
   </style>
 </head>
+  <head>
+  ...
+  <style>
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 0;
+      width: 100%;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-text {
+      font-size: 1.1em;
+      padding-right: 4rem;
+      color: #fff;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+  </head>
 <body>
 
 <!-- Encabezado principal oculto para SEO -->
