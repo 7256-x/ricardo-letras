@@ -28,7 +28,33 @@
 </head>
 <body>
 
- 
+ <!-- PORTADA -->
+<div class="hero">
+  <div id="contenedor-flotante">
+    <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+  </div>
+
+  <div class="marquee-container">
+    <div class="marquee-text">
+      Bienvenido a mi sitio literario. 📚 En esta 3ra entrega te invito a soñar despierto con el poema ‘Sueño’ y a descubrir la profundidad humana del cuento ‘Pura’.
+    </div>
+  </div>
+
+  <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio">
+    <img src="adoquin-boton.png" alt="Entrar al sitio" />
+  </button>
+</div>
+
+<!-- MENÚ DE NAVEGACIÓN -->
+<nav id="main-nav" style="display: none;">
+  <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
+  <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
+  <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
+  <button class="tab-button" onclick="showTab('tienda')">Tienda</button>
+  <button class="tab-button" onclick="showTab('invitados')">Invitados</button>
+  <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+  <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+</nav>
 
   <!-- SECCIÓN BIOGRAFÍA -->
   <section id="biografia" class="tab-content">
