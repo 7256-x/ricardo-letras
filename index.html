@@ -178,7 +178,68 @@
   Ricardo Hernández Rodríguez - Poemas y Cuentos
 </h1>
 
+<!-- PORTADA -->
+<div class="hero">
+  <div id="contenedor-flotante">
+    <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+  </div>
 
+  <div class="marquee-container">
+    <div class="marquee-text">
+      Bienvenido a mi sitio literario. 📚 En esta 3ra entrega te invito a soñar despierto con el poema ‘Sueño’ y a descubrir la profundidad humana del cuento ‘Pura’.
+    </div>
+  </div>
+
+  <!-- MENÚ LATERAL PORTADA -->
+  <div class="side-menu">
+    <a href="#" onclick="showTab('biografia'); return false;">Biografía</a>
+    <a href="#" onclick="showTab('poemas'); return false;">Poemas</a>
+    <a href="#" onclick="showTab('cuentos'); return false;">Cuentos</a>
+    <a href="#" onclick="showTab('tienda'); return false;">Tienda</a>
+    <a href="#" onclick="showTab('invitados'); return false;">Invitados</a>
+    <a href="#" onclick="showTab('comentarios'); return false;">Comentarios</a>
+    <a href="#" onclick="showTab('contacto'); return false;">Contacto</a>
+  </div>
+
+  <!-- BOTÓN ENTRAR -->
+  <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio">
+    <img src="adoquin-boton.png" alt="Entrar al sitio" />
+  </button>
+</div>
+
+<!-- MENÚ DE NAVEGACIÓN -->
+<nav id="main-nav">
+  <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
+  <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
+  <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
+  <button class="tab-button" onclick="showTab('tienda')">Tienda</button>
+  <button class="tab-button" onclick="showTab('invitados')">Invitados</button>
+  <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+  <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+</nav>
+
+<script>
+  // Oculta la portada y muestra el menú y la sección inicial
+  function entrarSitio() {
+    document.querySelector('.hero').style.display = 'none';
+    document.getElementById('main-nav').style.display = 'block';
+    showTab('biografia'); // Sección que se muestra por defecto
+  }
+
+  // Función para mostrar una sección y ocultar las demás
+  function showTab(tabId) {
+    // Oculta todas las secciones
+    document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+    // Muestra la sección seleccionada
+    const tab = document.getElementById(tabId);
+    if(tab) tab.style.display = 'block';
+
+    // Actualiza el estado activo de los botones del menú
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    const btn = document.querySelector(`#main-nav .tab-button[onclick*="${tabId}"]`);
+    if(btn) btn.classList.add('active');
+  }
+</script>
   <!-- SECCIONES DE CONTENIDO -->
 <div id="biografia" class="tab-content">
   <h2>Biografía</h2>
