@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ricardo Hernández Letras</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+  }
 
+  /* Hero / Portada */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('portada.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .btn-entrar {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  /* Marquee de bienvenida */
+  .welcome-banner {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    white-space: nowrap;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 0 0 8px 8px;
+    z-index: 999;
+    animation: scroll-left 8s linear forwards;
+  }
+
+  @keyframes scroll-left {
+    0% { left: 100%; }
+    100% { left: 0; }
+  }
+
+  /* Layout principal */
+  #main-nav {
+    display: none;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Menú lateral */
+  .sidebar {
+    width: 220px;
+    background: #003366;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+  }
+
+  .tab-button {
+    padding: 12px 20px;
+    text-align: left;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .tab-button:hover, .tab-button.active {
+    background: #0055aa;
+  }
+
+  .submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+
+  .submenu button {
+    padding: 8px 0;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .submenu button:hover {
+    color: #ffcc00;
+  }
+
+  /* Panel derecho */
+  .content-panel {
+    flex: 1;
+    padding: 20px;
+    background: url('literatura-fondo.png') center/cover no-repeat;
+    overflow-y: auto;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  button.boton-volver {
+    margin-top: 20px;
+    padding: 8px 12px;
+    background: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Portada -->
+<div class="hero">
+  <h1 style="color:white; text-shadow: 2px 2px 5px black;">Ricardo Hernández Letras</h1>
+  <button class="btn-entrar" onclick="entrarSitio()">Entrar al sitio</button>
+</div>
+
+<!-- Bienvenida -->
+<div class="welcome-banner" id="welcome-banner">
+📕 ¡Bienvenido a mi sitio web literario!🪶 Hoy presentamos nuevos temas: Poema "Sueño" y cuento "Pura".
+</div>
+
+<!-- Navegación principal -->
+<div id="main-nav">
+  <div class="sidebar">
+    <button class="tab-button" onclick="showTab('biografia')">Biografía</button>
+
+    <button class="tab-button" onclick="toggleSubmenu('poemas-sub')">Poemas</button>
+    <div id="poemas-sub" class="submenu">
+      <button onclick="showTab('poema1')">Se cae La Habana</button>
+      <button onclick="showTab('poema2')">Vida de Perros</button>
+      <button onclick="showTab('poema3')">Sueño</button>
+      <button disabled>Próximo...</button>
+      <button disabled>Próximo...</button>
+    </div>
+
+    <button class="tab-button" onclick="toggleSubmenu('cuentos-sub')">Cuentos</button>
+    <div id="cuentos-sub" class="submenu">
+      <button onclick="showTab('cuento1')">Balseros</button>
+      <button onclick="showTab('cuento2')">Persecución</button>
+      <button onclick="showTab('cuento3')">Pura</button>
+      <button disabled>Próximo...</button>
+      <button disabled>Próximo...</button>
+    </div>
+
+    <button class="tab-button" onclick="showTab('tienda')">Tienda</button>
+    <button class="tab-button" onclick="showTab('invitados')">Invitados</button>
+    <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+    <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+  </div>
+
+  <div class="content-panel">
+    <!-- Biografía -->
+    <div id="biografia" class="tab-content active">
+      <h2>Biografía</h2>
+      <p>Aquí va la biografía...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+
+    <!-- Poemas -->
+    <div id="poema1" class="tab-content">
+      <h2>Se cae La Habana</h2>
+      <p>Contenido del poema...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+    <div id="poema2" class="tab-content">
+      <h2>Vida de Perros</h2>
+      <p>Contenido del poema...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+    <div id="poema3" class="tab-content">
+      <h2>Sueño</h2>
+      <p>Contenido del poema...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+
+    <!-- Cuentos -->
+    <div id="cuento1" class="tab-content">
+      <h2>Balseros</h2>
+      <p>Contenido del cuento...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+    <div id="cuento2" class="tab-content">
+      <h2>Persecución</h2>
+      <p>Contenido del cuento...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+    <div id="cuento3" class="tab-content">
+      <h2>Pura</h2>
+      <p>Contenido del cuento...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+
+    <!-- Tienda -->
+    <div id="tienda" class="tab-content">
+      <h2>Tienda</h2>
+      <p>Contenido de la tienda...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+
+    <!-- Invitados -->
+    <div id="invitados" class="tab-content">
+      <h2>Invitados</h2>
+      <p>Contenido de invitados...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+
+    <!-- Comentarios -->
+    <div id="comentarios" class="tab-content">
+      <h2>Comentarios</h2>
+      <p>Aquí irán los comentarios...</p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+
+    <!-- Contacto -->
+    <div id="contacto" class="tab-content">
+      <h2>Contacto</h2>
+      <p>Email: <a href="mailto:ricardohernandezletras@gmail.com">ricardohernandezletras@gmail.com</a></p>
+      <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function entrarSitio() {
+  document.querySelector('.hero').style.display = 'none';
+  document.getElementById('main-nav').style.display = 'flex';
+}
+
+function showTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+  const seccion = document.getElementById(tabId);
+  if(seccion) seccion.classList.add('active');
+}
+
+function toggleSubmenu(subId) {
+  const submenu = document.getElementById(subId);
+  submenu.style.display = (submenu.style.display === 'flex') ? 'none' : 'flex';
+}
+
+function volverArriba() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
