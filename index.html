@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricardo Hernández Letras</title>
+  <style>
+    body { font-family: sans-serif; margin:0; padding:0; background:#f9f9f9; }
+    .hero { display:flex; justify-content:center; align-items:center; height:100vh; background:#003366; color:white; position:relative; overflow:hidden; }
+    .hero h1 { font-size:2em; white-space:nowrap; position:absolute; animation: marquee 15s linear infinite; top:10px; }
+    @keyframes marquee { 0% { left:100%; } 100% { left:-100%; } }
+    #main-nav { display:none; background:#003366; color:white; padding:10px; display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+    .tab-button { background:#0055aa; border:none; color:white; padding:10px 15px; cursor:pointer; border-radius:5px; }
+    .tab-button.active { background:#ff9900; }
+    .tab-content { display:none; padding:20px; max-width:800px; margin:20px auto; background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    .subtab-button { background:#999; border:none; color:white; padding:8px 12px; cursor:pointer; border-radius:5px; margin:5px 0; display:block; width:100%; text-align:left; }
+    .subtab-button.active { background:#ff6600; }
+    .subtab-content { display:none; padding:10px; border-left:3px solid #ff6600; margin-bottom:10px; }
+    .boton-volver { margin-top:20px; padding:10px 15px; background:#003366; color:white; border:none; border-radius:5px; cursor:pointer; }
+  </style>
+</head>
+<body>
 
+  <!-- PORTADA -->
+  <div class="hero">
+    <h1>Bienvenidos a Ricardo Hernández Letras</h1>
+    <button class="boton-volver" onclick="entrarSitio()">Entrar al sitio</button>
+  </div>
+
+  <!-- MENÚ PRINCIPAL -->
+  <div id="main-nav">
+    <button class="tab-button" onclick="showTab('biografia')">Biografía</button>
+    <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
+    <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
+    <button class="tab-button" onclick="showTab('tienda')">Tienda</button>
+    <button class="tab-button" onclick="showTab('invitados')">Invitados</button>
+    <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+    <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+  </div>
+
+  <!-- SECCIONES -->
+  <div id="biografia" class="tab-content">
+    <h2>Biografía</h2>
+    <p>Aquí puedes integrar la biografía completa de Ricardo Hernández Rodríguez.</p>
+    <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+  </div>
+
+  <div id="poemas" class="tab-content">
+    <h2>Poemas</h2>
+    <button class="subtab-button" onclick="showSubTab('poema1')">Se cae La Habana</button>
+    <div id="poema1" class="subtab-content"><p>Contenido de "Se cae La Habana" aquí.</p></div>
+
+    <button class="subtab-button" onclick="showSubTab('poema2')">Vida de Perros</button>
+    <div id="poema2" class="subtab-content"><p>Contenido de "Vida de Perros" aquí.</p></div>
+
+    <button class="subtab-button" onclick="showSubTab('poema3')">Sueño</button>
+    <div id="poema3" class="subtab-content"><p>Contenido de "Sueño" aquí.</p></div>
+
+    <!-- Espacio para futuros poemas -->
+    <button class="subtab-button" onclick="showSubTab('poema4')">Próximo Poema</button>
+    <div id="poema4" class="subtab-content"><p></p></div>
+
+    <button class="subtab-button" onclick="showSubTab('poema5')">Próximo Poema</button>
+    <div id="poema5" class="subtab-content"><p></p></div>
+
+    <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+  </div>
+
+  <div id="cuentos" class="tab-content">
+    <h2>Cuentos</h2>
+    <button class="subtab-button" onclick="showSubTab('cuento1')">Balseros</button>
+    <div id="cuento1" class="subtab-content"><p>Contenido de "Balseros" aquí.</p></div>
+
+    <button class="subtab-button" onclick="showSubTab('cuento2')">Persecución</button>
+    <div id="cuento2" class="subtab-content"><p>Contenido de "Persecución" aquí.</p></div>
+
+    <button class="subtab-button" onclick="showSubTab('cuento3')">Pura</button>
+    <div id="cuento3" class="subtab-content"><p>Contenido de "Pura" aquí.</p></div>
+
+    <!-- Espacio para futuros cuentos -->
+    <button class="subtab-button" onclick="showSubTab('cuento4')">Próximo Cuento</button>
+    <div id="cuento4" class="subtab-content"><p></p></div>
+
+    <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+  </div>
+
+  <div id="tienda" class="tab-content">
+    <h2>Tienda</h2>
+    <p>Aquí puedes integrar la tienda de libros.</p>
+    <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+  </div>
+
+  <div id="invitados" class="tab-content">
+    <h2>Invitados</h2>
+    <p>Aquí se pueden mostrar obras de invitados.</p>
+    <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+  </div>
+
+  <div id="comentarios" class="tab-content">
+    <h2>Comentarios</h2>
+    <p>Aquí se integra el sistema de comentarios.</p>
+    <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+  </div>
+
+  <div id="contacto" class="tab-content">
+    <h2>Contacto</h2>
+    <p>Integrar información de contacto aquí.</p>
+    <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    function entrarSitio() {
+      document.querySelector('.hero').style.display = 'none';
+      document.getElementById('main-nav').style.display = 'flex';
+      showTab('biografia');
+    }
+
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelector(`#${tabId}`).classList.add('active');
+      const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+      if (boton) boton.classList.add('active');
+    }
+
+    function showSubTab(subTabId) {
+      document.querySelectorAll('.subtab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.subtab-content').forEach(tab => tab.style.display='none');
+      document.getElementById(subTabId).style.display = 'block';
+      const boton = Array.from(document.querySelectorAll('.subtab-button')).find(btn => btn.getAttribute('onclick') === `showSubTab('${subTabId}')`);
+      if(boton) boton.classList.add('active');
+    }
+
+    function volverArriba() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
