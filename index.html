@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ricardo Hernández Letras</title>
+
+  <!-- SEO Básico -->
+  <meta name="description" content="Ricardo Hernández Rodríguez - Sitio literario con poemas, cuentos y reflexiones. Autor de 'Versos Callejeros' y 'Cuentos de suspense, amor y muerte'.">
+  <meta name="keywords" content="poesía cubana, cuentos de suspense, literatura cubana, Ricardo Hernández Rodríguez, poemas de amor, cuentos de muerte">
+  <meta name="author" content="Ricardo Hernández Rodríguez">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ricardo Hernández Letras - Poemas y Cuentos">
+  <meta property="og:description" content="Descubre poemas y cuentos de Ricardo Hernández Rodríguez. Literatura con emoción y verdad.">
+  <meta property="og:image" content="https://ricardo-letras.vercel.app/portada-nueva.png">
+  <meta property="og:url" content="https://ricardo-letras.vercel.app">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ricardo Hernández Letras - Poemas y Cuentos">
+  <meta name="twitter:description" content="Descubre poemas y cuentos de Ricardo Hernández Rodríguez.">
+  <meta name="twitter:image" content="https://ricardo-letras.vercel.app/portada-nueva.png">
+
+  <!-- Datos estructurados JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ricardo Hernández Rodríguez",
+    "alternateName": "Rihero",
+    "url": "https://ricardo-letras.vercel.app",
+    "image": "https://ricardo-letras.vercel.app/foto-default.jpg",
+    "sameAs": [
+      "https://www.facebook.com/tu-perfil",
+      "https://www.instagram.com/tu-perfil",
+      "https://twitter.com/tu-perfil"
+    ],
+    "jobTitle": "Escritor y poeta",
+    "worksFor": { "@type": "Organization", "name": "Ricardo Hernández Letras" },
+    "alumniOf": "Instituto Superior Pedagógico Enrique José Varona",
+    "knowsAbout": ["poesía", "cuentos", "literatura cubana", "suspense", "amor"],
+    "author": [
+      { "@type": "Book", "name": "Versos Callejeros. Las cosas que amo", "publisher": "Amazon", "datePublished": "2023" },
+      { "@type": "Book", "name": "Cuentos de suspense, amor y muerte", "publisher": "Amazon", "datePublished": "2024" }
+    ]
+  }
+  </script>
+
+  <!-- ESTILOS CSS -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      background-color: #f8f9fa;
+    }
+
+/* ======= PORTADA CORREGIDA ======= */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  z-index: 100;
+  overflow: hidden;
+
+  /* Fondo centrado y proporcional */
+  background-image: url('portada-nueva.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Foto flotante */
+#contenedor-flotante {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid white;
+  z-index: 999;
+}
+
+/* Botón Entrar al sitio */
+.boton-adoquin {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 160px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.boton-adoquin img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.boton-adoquin:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+}
+
+/* Ajustes específicos para pantallas medianas y móviles */
+@media (max-width: 1024px) {
+  .boton-adoquin {
+    bottom: 3%;
+    right: 3%;
+    width: 130px;
+  }
+
+  #contenedor-flotante {
+    top: 8%;
+    right: 4%;
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 600px) {
+  .boton-adoquin {
+    bottom: 2%;
+    right: 2%;
+    width: 120px;
+  }
+
+  #contenedor-flotante {
+    top: 3%;
+    right: 3%;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+    #foto-flotante {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .boton-adoquin {
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      width: 150px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      z-index: 101;
+    }
+
+    .boton-adoquin img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .boton-adoquin:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+    }
+
+    @media (max-width: 1024px) {
+      .boton-adoquin {
+        bottom: 3%;
+        right: 3%;
+        width: 130px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .boton-adoquin {
+        bottom: 2%;
+        right: 2%;
+        width: 120px;
+      }
+    }
+
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      color: white;
+      font-size: 0.9em;
+      font-style: italic;
+      background: rgba(0,0,0,0.4);
+      padding: 5px 0;
+      animation: scroll-once 10s ease-out forwards;
+    }
+
+    @keyframes scroll-once {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    }
+
+    /* ======= CONTENIDO INTERIOR ======= */
+    #main-nav {
+      display: none;
+      height: 100vh;
+      width: 100%;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #003366;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+      flex-shrink: 0;
+    }
+
+    .tab-button {
+      padding: 12px 20px;
+      text-align: left;
+      border: none;
+      background: none;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .tab-button:hover, .tab-button.active {
+      background: #0055aa;
+    }
+
+    .submenu {
+      display: none;
+      flex-direction: column;
+      padding-left: 20px;
+      font-size: 14px;
+    }
+
+    .submenu button {
+      padding: 8px 0;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .submenu button:hover {
+      color: #ffcc00;
+    }
+
+    .content-panel {
+      flex: 1;
+      background-color: #f8f9fa;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .tab-content {
+      display: none;
+      background: #fff;
+      padding: 2em;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    button.boton-volver {
+      margin-top: 20px;
+      padding: 8px 12px;
+      background: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button.boton-volver:hover {
+      background: #0055aa;
+    }
+/* ====== EFECTO DE APERTURA EN SECCIÓN COMENTARIOS ====== */
+#comentarios.active {
+  animation: resaltar 0.8s ease-in-out;
+}
+
+@keyframes resaltar {
+  0% { transform: scale(0.98); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- PORTADA -->
+  <div class="hero">
+    <div id="contenedor-flotante">
+      <img id="foto-flotante" src="foto-default.jpg" alt="Foto del autor">
+    </div>
+
+    <div class="marquee-container">
+      <div class="marquee-text">
+        ¡Bienvenido a mi sitio literario! 📚 En esta 3ra entrega te invito a soñar despierto con el poema ‘Sueño’ y a descubrir la profundidad humana del cuento ‘Pura’.
+      </div>
+    </div>
+
+    <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio">
+      <img src="adoquin-boton.png" alt="Entrar al sitio" />
+    </button>
+  </div>
+
+  <!-- INTERIOR DEL SITIO -->
+  <div id="main-nav">
+    <div class="sidebar">
+      <button class="tab-button" onclick="mostrarSeccion('biografia')">Biografía</button>
+      <button class="tab-button" onclick="toggleSubmenu('poemas-sub')">Poemas</button>
+      <div id="poemas-sub" class="submenu">
+        <button onclick="mostrarSeccion('poema1')">Se cae La Habana</button>
+        <button onclick="mostrarSeccion('poema2')">Vida de Perros</button>
+        <button onclick="mostrarSeccion('poema3')">Sueño</button>
+ <button onclick="mostrarSeccion('poema4')">xxxx </button>    
+<button onclick="mostrarSeccion('poema5')">xxxxx</button>
+         </div>
+<button class="tab-button" onclick="toggleSubmenu('cuentos-sub')">Cuentos</button>
+      <div id="cuentos-sub" class="submenu">
+        <button onclick="mostrarSeccion('cuento1')">Balseros</button>
+        <button onclick="mostrarSeccion('cuento2')">Persecución</button>
+<button onclick="mostrarSeccion('cuento3')">Pura</button>
+        <button onclick="mostrarSeccion('cuento4')">xxxx</button>
+<button onclick="mostrarSeccion('cuento5')">xxxxx</button>
+     
+      </div>
+       <button class="tab-button" onclick="mostrarSeccion('tienda')">Tienda</button> 
+      <button class="tab-button" onclick="mostrarSeccion('invitados')">Invitados</button>
+      <button class="tab-button" onclick="mostrarSeccion('comentarios')">Comentarios</button>
+      <button class="tab-button" onclick="mostrarSeccion('contacto')">Contacto</button>
+    </div>
+
+    <div class="content-panel">
+      <div id="biografia" class="tab-content active">
+        <h2>Biografía</h2>
+        <p style="text-align: justify;">
+          Ricardo Hernández Rodríguez nació en Colón, Matanzas, Cuba, el 7 de febrero de 1956.
+          Reside en La Habana desde 1962. Graduado de Pedagogía en la especialidad de Química
+          por el Instituto Superior Pedagógico Enrique José Varona. Desarrolló una extensa carrera
+          en la docencia y en la gestión de recursos humanos, cursando estudios de posgrado en Cuba,
+          México y República Dominicana. Autor de los libros
+          <em>Versos Callejeros. Las cosas que amo</em> y
+          <em>Cuentos de suspense, amor y muerte</em>, ambos publicados en Amazon.
+        </p>
+      </div>
+
+      <div id="poema1" class="tab-content">
+        <h2>Se cae La Habana</h2>
+        <p>Poema de Ricardo Hernández Rodríguez</p>
+
+</p>
+ El poema forma parte del libro <strong>"Versos callejeros. Las cosas que amo"</strong> de Ricardo Hernández Rodríguez.<br>
+  <a href="https://www.amazon.com/ebook/dp/B0DSJQT76R" target="_blank">Ver en Amazon</a>
+  </p>
+
+  <p style="margin-top:20px; text-align:center;">
+<a href="javascript:void(0)" onclick="mostrarSeccion('comentarios')" class="enlace-comentarios">
+💬 Tu opinión es importante. Deja un comentario
+</a>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+    </div>
+
+      <div id="poema2" class="tab-content">
+        <h2>Vida de Perros</h2>
+        <p>Poema dedicado a los emigrantes cubanos...</p>
+      </div>
+
+      <div id="poema3" class="tab-content">
+        <h2>Sueño</h2>
+        <p>Soñé sobre un lugar donde vivir...</p>
+      </div>
+
+      <div id="poema4" class="tab-content">
+        <h2>xxxx</h2>
+        <p>............</p>
+      </div>
+
+      <div id="poema5" class="tab-content">
+        <h2>xxxxx</h2>
+        <p>............</p>
+      </div>
+
+   
+  <div id="cuento1" class="tab-content">
+        <h2>Balseros</h2>
+        <p>Fragmento del cuento...</p>
+ <p>
+    "Balseros" forma parte del libro  <strong>"Cuentos de suspense, amor y muerte"</strong> 
+    de Ricardo Hernández Rodríguez:<br>
+    <a href="https://www.amazon.com/dp/B0DV2FX2FV" target="_blank">Puedes comprar el libro en Amazon</a>
+  </p>
+
+  <p style="margin-top:20px; text-align:center;">
+<a href="javascript:void(0)" onclick="mostrarSeccion('comentarios')" class="enlace-comentarios">
+💬 Tu opinión es importante. Deja un comentario
+</a>
+
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+      
+
+      <div id="cuento2" class="tab-content">
+        <h2>Persecucion</h2>
+        <p>Relato .</p>
+      </div>
+
+      <div id="cuento3" class="tab-content">
+        <h2>Pura</h2>
+        <p>Relato de amor y destino.</p>
+      </div>
+
+      <div id="cuento4" class="tab-content">
+        <h2>xxxx</h2>
+        <p>Relato .</p>
+      </div>
+
+      <div id="cuento5" class="tab-content">
+        <h2>xxxxx</h2>
+        <p>Relato .</p>
+      </div>
+<div id="tienda" class="tab-content">
+  <h2>Tienda</h2>
+  <p style="text-align: justify;">
+    Aquí puedes adquirir mis libros en formato PDF de manera directa y segura a través de Gumroad.
+    Una vez realizada la compra, recibirás el archivo automáticamente en tu correo electrónico 📧.
+  </p>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+    <!-- Producto 1 -->
+    <div style="background:#f1f1f1; padding:20px; border-radius:12px; width:250px; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
+      <img src="portada-versos.jpg" alt="Versos Callejeros" style="max-width:100%; border-radius:8px;">
+      <h3 style="margin:15px 0 10px 0;">Versos Callejeros</h3>
+      <p style="font-style:italic; font-size:0.9em;">Las cosas que amo</p>
+      <a href="https://ricardo.gumroad.com/l/versos" target="_blank" 
+         style="display:inline-block; margin-top:10px; padding:10px 16px; background:#003366; color:white; text-decoration:none; border-radius:8px;">
+         Comprar PDF
+      </a>
+    </div>
+
+    <!-- Producto 2 -->
+    <div style="background:#f1f1f1; padding:20px; border-radius:12px; width:250px; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
+      <img src="portada-cuentos.jpg" alt="Cuentos de suspense" style="max-width:100%; border-radius:8px;">
+      <h3 style="margin:15px 0 10px 0;">Cuentos de suspense</h3>
+      <p style="font-style:italic; font-size:0.9em;">Amor y muerte</p>
+      <a href="https://ricardo.gumroad.com/l/cuentos" target="_blank" 
+         style="display:inline-block; margin-top:10px; padding:10px 16px; background:#cc0000; color:white; text-decoration:none; border-radius:8px;">
+         Comprar PDF
+      </a>
+    </div>
+  </div>
+
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+      <div id="invitados" class="tab-content">
+        <h2>Invitados</h2>
+        <p>Espacio para nuestros colaboradores literarios.</p>
+      </div>
+<div id="comentarios" class="tab-content">
+  <h2>Comentarios</h2>
+  <p style="text-align: justify;">
+    Déjame tu opinión o comentario sobre los poemas y cuentos publicados en este sitio.
+    Tus palabras son bienvenidas y ayudan a mantener vivo este espacio literario.
+  </p>
+
+  <!-- Contenedor principal del sistema Cusdis -->
+  <div id="cusdis_thread"
+       data-host="https://cusdis.com"
+       data-app-id="75427542-5fae-4aac-b8a5-801e82606b2c"
+       data-page-id="principal"
+       data-page-url="https://ricardo-letras.vercel.app"
+       data-page-title="Comentarios del sitio Ricardo Hernández Letras">
+  </div>
+</div>
+
+ <div id="contacto" class="tab-content">
+        <h2>Contacto</h2>
+        <p>Escríbenos a: <strong>contacto@ricardohernandezletras.com</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Encabezado oculto SEO -->
+  <h1 style="position:absolute; left:-9999px;">Ricardo Hernández Rodríguez - Poemas y Cuentos</h1>
+
+  <!-- FUNCIONES -->
+  <script>
+    function entrarSitio() {
+      document.querySelector('.hero').style.display = 'none';
+      document.getElementById('main-nav').style.display = 'flex';
+    }
+
+    function toggleSubmenu(id) {
+      const sub = document.getElementById(id);
+      sub.style.display = (sub.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<script>
+function mostrarSeccion(id) {
+  // Oculta todas las secciones
+  document.querySelectorAll('.tab-content').forEach(sec => sec.classList.remove('active'));
+  
+  // Muestra la que corresponde
+  const seccion = document.getElementById(id);
+  if (seccion) {
+    seccion.classList.add('active');
+
+    // 🔄 Recarga Cusdis solo cuando la pestaña de comentarios se muestra
+    if (id === 'comentarios' && window.CUSDIS) {
+      const thread = document.getElementById('cusdis_thread');
+      window.CUSDIS.renderTo(thread);
+    }
+  }
+}
+</script>
+<script>
+function volverArriba() {
+  // Desplazamiento suave hacia el inicio del contenedor principal de contenido
+  const contentPanel = document.querySelector('.content-panel');
+  if (contentPanel) {
+    contentPanel.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  } else {
+    // Si por alguna razón no se encuentra el panel, hace scroll del documento completo
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+}
+</script>
+</body>
+</html>
