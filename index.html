@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ricardo Hernández Letras</title>
+  
+  <!-- SEO Básico -->
+  <meta name="description" content="Ricardo Hernández Rodríguez - Sitio literario con poemas, cuentos y reflexiones. Autor de 'Versos Callejeros' y 'Cuentos de suspense, amor y muerte'.">
+  <meta name="keywords" content="poesía cubana, cuentos de suspense, literatura cubana, Ricardo Hernández Rodríguez, poemas de amor, cuentos de muerte">
+  <meta name="author" content="Ricardo Hernández Rodríguez">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ricardo Hernández Letras - Poemas y Cuentos">
+  <meta property="og:description" content="Descubre poemas y cuentos de Ricardo Hernández Rodríguez. Literatura con emoción y verdad.">
+  <meta property="og:image" content="https://ricardo-letras.vercel.app/portada-nueva.png">
+  <meta property="og:url" content="https://ricardo-letras.vercel.app">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ricardo Hernández Letras - Poemas y Cuentos">
+  <meta name="twitter:description" content="Descubre poemas y cuentos de Ricardo Hernández Rodríguez.">
+  <meta name="twitter:image" content="https://ricardo-letras.vercel.app/portada-nueva.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ricardo Hernández Rodríguez",
+  "alternateName": "Rihero",
+  "url": "https://ricardo-letras.vercel.app",
+  "image": "https://ricardo-letras.vercel.app/foto-default.jpg",
+  "sameAs": [
+    "https://www.facebook.com/tu-perfil",
+    "https://www.instagram.com/tu-perfil",
+    "https://twitter.com/tu-perfil"
+  ],
+  "jobTitle": "Escritor y poeta",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Ricardo Hernández Letras"
+  },
+  "alumniOf": "Instituto Superior Pedagógico Enrique José Varona",
+  "knowsAbout": ["poesía", "cuentos", "literatura cubana", "suspense", "amor"],
+  "author": [
+    {
+      "@type": "Book",
+      "name": "Versos Callejeros. Las cosas que amo",
+      "publisher": "Amazon",
+      "datePublished": "2023"
+    },
+    {
+      "@type": "Book",
+      "name": "Cuentos de suspense, amor y muerte",
+      "publisher": "Amazon",
+      "datePublished": "2024"
+    }
+  ]
+}
+</script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+     .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      pointer-events: none;
+     }
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      color: white;
+      font-size: 0.9em;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px 0;
+      animation: scroll-once 10s ease-out forwards;
+    }
+
+    @keyframes scroll-once {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .hero {
+      background-image: url('portada-nueva.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .boton-adoquin {
+      position: absolute;
+      top: 91%;
+      left: 89%;
+      transform: translate(-50%, -50%);
+      width: 160px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .boton-adoquin img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .boton-adoquin:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    }
+
+    #contenedor-flotante {
+      position: absolute;
+      top: 4%;
+      left: 89%;
+      width: 90px;
+      height: 95px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      z-index: 999;
+    }
+
+    #foto-flotante {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    nav {
+      text-align: center;
+      background-color: #003366;
+      padding: 1em;
+    }
+
+    .tab-button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .tab-button:hover {
+      background-color: #005599;
+    }
+
+    .tab-button.active {
+      background-color: #cc0000;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2em;
+      max-width: 900px;
+      margin: 40px auto;
+      line-height: 1.8;
+      color: #333;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Botón invisible (oculto hasta instalar contador) */
+    .glow-button {
+      display: none;
+    }
+
+    .boton-volver {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #5c3c2b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9em;
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .boton-volver:hover {
+      background-color: #3e291f;
+    }
+
+    /* Letras bonitas en encabezados */
+    .tab-content h2, 
+    .tab-content h3 {
+      font-family: 'Georgia', serif !important;
+      font-weight: normal;
+      letter-spacing: 0.5px;
+    }
+
+    .tab-content h2::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 4px;
+      margin: 12px auto 0 auto;
+      border-radius: 2px;
+    }
+
+    /* Colores por sección */
+    #biografia h2 { color: #003366; }
+    #biografia h2::after { background: #003366; }
+
+    #poemas h2 { color: #5c3c2b; }
+    #poemas h2::after { background: #5c3c2b; }
+
+    #cuentos h2 { color: #cc0000; }
+    #cuentos h2::after { background: #cc0000; }
+
+    #comentarios h2 { color: #006633; }
+    #comentarios h2::after { background: #006633; }
+
+    #contacto h2 { color: #884dff; }
+    #contacto h2::after { background: #884dff; }
+  </style>
+</head>
+<body>
+
+<!-- Encabezado principal oculto para SEO -->
+<h1 style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+  Ricardo Hernández Rodríguez - Poemas y Cuentos
+</h1>
+
+<!-- PORTADA -->
+<div class="hero">
+  <div id="contenedor-flotante">
+    <img id="foto-flotante" src="foto-default.jpg" alt="Tu foto" />
+  </div>
+
+  <div class="marquee-container">
+    <div class="marquee-text">
+  Bienvenido a mi sitio literario. 📚 En esta 3ra entrega te invito a soñar despierto con el poema ‘Sueño’ y a descubrir la profundidad humana del cuento ‘Pura’.
+    </div>
+  </div>
+
+  <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio">
+    <img src="adoquin-boton.png" alt="Entrar al sitio" />
+  </button>
+</div>
+
+<!-- MENÚ DE NAVEGACIÓN -->
+<nav id="main-nav" style="display: none;">
+  <button class="tab-button active" onclick="showTab('biografia')">Biografía</button>
+  <button class="tab-button" onclick="showTab('poemas')">Poemas</button>
+  <button class="tab-button" onclick="showTab('cuentos')">Cuentos</button>
+  <button class="tab-button" onclick="showTab('tienda')">Tienda</button> <!-- NUEVO -->
+  <button class="tab-button" onclick="showTab('invitados')">Invitados</button>
+  <button class="tab-button" onclick="showTab('comentarios')">Comentarios</button>
+  <button class="tab-button" onclick="showTab('contacto')">Contacto</button>
+</nav>
+
+<!-- SECCIÓN BIOGRAFÍA -->
+<div id="biografia" class="tab-content">
+  <h2>Biografía</h2>
+   <p>Ricardo Hernández Rodríguez, nacido el 7 de febrero de 1956 en Colón, Matanzas, Cuba.<br>
+  Reside en La Habana desde 1961.</p>
+
+  <p style="text-align: justify;">Maestro de profesión, es Licenciado en Pedagogía con especialidad en Química por el Instituto Superior Pedagógico 
+  Enrique José Varona (La Habana, Cuba). Inició su vida laboral como profesor de Química en la Escuela Secundaria Básica 
+  del Reparto Habana del Este.La Habana. Posteriormente, los caminos de la vida lo llevaron a desempeñarse en distintas ramas de la 
+  esfera económica, vinculadas principalmente a los recursos humanos.</p>
+
+  <p style="text-align: justify;">Ha realizado estudios de posgrado en FORMATUR (Cuba), la Universidad de La Salle (México) y la Universidad Católica de 
+  Santo Domingo (República Dominicana).</p>
+
+  <p>Es autor del poemario<em>"Versos Callejeros. Las cosas que amo"</em> y el libro<em>"Cuentos de suspense, amor y muerte"</em>, ambos publicados en Amazon.com</p>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+
+<!-- SECCIÓN POEMAS -->
+<div id="poemas" class="tab-content">
+  <h2>Poemas</h2>
+ <p style="text-align: justify;"> Prólogo: “Un viaje lírico hacia un mundo donde los ríos rozan las estrellas,
+la luna acaricia al sol y la memoria se convierte en alimento del alma.</p>
+
+
+  
+</h3>"Sueño"</h3>
+</p>Existe un lugar donde los ríos corren<br>
+</p>hacia las estrellas.<br>
+</p>La luna se transporta en sus aguas<br>
+</p>para besar al sol en las noches.</p>
+</p>El mundo es de arenas blancas,<br>
+</p>miel y agua dulce que riega el pasto.<br>
+</p>No se nubla para llover.<br>
+</p>El futuro se alimenta de los recuerdos,<br>
+</p>bebiendo del rocío mañanero.<br>
+</p>Sumergidos en el océano de las inclinaciones,<br>
+</p>no lanzan piedras por pensar.<br>
+</p>Se impone la fantasía sobre el desengaño.</p>
+ 
+Fin
+
+  <p style="text-align: center; font-style: italic;">
+  El poema "Sueño" no forma parte del libro <strong>"Versos callejeros. Las cosas que amo"</strong> de Ricardo Hernández Rodríguez.<br>
+  <a href="https://www.amazon.com/ebook/dp/B0DSJQT76R" target="_blank">Puedes comprarlo en Amazon</a>
+  </p>
+
+  <p style="margin-top:20px; text-align:center;">
+  <a href="#comentarios" class="enlace-comentarios">Tú opinión es importante.Deja un comentario</a>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+
+<!-- SECCIÓN CUENTOS -->
+<div id="cuentos" class="tab-content">
+  <h2>Cuentos</h2>
+<p style="text-align: justify;">Prólogo:Un apodo, un deseo prohibido y un reencuentro que lo cambia todo. “Pura” es un cuento sobre heridas ocultas y liberaciones inesperadas.</p>
+</p>
+  
+  <h3>"Pura"</h3>
+  
+<p style="text-align: justify;">Pura cuyo nombre de pila es Josefina pasa ya de los cincuenta años. Conserva envidiable salud, vitalidad y rasgos de la belleza que en su juventud exhibió con orgullo, dueña de una exquisita feminidad, facilidad de expresión e inteligencia. A pesar de todos estos atributos nunca se casó. A falta de familia propia la prole de hermanos primos y sobrinos que atesora, la veneran como el principal pilar de la familia. Muy conocida y apreciada en el barrio, el mismo donde nació, creció y posiblemente morirá algún día.</br>
+<p style="text-align: justify;">El puritano mote surgió poco después de haber cumplido los treinta años. Vecinos, familiares y amigas comenzaron a llamarla así porque no había contraído matrimonio a esa edad y tampoco se le conocía novio o enamorado alguno. Todos presumían que su virginidad se mantenía intacta. Un poco en mofa y otro en broma el apodo fue ganando terreno para finalmente establecerse como apelativo identificador de la respetada señora, quien tampoco hizo rechazo alguno a ser llamada así.</br>
+<p style="text-align: justify;">Sin remordimientos aparentes que pudieran poner en riesgo el sano disfrute de su adultez, continuaba el tranquilo andar por la vida la experimentada dama. Agradecida de la existencia y segura de sí misma obsequiaba los mejores consejos a los jóvenes, ayudaba desinteresadamente a los más necesitados y mostraba a todos la agradable sonrisa de su plena felicidad. </br>
+<p style="text-align: justify;">Nada es eterno en este mundo. Uno de esos días en que Pura paseaba lejos de los lugares que habitualmente solía frecuentar, se cruzó inesperadamente con el fantasma perturbador de sus sueños. El varón que sin proponérselo transformó en pesadillas sus más caros anhelos de hembra y los virtuosos sentimientos de amor que la desbordaba. Atributos que Josefina nunca más compartiría con otro ser humano.</br>
+<p style="text-align: justify;">No pudo evitar la veterana que la asaltaran los recuerdos de los hechos jamás revelados a terceras personas. Acontecimientos que ocurrieron una cálida tarde de verano extremadamente lluvioso. En aquella ocasión impulsada por el amor y la excitación que desbordaban su alma y su sexo, decidió entregarse al ser amado. Creía con el juicio propio de una ingenua e inexperta joven recién traspasada la etapa de la adolescencia, que la ofrenda amorosa los uniría para siempre.</br>
+<p style="text-align: justify;">Nenito no era de los chicos más robustos y atléticos del vecindario. Tampoco de la escuela donde estudiaban. No obstante, su delgada complexión física, un rostro muy bonito y la encantadora timidez de la que hacía gala, redondeaban una atractiva personalidad en desarrollo. Vecino puerta con puerta y mejor amigo de Josefina desde niños jugaron, estudiaron y crecieron siempre inseparables.</br> 
+<p style="text-align: justify;">Con la sangre emanada de cortadas autoinflingidas en sus infantiles dedos concretaron en la soledad de una casucha abandonada del vecindario, el juramento de eterna amistad. Josefina niña muy espabilada juramentó en silencioso secreto, amor eterno por Nenito. A esa altura de su corta vida, ya se había enamorado perdidamente del dulce niño.</br>
+<p style="text-align: justify;">Con el tiempo sus personalidades sufrirían ineludiblemente las transformaciones propias del desarrollo humano como sucede con todos. Cambios físicos, intelectuales, sociales y emocionales los harían crecer y madurar a velocidades diferentes  y con características muy propias.</br>
+<p style="text-align: justify;">Mientras tanto la futura Pura procuraba cada instante del día para respirar el mismo aire que el tímido Nenito. Los juegos o actividades que desarrollaban juntos eran aprovechados por la doncella para con cualquier pretexto, rozar la cálida piel del infante. A su contacto se incendiaba la suya propia, proporcionándole un estado de éxtasis muy placentero, de lo cual el otro no se daba por enterado. La pusilánime conducta del nene no hacía más que provocar en la adolescente pícaras sonrisas en sus nocturnales desvelos. Idolatrando la linda carita del Adonis prolongaba la ilusión de ser correspondida en sus actos y sentimientos algún día.</br>
+<p style="text-align: justify;">En la medida que sus cuerpos y mentes desarrollaron suspiraba entonces la joven por los besos y caricias que a pesar de sus constantes insinuaciones, nunca cristalizaban. Descubría cada mañana una persistente humedad entre sus muslos.  Fruto de la acumulación de deseos no saciados en los inconclusos sueños de cada despertar.</br> 
+<p style="text-align: justify;">Nenito continuaba sin emitir señales que presagiaran interés alguno por los eróticos juegos que proponía la juramentada amiga. Reacción que tal vez estaría relacionada con la manifiesta y conocida introversión del chiquillo. Pensaba entonces Josefina con cierto enojo de enamorada.</br>
+<p style="text-align: justify;">Continuó evocando Pura que en aquella calurosa tarde de verano Josefina dormitaba plácidamente. Arrullada por el tintinear de las abundantes lluvias que ocurrían en esos días, casi siempre en horas tempranas de la tarde, no se había percatado de los ruidos provenientes del hogar vecino. Al escucharlos despertó la soñadora. Conocía que los  padres de Nenito trabajaban lejos. No regresaban hasta cerca del anochecer y le tenían prohibido la entrada de amigos a la casa en sus ausencias. Supuso de inmediato que el muchacho se encontraba solo en el hogar.</br>
+<p style="text-align: justify;">Bajo los efectos de la embriaguez sexual provocada por los incompletos y sensuales sueños que la mantenían en constante estado de excitación, se dispuso Josefina a revelar de una vez por todas, el amor que la desbordaba. Sentimiento que trascendía más allá de cualquier duda o concepto moral que le impidiera entregar a su hombre, el más preciado de los presentes carnales.</br>
+<p style="text-align: justify;">Algo nerviosa Josefina se arregló un poco y luego de cambiarse la húmeda ropa interior se dirigió resueltamente a cumplir con su destino. Solamente necesitó abrir la puerta de su hogar y traspasar el portón de la casa contigua habitualmente semiabierto. <p style="text-align: justify;">A pesar del corto trayecto recorrido fue suficiente el tiempo como para empaparse por la intensidad del torrencial chaparrón. Ya dentro de la morada conociendo a lo que iba, se despojó de la vestimenta mojada y se encaminó con determinación al dormitorio de Nenito, cuya ubicación conocía muy bien.</br>
+<p style="text-align: justify;">Josefina no llegó a penetrar en la habitación donde planeaba entregar su ardiente virginidad. Desde la puerta de entrada al cubículo avistó incrédula el espectáculo que jamás imaginó presencial: El nene en total estado de arrebatamiento, desnudo sobre la cama en posición de cuatro puntos o perrito, gemía de placer ante las arremetidas del pene del guapo del barrio, quien taladraba sin compasión el orificio anal del chico transformado en nenita.</br>
+<p style="text-align: justify;">Fue tan intenso y cruel el desencanto sufrido por Josefina al descubrir la desconocida orientación sexual del macho al que había jurado amar para siempre, como el impacto experimentado por Pura al tropezar de imprevisto con la visión del  recuerdo que creía sepultado.</br>
+<p style="text-align: justify;">Con la vista baja para que no se notaran las lágrimas a punto de aflorar y con mayor velocidad que la utilizada por Josefina, para vestirse y abandonar el recinto del pecado aquel tempestuoso atardecer, Pura pasó de largo por el lado de Nenito quien muy orondo engalanado con ropas de mujer no  la reconoció.</br> 
+<p style="text-align: justify;">La perturbación causada por el reencuentro duraría solamente unos segundos. Lapso de tiempo suficiente para reponerse del desencanto que la mantuvo autosecuestrada por más  de treinta años en el oscuro mundo de la incomprensión. Descubrió la señora en un abrir y cerrar de ojos, la encrucijada, profundidad e inocencia de los sentimientos humanos. Lejos de enfadarse, rió cuan niña feliz. Sanaban así para siempre las heridas psicológicas del pasado. Josefina Pura libre como el viento, dueña de su presente y futuro comenzó a soñar nuevamente con el amor.</br>
+
+</p>Fin.</br>
+  <p>
+    "Pura" forma parte del libro  <strong>"Cuentos de suspense, amor y muerte"</strong> 
+    de Ricardo Hernández Rodríguez:<br>
+    <a href="https://www.amazon.com/dp/B0DV2FX2FV" target="_blank">Puedes comprar el libro en Amazon</a>
+  </p>
+
+  <p style="margin-top:20px; text-align:center;">
+
+
+   <a href="#comentarios" class="enlace-comentarios">Tú opinión es importante. Deja un comentario</a>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+<!-- SECCIÓN TIENDA -->
+<div id="tienda" class="tab-content">
+  <h2>Tienda</h2>
+  <p style="text-align: justify;">
+    Aquí puedes adquirir mis libros en formato PDF de manera directa y segura a través de Gumroad.
+    Una vez realizada la compra, recibirás el archivo automáticamente en tu correo electrónico 📧.
+  </p>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+    <!-- Producto 1 -->
+    <div style="background:#f1f1f1; padding:20px; border-radius:12px; width:250px; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
+      <img src="portada-versos.jpg" alt="Versos Callejeros" style="max-width:100%; border-radius:8px;">
+      <h3 style="margin:15px 0 10px 0;">Versos Callejeros</h3>
+      <p style="font-style:italic; font-size:0.9em;">Las cosas que amo</p>
+      <a href="https://ricardo.gumroad.com/l/versos" target="_blank" 
+         style="display:inline-block; margin-top:10px; padding:10px 16px; background:#003366; color:white; text-decoration:none; border-radius:8px;">
+         Comprar PDF
+      </a>
+    </div>
+
+    <!-- Producto 2 -->
+    <div style="background:#f1f1f1; padding:20px; border-radius:12px; width:250px; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
+      <img src="portada-cuentos.jpg" alt="Cuentos de suspense" style="max-width:100%; border-radius:8px;">
+      <h3 style="margin:15px 0 10px 0;">Cuentos de suspense</h3>
+      <p style="font-style:italic; font-size:0.9em;">Amor y muerte</p>
+      <a href="https://ricardo.gumroad.com/l/cuentos" target="_blank" 
+         style="display:inline-block; margin-top:10px; padding:10px 16px; background:#cc0000; color:white; text-decoration:none; border-radius:8px;">
+         Comprar PDF
+      </a>
+    </div>
+  </div>
+
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+  <!-- SECCIÓN INVITADOS -->
+<div id="invitados" class="tab-content">
+  <h2>Invitados</h2>
+  <h3>Un rincón para compartir las letras de amigos y colegas.
+  Voces que enriquecen este espacio con su sensibilidad y su mirada propia</h3>
+  
+  Proximamente: ¡Mi primer invitado!
+ <p><strong> Julio Alberto Cumberbatch Padrón(La Habana, 1951). Amigo y maestro. Profesor de Inglés, licenciado en Español y literatura. Poeta, compositor, interprete, guitarrista. Miembro de la Sociedad Económica Amigos del País, miembro de la UNEAC, Miembro del Grupo A la Décima. Su poemario Canto a una muchacha y otras fábulas fue publicado por Ediciones Extramuros,2009. Su obra está antologada en Esta cárcel de aire puro. Panorama de la Décima Cubana, tomo I y en Té y limón. Como guitarrista e interprete se presenta desde 2016 en el restaurante Unión francesa.</br>
+  
+   :</strong> “Título del escrito”</p>
+  <p>
+  Texto del autor invitado. 
+  Copiar y pegar 
+  </p>
+   <a href="#comentarios" class="enlace-comentarios">Tú opinión es importante. Deja un comentario</a>
+  <button class="boton-volver" onclick="volverArriba()">Volver arriba</button>
+</div>
+</div>
+<!-- SECCIÓN COMENTARIOS -->
+<div id="comentarios" class="tab-content">
+  <h2>Comentarios</h2>
+  Para comentar no es obligatorio poner el correo electrónico, es opcional. Reply= Responder. Comentar.
+  <!-- Cusdis en español -->
+  <div id="cusdis_thread"
+       data-host="https://cusdis.com"
+       data-app-id="75427542-5fae-4aac-b8a5-801e82606b2c"
+       data-page-id="ricardo-letras"
+       data-page-url="https://ricardo-letras.vercel.app"
+       data-page-title="Ricardo Hernández Letras"
+       data-lang="es">
+  </div>
+  <button class="boton-volver" onclick="volverPortada()">Volver a la portada</button>
+</div>
+
+<!-- SECCIÓN CONTACTO -->
+<div id="contacto" class="tab-content">
+  <h2>Contacto</h2>
+  <p>
+    Si deseas comunicarte conmigo, escribe a: 
+    <a href="mailto:ricardohernandezletras@gmail.com">
+      ricardohernandezletras@gmail.com
+    </a>
+  </p>
+  <button class="boton-volver" onclick="volverPortada()">Volver a la portada</button>
+</div>
+<!-- Script Cusdis -->
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+
+    const seccion = document.getElementById(tabId);
+    if (seccion) seccion.classList.add('active');
+
+    const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+    if (boton) boton.classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function volverArriba() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function volverPortada() {
+    document.getElementById('main-nav').style.display = 'none';
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelector('.hero').style.display = 'flex';
+    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTab('comentarios');
+        document.getElementById('comentarios').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+</script>
+
+<!-- SCRIPTS -->
+<script>
+  function entrarSitio() {
+    document.querySelector('.hero').style.display = 'none';
+    document.getElementById('main-nav').style.display = 'block';
+    showTab('biografia'); // inicia con Biografía
+  }
+
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+    const boton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+    if (boton) boton.classList.add('active');
+
+    const seccion = document.getElementById(tabId);
+    if (seccion) seccion.classList.add('active');
+  }
+
+  function volverArriba() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function volverPortada() {
+    document.getElementById('main-nav').style.display = 'none';
+    document.querySelectorAll('.tab-content').forEach(sec => sec.classList.remove('active'));
+    document.querySelector('.hero').style.display = 'flex';
+    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Enlaces directos a comentarios
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.enlace-comentarios').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTab('comentarios');
+        document.getElementById('comentarios').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+</script>
+
+<!-- SECCIÓN OCULTA DEL CONTADOR -->
+<div id="contador" class="tab-content" style="display: none; text-align:center; padding:2em;">
+  <h2>Estadísticas del sitio</h2>
+  <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek">000000</div>
+  <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
+  <br>
+  <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+</div>
+
+<!-- BOTÓN INVISIBLE DE ACCESO AL CONTADOR -->
+<audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2576/2576-preview.mp3"></audio>
+
+<script>
+  // Crear el botón invisible
+  const botonInvisible = document.createElement("div");
+  botonInvisible.style.position = "fixed";
+  botonInvisible.style.bottom = "10px";
+  botonInvisible.style.left = "10px";
+  botonInvisible.style.width = "40px";
+  botonInvisible.style.height = "40px";
+  botonInvisible.style.opacity = "0"; // invisible
+  botonInvisible.style.cursor = "pointer";
+  botonInvisible.style.zIndex = "9999";
+  document.body.appendChild(botonInvisible);
+
+  // Al hacer clic
+  botonInvisible.addEventListener("click", function() {
+    const clickSound = document.getElementById("clickSound");
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    const clave = prompt("Introduce la clave para acceder:");
+    if (clave === "rcl1982") {
+      const contador = document.getElementById("contador");
+      if (contador) {
+        contador.style.display = "block";
+        mostrarMensajeAcceso();
+        contador.scrollIntoView({ behavior: "smooth" });
+      } else {
+        alert("⚠️ Sección del contador no encontrada.");
+      }
+    } else {
+      alert("❌ Clave incorrecta.");
+    }
+  });
+
+  // Mensaje visual de acceso concedido
+  function mostrarMensajeAcceso() {
+    const mensaje = document.createElement("div");
+    mensaje.textContent = "🔓 Acceso concedido";
+    mensaje.style.position = "fixed";
+    mensaje.style.bottom = "60px";
+    mensaje.style.left = "20px";
+    mensaje.style.background = "rgba(0,0,0,0.75)";
+    mensaje.style.color = "white";
+    mensaje.style.padding = "10px 20px";
+    mensaje.style.borderRadius = "10px";
+    mensaje.style.fontSize = "16px";
+    mensaje.style.fontFamily = "sans-serif";
+    mensaje.style.zIndex = "10000";
+    mensaje.style.opacity = "0";
+    mensaje.style.transition = "opacity 0.8s ease";
+
+    document.body.appendChild(mensaje);
+    setTimeout(() => mensaje.style.opacity = "1", 100);
+    setTimeout(() => {
+      mensaje.style.opacity = "0";
+      setTimeout(() => mensaje.remove(), 1000);
+    }, 2000);
+  }
+</script>
+
+<!-- Script Cusdis en español -->
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  window.CUSDIS_LOCALE = {
+    powered_by: "Comentarios con Cusdis",
+    post_comment: "Publicar comentario",
+    loading: "Cargando...",
+    email: "Correo electrónico",
+    nickname: "Nombre",
+    reply: "Responder",
+    cancel: "Cancelar",
+    content: "Comentario",
+    submit: "Enviar",
+    submitting: "Enviando...",
+    approved: "Tu comentario está pendiente de aprobación",
+    error: "Error, inténtalo de nuevo",
+    no_comment: "Aún no hay comentarios. ¡Sé el primero en opinar!",
+  };
+</script>
+</body>
+</html>  
