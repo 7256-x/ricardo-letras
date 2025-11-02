@@ -460,8 +460,7 @@
 
     <div class="marquee-container">
       <div class="marquee-text">
-        ¡Bienvenido a mi sitio literario! 📚 ’Ahora puedes recorrer cada poema,
-cada cuento publicado hasta hoy.
+        ¡Bienvenido a mi sitio literario! 📚 Ahora puedes recorrer cada poema, cada cuento publicado hasta hoy.
       </div>
     </div>
 
@@ -968,6 +967,76 @@ function mostrarSeccion(id) {
   }
 }
 </script>
+<!-- SECCIÓN OCULTA DEL CONTADOR -->
+  <div id="contador" class="tab-content" style="display: none; text-align:center; padding:2em;">
+    <h2>Estadísticas del sitio</h2>
+    <div id="sfcgecz3rkbphaxau6renpc7jwpu9zhc6ek">000000</div>
+    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=gecz3rkbphaxau6renpc7jwpu9zhc6ek&down=async" async></script>
+    <br>
+    <a href="https://www.freecounterstat.com" style="color:#ccc;">free hit counter</a>
+  </div>
 
+  <!-- BOTÓN INVISIBLE DE ACCESO AL CONTADOR -->
+  <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2576/2576-preview.mp3"></audio>
+
+  <script>
+    // Crear el botón invisible
+    const botonInvisible = document.createElement("div");
+    botonInvisible.style.position = "fixed";
+    botonInvisible.style.bottom = "10px";
+    botonInvisible.style.left = "10px";
+    botonInvisible.style.width = "40px";
+    botonInvisible.style.height = "40px";
+    botonInvisible.style.opacity = "0"; // invisible
+    botonInvisible.style.cursor = "pointer";
+    botonInvisible.style.zIndex = "9999";
+    document.body.appendChild(botonInvisible);
+
+    // Al hacer clic
+    botonInvisible.addEventListener("click", function() {
+      const clickSound = document.getElementById("clickSound");
+      clickSound.currentTime = 0;
+      clickSound.play();
+
+      const clave = prompt("Introduce la clave para acceder:");
+      if (clave === "rcl1982") {
+        const contador = document.getElementById("contador");
+        if (contador) {
+          contador.style.display = "block";
+          mostrarMensajeAcceso();
+          contador.scrollIntoView({ behavior: "smooth" });
+        } else {
+          alert("⚠️ Sección del contador no encontrada.");
+        }
+      } else {
+        alert("❌ Clave incorrecta.");
+      }
+    });
+
+    // Mensaje visual de acceso concedido
+    function mostrarMensajeAcceso() {
+      const mensaje = document.createElement("div");
+      mensaje.textContent = "🔓 Acceso concedido";
+      mensaje.style.position = "fixed";
+      mensaje.style.bottom = "60px";
+      mensaje.style.left = "20px";
+      mensaje.style.background = "rgba(0,0,0,0.75)";
+      mensaje.style.color = "white";
+      mensaje.style.padding = "10px 20px";
+      mensaje.style.borderRadius = "10px";
+      mensaje.style.fontSize = "16px";
+      mensaje.style.fontFamily = "sans-serif";
+      mensaje.style.zIndex = "10000";
+      mensaje.style.opacity = "0";
+      mensaje.style.transition = "opacity 0.8s ease";
+
+      document.body.appendChild(mensaje);
+      setTimeout(() => mensaje.style.opacity = "1", 100);
+      setTimeout(() => {
+        mensaje.style.opacity = "0";
+        setTimeout(() => mensaje.remove(), 1000);
+      }, 2000);
+    }
+  </script>
 </body>
 </html>
