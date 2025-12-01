@@ -206,25 +206,56 @@
       }
     }
 
-    .marquee-container {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+   /* PRIMER LETRERO - Derecha → Izquierda */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
-    .marquee-text {
-      display: inline-block;
-      padding-left: 100%;
-      color: white;
-      font-size: 0.9em;
-      font-style: italic;
-      background: rgba(0,0,0,0.4);
-      padding: 5px 0;
-      animation: scroll-once 10s ease-out forwards;
-    }
+.marquee-text {
+  display: inline-block;
+  color: white;
+  font-size: 0.9em;
+  font-style: italic;
+  background: rgba(0,0,0,0.4);
+  padding: 5px 0;
+  animation: scroll-right-left 12s ease-out forwards;
+}
+
+/* SEGUNDO LETRERO - Izquierda → Derecha */
+.marquee-container2 {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top: 30px; /* debajo del primero */
+  left: 0;
+}
+
+.marquee-text2 {
+  display: inline-block;
+  color: white;
+  font-size: 0.9em;
+  font-style: italic;
+  background: rgba(0,0,0,0.4);
+  padding: 5px 0;
+  animation: scroll-left-right 12s ease-out forwards;
+}
+
+/* ANIMACIONES */
+@keyframes scroll-right-left {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes scroll-left-right {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
 
     @keyframes scroll-once {
       0% { transform: translateX(100%); }
@@ -456,7 +487,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-  </style>
+ </style>
 </head>
 
 <body>
@@ -467,11 +498,17 @@
       <img id="foto-flotante" src="foto-default.jpg" alt="Foto del autor">
     </div>
 
-    <div class="marquee-container">
-      <div class="marquee-text">
-        ¡Felíz Navidad y bienvenidos a mi sitio literario! 📚 Cerramos el mes con más  de 200 visitas. ¡Gracias a todos! A partir del 1-12-25 nuevos versos e historias intensas.
-      </div>
-    </div>
+   <div class="marquee-container">
+  <div class="marquee-text">
+    ¡Feliz Navidad y bienvenidos a mi sitio literario! 🎄 Gracias por más de 200 visitas.
+  </div>
+</div>
+
+<div class="marquee-container2">
+  <div class="marquee-text2">
+    Nuevos versos y el cuento “Amigos” ya están disponibles en ricardo-letras.com
+  </div>
+</div>
 
     <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio">
       <img src="adoquin-boton.png" alt="Entrar al sitio" />
