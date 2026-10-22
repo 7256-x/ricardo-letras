@@ -1174,6 +1174,10 @@ function mostrarSeccion(id) {
 
   if (id === 'pagina-principal') {
     menu.style.display = 'flex';
+
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) sidebar.style.display = 'flex';
+
     if (panel) panel.style.width = '';
   } else {
     menu.style.display = 'flex';
