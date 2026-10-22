@@ -1153,18 +1153,34 @@ Estamos en restauracion
 <script>
 function mostrarSeccion(id) {
   // Oculta todas las secciones
-  document.querySelectorAll('.tab-content').forEach(sec => sec.classList.remove('active'));
-  
-  // Muestra la que corresponde
+  document.querySelectorAll('.tab-content').forEach(sec => {
+    sec.classList.remove('active');
+  });
+
+  // Muestra la sección seleccionada
   const seccion = document.getElementById(id);
   if (seccion) {
     seccion.classList.add('active');
+  }
 
-    // 🔄 Recarga Cusdis solo cuando la pestaña de comentarios se muestra
-    if (id === 'comentarios' && window.CUSDIS) {
-      const thread = document.getElementById('cusdis_thread');
-      window.CUSDIS.renderTo(thread);
-    }
+  // Oculta el menú azul al entrar en una sección
+  const menu = document.getElementById('main-nav');
+  const panel = document.querySelector('.content-panel');
+
+  if (id === 'pagina-principal') {
+    menu.style.display = 'flex';
+    if (panel) panel.style.width = '';
+  } else {
+    menu.style.display = 'flex';
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) sidebar.style.display = 'none';
+    if (panel) panel.style.width = '100%';
+  }
+
+  // Recarga Cusdis al entrar en Comentarios
+  if (id === 'comentarios' && window.CUSDIS) {
+    const thread = document.getElementById('cusdis_thread');
+    if (thread) window.CUSDIS.renderTo(thread);
   }
 }
 </script>
