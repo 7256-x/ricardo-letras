@@ -214,9 +214,15 @@
 }
 
 .marquee-container {
-  top: 0;
+  position: absolute;
+  top: -45px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  white-space: normal;
+  overflow: visible;
+  z-index: 5;
 }
-
 .marquee-container2 {
   top: 55px;
 }
@@ -523,11 +529,7 @@ border-radius: 0;
   </div>
 </div>
 
-<div class="marquee-container2">
-  <div class="marquee-text2">
-Estamos en restauracion
-  </div>
-</div>
+
   <button onclick="entrarSitio()" class="boton-adoquin" title="Entrar al sitio" aria-label="Entrar al sitio" style="position:absolute; bottom:-15px; right:100px; width:140px; height:70px; opacity:0.5; z-index:1000; cursor:pointer; border:none; background:transparent; padding:0;">
   <img src="adoquin-boton.png" alt="" style="width:100%; height:100%; opacity:0;" />
 </button>
