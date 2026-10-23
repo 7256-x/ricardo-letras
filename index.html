@@ -211,15 +211,17 @@
 }
 
 .marquee-text {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
   color: white;
   font-size: 0.9em;
   font-style: italic;
   background: rgba(0,0,0,0.4);
-  padding: 5px 0;
+  padding: 5px 12px;
   animation: scroll-right-left 12s ease-out forwards;
 }
-
 /* SEGUNDO LETRERO - Izquierda → Derecha */
 .marquee-container2 {
   width: 100%;
@@ -241,9 +243,14 @@
 }
 
 /* ANIMACIONES */
+/* ANIMACIÓN: DERECHA A IZQUIERDA HASTA EL CENTRO */
 @keyframes scroll-right-left {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes scroll-left-right {
