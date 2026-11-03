@@ -638,7 +638,17 @@ border-radius: 0;
   <button onclick="mostrarSeccion('cancion4')">Confesión</button>
   <button onclick="mostrarSeccion('cancion5')">Ladrona</button>
   <button onclick="mostrarSeccion('cancion6')">Pandemia de amor</button>
-</div>   
+</div>  
+      <button class="tab-button" onclick="toggleSubmenu('vida-pensamiento-sub')">Vida y pensamiento</button>
+
+<div id="vida-pensamiento-sub" class="submenu">
+  <button onclick="mostrarSeccion('hombre-libre')">Soy un hombre libre</button>
+  <button onclick="mostrarSeccion('textos-cuba')">Textos sobre Cuba</button>
+  <button onclick="mostrarSeccion('reflexiones')">Reflexiones personales</button>
+  <button onclick="mostrarSeccion('anecdotas')">Anécdotas y experiencias</button>
+  <button onclick="mostrarSeccion('humor-satira')">Humor, ironía y sátira</button>
+  <button onclick="mostrarSeccion('vida-cotidiana')">Observaciones sobre la vida cotidiana</button>
+</div>
       <button class="tab-button" onclick="mostrarSeccion('comentarios')">Comentarios</button>
       <button class="tab-button" onclick="mostrarSeccion('contacto')">Contacto</button>
     </div>
@@ -1356,7 +1366,73 @@ border-radius: 0;
     </button>
   </p>
 </div>
+<!-- VIDA Y PENSAMIENTO -->
 
+<div id="hombre-libre" class="tab-content">
+  <h2>Soy un hombre libre</h2>
+
+  <div class="publicacion-vida">
+    <p>Soy un hombre libre.</p>
+
+    <p>No tengo ataduras ideológicas, partidistas ni laborales a las que deba responder. Actualmente resido en un país grande, hermoso y acogedor, donde puedo expresarme sin miedo a la represión. Siempre defendí con lealtad la camiseta del equipo al que pertenecí durante casi toda mi vida, y actué en consecuencia.</p>
+
+    <p>Soy de los que arriesgó la vida por su país y por los ideales en los que creía. Lo hice durante muchos años con convicción total. Luego vinieron otros años: largos, tortuosos, dolorosos. Un proceso de transformación interior que me obligó a enfrentarme con honestidad a mis propias creencias. Dejé de defender con entusiasmo ciertas ideas, aunque no las rechacé del todo.</p>
+
+    <p>Por mi salud mental y corporal, me vi obligado a aplicar el principio martiano:</p>
+
+    <blockquote>
+      "En silencio tuvo que ser, porque hay cosas que para lograrlas, han de andar ocultas."
+    </blockquote>
+
+    <p>Cuando comprendí que había llegado el momento de romper con mi pasado, fui desatando, con disciplina, todos los lazos que me unían a partidos e instituciones.</p>
+
+    <p>Cuando critico, no traiciono.</p>
+
+    <p>No me debo a nadie más que a Cuba. Y Cuba, como cualquier otro país del mundo, no es propiedad exclusiva de ninguna persona, ideología o partido, aunque la Constitución diga lo contrario.</p>
+
+    <p>Adiós a los amigos que decidan irse por basar su afecto en afinidades ideológicas. Les deseo lo mejor.</p>
+
+    <p>Seguiré expresando libremente mis puntos de vista sobre la isla y sobre lo que en ella suceda. Lo haré en redes sociales y en cualquier otro medio al que tenga acceso, sea a través de versos, cuentos, imágenes o textos libres.</p>
+
+    <p>Podrán coincidir con opiniones ajenas, sí.</p>
+
+    <p>Pero siempre nacerán de mi corazón.</p>
+
+    <p><strong>Ricardo Hernández Rodríguez</strong></p>
+  </div>
+
+  <div class="comentarios-publicacion">
+    <h3>Deja tu comentario</h3>
+    <div data-disfora-comments></div>
+  </div>
+</div>
+
+<div id="textos-cuba" class="tab-content">
+  <h2>Textos sobre Cuba</h2>
+  <p>Próximamente.</p>
+</div>
+
+<div id="reflexiones" class="tab-content">
+  <h2>Reflexiones personales</h2>
+  <p>Próximamente.</p>
+</div>
+
+<div id="anecdotas" class="tab-content">
+  <h2>Anécdotas y experiencias</h2>
+  <p>Próximamente.</p>
+</div>
+
+<div id="humor-satira" class="tab-content">
+  <h2>Humor, ironía y sátira</h2>
+  <p>Próximamente.</p>
+</div>
+
+<div id="vida-cotidiana" class="tab-content">
+  <h2>Observaciones sobre la vida cotidiana</h2>
+  <p>Próximamente.</p>
+</div>
+
+<!-- FIN VIDA Y PENSAMIENTO -->
       <div id="comentarios" class="tab-content">
   <h2>Comentarios</h2>
   <p style="text-align: justify;">
